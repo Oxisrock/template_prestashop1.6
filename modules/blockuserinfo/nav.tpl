@@ -1,15 +1,15 @@
 <!-- Block user information module NAV  -->
 {if $is_logged}
-	<div class="header_user_info">
-		<span>{$cookie->customer_lastname}</span>
-		<div class="dropdown">
-		<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
+	<div class="user-block">
+	<div class="current" ><i class="icon-user"></i></div>
+		<ul class="user-block toogle_content">
+		<li><a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}">
 			{l s='Mi cuenta'}
-		</a>
-		<a class="logout" href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Log me out' mod='blockuserinfo'}">
+		</a></li>
+		<li><a class="logout" href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Log me out' mod='blockuserinfo'}">
 			{l s='Sign out' mod='blockuserinfo'}
-		</a>
-	</div>
+		</a></li>
+	</ul>
 	</div>
 {/if}
 <div class="header_user_info">

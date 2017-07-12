@@ -2,14 +2,14 @@
   padding-top: 1em;
   padding-bottom: 1em;
   display: block;
-  width: 50px;
+  width: 300px;
   float: left;
   }
   #search_block_top #searchbox {
-    float: left;
+    float: none;
     width: 100%; }
   #search_block_top .btn.button-search {
-    background: #333;
+    background: #8D8383;
     display: block;
     position: absolute;
     top: 0;
@@ -54,15 +54,15 @@
       background: #fbfbfb; }
 
 form#searchbox {
-  position: relative; }
+  position: relative;; }
   form#searchbox label {
     color: #333; }
   form#searchbox input#search_query_block {
     margin-right: 10px;
-    max-width: 222px;
+    max-width: 270px;
     margin-bottom: 10px;
     display: inline-block;
-    float: left; }
+    float: left;; }
   form#searchbox .button.button-small {
     float: left; }
     form#searchbox .button.button-small i {
