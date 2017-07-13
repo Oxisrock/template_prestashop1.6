@@ -25,7 +25,7 @@
     #languages-block-top div.current strong {
       color: #777777; }
     #languages-block-top div.current:after {
-      content: "\f0d7";
+      /*content: "\f0d7";*/
       font-family: "FontAwesome";
       font-size: 18px;
       line-height: 18px;

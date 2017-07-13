@@ -52,7 +52,7 @@ $(document).ready(function(){
 			slideWidth: homeslider_width,
 			infiniteLoop: homeslider_loop,
 			hideControlOnEnd: true,
-			pager: false,
+			pager: true,
 			autoHover: true,
 			auto: homeslider_loop,
 			speed: parseInt(homeslider_speed),

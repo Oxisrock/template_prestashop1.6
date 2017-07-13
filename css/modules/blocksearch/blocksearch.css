@@ -4,6 +4,7 @@
   display: block;
   width: 300px;
   float: left;
+  margin-left: 13%;
   }
   #search_block_top #searchbox {
     float: none;

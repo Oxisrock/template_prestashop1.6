@@ -67,7 +67,9 @@
   #homepage-slider .bx-wrapper a {
     display: block; }
   #homepage-slider .bx-wrapper img {
-    height: auto; }
+    height: auto;
+    width: 100%;
+   }
   #homepage-slider .bx-wrapper .bx-viewport {
     width: 100%;
     direction: ltr !important; }
@@ -77,7 +79,7 @@
     top: auto;
     margin-top: 0px;
     font-size: 1em;
-    bottom: 10px;
+    bottom: 330px;
     outline: 0;
     width: 52px;
     height: 52px;

@@ -24,8 +24,21 @@
 */
 //global variables
 var responsiveflag = false;
-
 $(document).ready(function(){
+
+	/*
+		script para las busquedador
+	*/
+	$('#search_trigger').live('click', function (e){
+
+		e.preventDefault()
+			$('#search_top_wrapper').toogleClass('hidden')
+
+	});
+	$('.hider').live('click') , function (e) {
+		$('#search_top_wrapper').addClass('hidden')
+	}
+
 	highdpiInit();
 	responsiveResize();
 	$(window).resize(responsiveResize);

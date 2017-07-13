@@ -55,6 +55,7 @@
 					<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" />
 				{/if}
 			{/foreach}
+			 <link rel="stylesheet" href="{$css_dir}general.css" type="text/css" media="{$media}" />
 		{/if}
 		{if isset($js_defer) && !$js_defer && isset($js_files) && isset($js_def)}
 			{$js_def}
@@ -104,8 +105,8 @@
 							</div>
 						</div>
 					{/if}
-					<div>
-						<div class="container">
+					<div class="top_menu_container">
+						<div class="container container-full">
 							<div class="row">
 								{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
 							</div>
