@@ -24,12 +24,12 @@
 *}
 <!-- Block languages module -->
 {if count($languages) > 1}
-	<div id="languages-block-top" class="languages-block">
+<div class="header-right ">
+	<div id="claro" class="languages-block btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
 		{foreach from=$languages key=k item=language name="languages"}
 			{if $language.iso_code == $lang_iso}
-				<div class="current">
-					<span>{$language.name|regex_replace:"/\s\(.*\)$/":""}</span>
-				</div>
+				<div class="current"><img class="" src="{$img_dir}lang_esp.png" /></div>
+				<div class="current"><img src="{$img_dir}lang_eng.png" /></div>
 			{/if}
 		{/foreach}
 		<ul id="first-languages" class="languages-block_ul toogle_content">
@@ -51,5 +51,6 @@
 			{/foreach}
 		</ul>
 	</div>
+</div>
 {/if}
 <!-- /Block languages module -->

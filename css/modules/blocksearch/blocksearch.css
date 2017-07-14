@@ -5,7 +5,12 @@
   width: 300px;
   float: left;
   margin-left: 13%;
+  color: #999 !important;
+	margin-top: 8px;
+	margin-left: 30px;
+  left: 14%;
   }
+
   #search_block_top #searchbox {
     float: none;
     width: 100%; }
@@ -13,13 +18,14 @@
     background: #8D8383;
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: 269px;
     border: none;
     color: #fff;
     width: 50px;
     text-align: center;
-    padding: 10px 0 11px 0; }
+    padding: 10px 0 11px 0;
+   }
     #search_block_top .btn.button-search span {
       display: none; }
     #search_block_top .btn.button-search:before {

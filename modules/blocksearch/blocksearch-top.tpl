@@ -23,15 +23,19 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <!-- Block search module TOP -->
-<div id="search_block_top" class="col-sm-4 clearfix">
-	<form id="searchbox" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}" >
-		<input type="hidden" name="controller" value="search" />
-		<input type="hidden" name="orderby" value="position" />
-		<input type="hidden" name="orderway" value="desc" />
+<div class="animated fadeInLeft animation-delay-6 ms-title" style="padding-bottom: 7px; margin-bottom: 20px">
+<div id="search_block_top buscador1">
+	<div class="col-md-10">
+	<form id="searchbox" class="form-group" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}" >
+		<input class="form-control" type="hidden" name="controller" value="search" />
+		<input class="form-control" type="hidden" name="orderby" value="position" />
+		<input class="form-control" type="hidden" name="orderway" value="desc" />
+		<label class="col-md-1 text-right hidden-sm"><i class="fa fa-search fa-2x" aria-hidden="true" ></i>&nbsp;</label>
+		<div class="col-md-10">
 		<input class="search_query form-control" type="text" id="search_query_top" name="search_query" placeholder="{l s='Search' mod='blocksearch'}" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" />
-		<button id="search-trigger" type="submit" name="submit_search" class="btn btn-default button-search">
-			<span>{l s='Search' mod='blocksearch'}</span>
-		</button>
+		</div>
 	</form>
+		</div>
+	</div>
 </div>
 <!-- /Block search module TOP -->

@@ -16,6 +16,7 @@
   width: 100%;
   background: #fff;
   text-align: center;
+  height: 3em;
  }
   @media (max-width: 767px) {
     .sf-menu {

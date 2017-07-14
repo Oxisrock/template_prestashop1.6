@@ -1,3 +1,22 @@
 body {
   background: #fff !important;
 }
+#header_logo {
+  padding-top: 0 !important;
+}
+#header_logo .img-responsive {
+    display: block !important;
+    height: 7.3em !important;
+}
+header .row #header_logo {
+    width: 24.333% !important;
+}
+#gotas {
+	background-image: url("../img/rain.jpg") !important;
+	background-size: cover;
+}
+nav .languages-block-top
+{
+  background-color: rgba(255,255,255,0.7) !important;
+	border-radius: 25px !important;
+}

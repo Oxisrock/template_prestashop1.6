@@ -2,7 +2,7 @@
       float: right;
       border-left: 1px solid #515151;
       position: relative;
-      margin-top: 2em;
+      margin-top: 3em;
      }
       @media (max-width: 479px) {
         .user-block {
