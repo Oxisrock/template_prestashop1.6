@@ -22,4 +22,12 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-<li><a data-toggle="tab" href="#blocknewproducts" class="blocknewproducts">{l s='Descubre nuestros nuevos productos' mod='blocknewproducts'}</a></li>
+<div class="" style="background: #bedb02">
+<div class="container index-1">
+<div data-toggle="tab" href="#blocknewproducts" class="text-center mb-4" style="background: #fff; padding: 5px; border-radius: 4px; margin-top: 12px;">
+            <h2 class="color-info-light superh1">Descubre nuestros nuevos productos</h2>
+            <p class="lead"><b>Bienvenido</b>... Descubre los últimos productos a precios increíbles.
+            <br>No olvide consultar nuestras ofertas diarias.</p>
+</div>
+</div>
+</div>

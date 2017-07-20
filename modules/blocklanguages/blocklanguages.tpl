@@ -28,7 +28,7 @@
 	<div id="claro" class="languages-block btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
 		{foreach from=$languages key=k item=language name="languages"}
 			{if $language.iso_code == $lang_iso}
-				<div class="current"><img class="" src="{$img_dir}lang_esp.png" /></div>
+				<div class="current"><img src="{$img_dir}lang_esp.png" /></div>
 				<div class="current"><img src="{$img_dir}lang_eng.png" /></div>
 			{/if}
 		{/foreach}

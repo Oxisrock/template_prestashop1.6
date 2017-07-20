@@ -22,6 +22,9 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+{* Listado de productos *}
+<div class="container index-1">
+	{*si hay productos almacenados*}
 {if isset($products) && $products}
 	{*define number of products per line in other page for desktop*}
 	{if $page_name !='index' && $page_name !='product'}
@@ -220,3 +223,4 @@
 {addJsDef comparator_max_item=$comparator_max_item}
 {addJsDef comparedProductsIds=$compared_products}
 {/if}
+</div>

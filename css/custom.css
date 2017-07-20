@@ -5,6 +5,9 @@
 	right: 5%;
 	width: 35%;
 }
+.trans {
+	background: transparent !important;
+}
 .banner_izq {
 	position: absolute;
 	top: 20%;

@@ -32,14 +32,124 @@
 			</div><!-- .columns-container -->
 			{if isset($HOOK_FOOTER)}
 				<!-- Footer -->
-				<div class="footer-container">
-					<footer id="footer"  class="container">
-						<div class="row">{$HOOK_FOOTER}</div>
-					</footer>
+				<div class="">{$HOOK_FOOTER}
+
+<!-- *******************************
+FOOTER
+******************************* -->
+<aside class="ms-footbar" style="background-color: #2061A8;">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-4 col-sm-12 ms-footer-col" style="background-color: #2061A8;">
+				<div class="ms-footbar-block">
+					<h3 class="ms-footbar-title">Sitemap</h3>
+					<ul class="list-unstyled ms-icon-list three_cols">
+						<li>
+							<a href="index.php">
+								<i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
+						</li>
+						{if !$is_logged}
+						<li>
+							<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
+								<i class="fa fa-user-plus" aria-hidden="true"></i> Registro</a>
+						</li>
+						<li>
+							<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
+								<i class="fa fa-user" aria-hidden="true"></i> Ingresar</a>
+						</li>
+						{/if}
+						{if $is_logged}
+						<li>
+							<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
+								<i class="fa fa-user-plus" aria-hidden="true"></i> Mi Cuenta</a>
+						</li>
+						<li>
+							<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}">
+								<i class="fa fa-user" aria-hidden="true"></i> Deslogear</a>
+						</li>
+						{/if}
+						<li>
+							<a href="javascript:void(0)">
+								<i class="fa fa-tint" aria-hidden="true"></i> Tienda</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<i class="zmdi zmdi-favorite-outline"></i> Favoritos</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<i class="fa fa-users" aria-hidden="true"></i> Somos</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<i class="fa fa-download" aria-hidden="true"></i> Descargas</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<i class="fa fa-envelope" aria-hidden="true"></i> Contáctanos</a>
+						</li>
+						<!-- <li>
+							<a href="javascript:void(0)">
+								<i class="fa fa-file-text-o" aria-hidden="true"></i> Condiciones</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-xs-6 ms-footer-col" style="background-color: #538e1c;">
+				<div class="ms-footbar-block center-block text-center">
+					<img class="animated fadeInUp animation-delay-6 img-responsive center-block" src="{$img_dir}logob.svg" alt="Logo Blanco">
+					<br>
+					<h3 class="ms-footbar-title">Manténte en contacto</h3>
+					<div class="ms-footbar-social">
+						<a href="javascript:void(0)" class="btn-circle btn-twitter">
+							<i class="zmdi zmdi-twitter"></i>
+						</a>
+						<a href="javascript:void(0)" class="btn-circle btn-youtube">
+							<i class="zmdi zmdi-youtube"></i>
+						</a>
+						<a href="javascript:void(0)" class="btn-circle btn-instagram">
+							<i class="zmdi zmdi-instagram"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-xs-6 ms-footer-col ms-footer-text-right" style="background-color: #2061A8;">
+				<div class="ms-footbar-block">
+					<h3 class="ms-footbar-title">Contáctanos</h3>
+					<address class="no-mb">
+						<p>
+							<i class="color-danger-light zmdi zmdi-pin mr-1"></i>3874 SW 30th Avenue</p>
+						<p>
+							<i class="color-warning-light zmdi zmdi-map mr-1"></i>Fort Lauderdale, FL</p>
+						<p>
+							<i class="color-info-light zmdi zmdi-email mr-1"></i>
+							<a href="mailto:info@conectala.com">admin@bluehorizon.us</a>
+						</p>
+						<p>
+							<i class="color-royal-light zmdi zmdi-phone mr-1"></i>+34 123 456 7890 </p>
+						<p>
+							<i class="color-success-light fa fa-fax mr-1"></i>+34 123 456 7890 </p>
+					</address>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</aside>
+
+<footer class="ms-footer" style="background-color: #333;">
+	<div class="container">
+		<p class="font"><a href="javascript:void(0)">Condiciones</a> <span class="hidden-xs">&nbsp; &#8226; &nbsp;</span> <br class="visible-xs"> Copyright &copy; Blue Horizon 2017 - Powered by <a href="http://www.slicegroup.xyz">Slice Group</a></p>
+	</div>
+</footer>
+<!-- /. Footer -->
 				</div><!-- #footer -->
 			{/if}
-		</div><!-- #page -->
 {/if}
-{include file="$tpl_dir./global.tpl"}
-	</body>
-</html>
