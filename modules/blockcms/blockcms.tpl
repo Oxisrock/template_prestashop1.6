@@ -22,7 +22,6 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
 {if $block == 1}
 	<!-- Block CMS module -->
 	{foreach from=$cms_titles key=cms_key item=cms_title}

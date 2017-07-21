@@ -23,7 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<div id="contact_block" class="block">
+<div id="contact_block" class="container container-full">
 	<h4 class="title_block">
 		{l s='Contact Us' mod='blockcontact'}
 	</h4>
