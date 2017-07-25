@@ -5,6 +5,13 @@
 	right: 5%;
 	width: 35%;
 }
+ul{
+	list-style: none;
+}
+.text-white
+{
+  color: #fff;
+}
 .trans {
 	background: transparent !important;
 }

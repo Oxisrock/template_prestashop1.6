@@ -55,26 +55,37 @@
 				<div class="left-block">
 					<div class="card card-warning animation-delay-5">
 					<div class="card-block text-center">
-					<div class="product-image-container">
+					<div class="product-image-container row">
+						{if isset($product.new) && $product.new == 1}
+							<a class="btn btn-primary btn-sm btn-block btn-raised mt-2 no-mb" href="{$product.link|escape:'html':'UTF-8'}">
+								<span class="new-label">{l s='New'}</span>
+							</a>
+						{/if}
+						<figure class="ms-thumbnail">
+						{* Imagen de productos *}
 						<a class="product_img_link" href="{$product.link|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}" itemprop="url">
 							<img class="img-responsive center-block" src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')|escape:'html':'UTF-8'}" alt="{if !empty($product.legend)}{$product.legend|escape:'html':'UTF-8'}{else}{$product.name|escape:'html':'UTF-8'}{/if}" title="{if !empty($product.legend)}{$product.legend|escape:'html':'UTF-8'}{else}{$product.name|escape:'html':'UTF-8'}{/if}" {if isset($homeSize)} width="{$homeSize.width}" height="{$homeSize.height}"{/if} itemprop="image" />
 						</a>
-						<h5 itemprop="name">
-							{if isset($product.pack_quantity) && $product.pack_quantity}{$product.pack_quantity|intval|cat:' x '}{/if}
-							<a class="product-name" href="{$product.link|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}" itemprop="url" >
-								{$product.name|truncate:45:'...'|escape:'html':'UTF-8'}
-							</a>
-						</h5>
+						<figcaption class="ms-thumbnail-caption">
+							{* Nombre de productos *}
+							<h5 class="text-normal text-center " itemprop="name">
+								{if isset($product.pack_quantity) && $product.pack_quantity}{$product.pack_quantity|intval|cat:' x '}{/if}
+								<a class="text-white" href="{$product.link|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}" itemprop="url" >
+									{$product.name|truncate:45:'...'|escape:'html':'UTF-8'}
+								</a>
+							</h5>
+						{* vistazo rapido de los productos *}
 						{if isset($quick_view) && $quick_view}
 							<div class="quick-view-wrapper-mobile">
 							<a class="quick-view-mobile" href="{$product.link|escape:'html':'UTF-8'}" rel="{$product.link|escape:'html':'UTF-8'}">
 								<i class="icon-eye-open"></i>
 							</a>
 						</div>
-						<a class="quick-view" href="{$product.link|escape:'html':'UTF-8'}" rel="{$product.link|escape:'html':'UTF-8'}">
-							<span>{l s='Quick view'}</span>
+						<a class="btn btn-primary btn-sm btn-block btn-raised mt-2 no-mb" href="{$product.link|escape:'html':'UTF-8'}" rel="{$product.link|escape:'html':'UTF-8'}">
+							<span class="text-white">{l s='Quick view'}</span>
 						</a>
 						{/if}
+						{* Nivel de popularidad *}
 						<div class="mt-2">
 							<span class="mr-2">
 										<i class="zmdi zmdi-star color-warning"></i>
@@ -92,6 +103,7 @@
 										{if !$priceDisplay}{convertPrice price=$product.price}{else}{convertPrice price=$product.price_tax_exc}{/if}
 									</span>
 									<meta itemprop="priceCurrency" content="{$currency->iso_code}" />
+									<div>
 									{if $product.price_without_reduction > 0 && isset($product.specific_prices) && $product.specific_prices && isset($product.specific_prices.reduction) && $product.specific_prices.reduction > 0}
 										{hook h="displayProductPriceBlock" product=$product type="old_price"}
 										<span class="old-price product-price">
@@ -101,6 +113,8 @@
 											<span class="price-percent-reduction">-{$product.specific_prices.reduction * 100}%</span>
 										{/if}
 									{/if}
+								</div>
+									<div class="">
 									{if $PS_STOCK_MANAGEMENT && isset($product.available_for_order) && $product.available_for_order && !isset($restricted_country_mode)}
 										<span class="unvisible">
 											{if ($product.allow_oosp || $product.quantity > 0)}
@@ -113,16 +127,14 @@
 											{/if}
 										</span>
 									{/if}
+								</div>
 									{hook h="displayProductPriceBlock" product=$product type="price"}
 									{hook h="displayProductPriceBlock" product=$product type="unit_price"}
 								{/if}
 							</div>
 						{/if}
-						{if isset($product.new) && $product.new == 1}
-							<a class="new-box" href="{$product.link|escape:'html':'UTF-8'}">
-								<span class="new-label">{l s='New'}</span>
-							</a>
-						{/if}
+					</figcaption>
+				</figure>
 						{if isset($product.on_sale) && $product.on_sale && isset($product.show_price) && $product.show_price && !$PS_CATALOG_MODE}
 							<a class="sale-box" href="{$product.link|escape:'html':'UTF-8'}">
 								<span class="sale-label">{l s='Sale!'}</span>

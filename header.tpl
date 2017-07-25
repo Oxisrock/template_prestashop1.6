@@ -64,7 +64,7 @@
 		{if isset($js_defer) && !$js_defer && isset($js_files) && isset($js_def)}
 			{$js_def}
 			{foreach from=$js_files item=js_uri}
-			{* <script type="text/javascript" src="{$js_uri|escape:'html':'UTF-8'}"></script> *}
+			<script type="text/javascript" src="{$js_uri|escape:'html':'UTF-8'}"></script>
 			{/foreach}
 			<script src=”{$js_dir}plugins.min.js”></script>
 			<script src=”{$js_dir}app.min.js”></script>
