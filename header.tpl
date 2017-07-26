@@ -127,13 +127,63 @@
 							<div id="top_column" class="ms-carousel carousel slide hidden-xs">{$smarty.capture.displayTopColumn}</div>
 						{/if}
 					</div>
-						<div class="">
+						<div class="" style="background: #bedb02">
 						{if isset($left_column_size) && !empty($left_column_size)}
-						<div id="left_column" class="column col-xs-12 col-sm-{$left_column_size|intval}">{$HOOK_LEFT_COLUMN}</div>
+						<div id="left_column" class="column col-xs-12 col-sm-{$left_column_size|intval}" style="background: #bedb02">{$HOOK_LEFT_COLUMN}</div>
 					</div>
 						{/if}
 					<div class="s">
 						{if isset($left_column_size) && isset($right_column_size)}{assign var='cols' value=(12 - $left_column_size - $right_column_size)}{else}{assign var='cols' value=12}{/if}
-						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}"></div>
+						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}" style="background: #bedb02"></div>
 						{/if}
 					</div>
+					<!-- *******************************
+      BOTON SUBIR
+      ******************************* -->
+      <div class="btn-back-top hidden-xs">
+        <a href="#" data-scroll id="back-top" class="btn-circle btn-circle-primary btn-circle-sm btn-circle-raised ">
+          <i class="zmdi zmdi-long-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+    <!-- /.Botón Subir -->
+					<script type="text/javascript">
+      // Modifica el Navbar al hacer scroll //
+      $(document).ready(function(){
+          var altura = $('.medir').offset().top;
+
+        $(window).on('scroll', function(){
+          if ( $(window).scrollTop() > altura ){
+            $('.ver').addClass('nover');
+          } else {
+            $('.ver').removeClass('nover');
+          }
+        });
+      });
+
+      // Modifica el Navbar en tablets //
+      $(document).ready(function(){
+          var altura = $('.medir').offset().top;
+
+        $(window).on('scroll', function(){
+          if ( $(window).scrollTop() > altura ){
+            $('.tablet').addClass('ocultar');
+          } else {
+            $('.tablet').removeClass('ocultar');
+          }
+        });
+      });
+
+      // Muestra el buscador al hacer scroll //
+      $(document).ready(function(){
+          var altura = $('.medir').offset().top;
+
+        $(window).on('scroll', function(){
+          if ( $(window).scrollTop() > altura ){
+            $('.buscar').addClass('mostrar');
+          } else {
+            $('.buscar').removeClass('mostrar');
+          }
+        });
+      });
+    </script>

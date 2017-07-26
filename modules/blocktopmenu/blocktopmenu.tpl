@@ -76,7 +76,7 @@
 								</li>
 								<li>
 									<a href="javascript:void(0)" class="animated fadeIn animation-delay-2" title="Tus Compras"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="badge">7</span></a>
-									
+
 								</li>
 								<!-- <li class="btn-navbar-menu"><a href="javascript:void(0)" class="sb-toggle-left"><i class="zmdi zmdi-menu"></i></a></li> -->
 							</ul>
