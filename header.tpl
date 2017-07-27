@@ -52,7 +52,7 @@
 					{/foreach}
 					<![endif]-->
 				{else}
-					{*<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" /> *}
+					{*<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" />*}
 				{/if}
 			{/foreach}
 			 <link rel="stylesheet" href="{$css_dir}custom.css" type="text/css" media="{$media}" />

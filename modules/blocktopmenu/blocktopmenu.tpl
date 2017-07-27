@@ -80,7 +80,14 @@
 									</a>
 									<ul class="dropdown-menu">
 										<li>
-
+											{if isset($blockcart_top) && $blockcart_top}
+												<div class="col-sm-4 clearfix{if $PS_CATALOG_MODE} header_user_catalog{/if}">
+											{/if}
+											<div class="shopping_cart">
+												<a href="{$link->getPageLink($order_process, true)|escape:'html':'UTF-8'}" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
+													Carrito
+												</a>
+											</div>
 										</li>
 									</ul>
 								</li>
