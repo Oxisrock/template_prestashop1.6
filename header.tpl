@@ -52,7 +52,7 @@
 					{/foreach}
 					<![endif]-->
 				{else}
-					{* <link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" /> *}
+					{*<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" /> *}
 				{/if}
 			{/foreach}
 			 <link rel="stylesheet" href="{$css_dir}custom.css" type="text/css" media="{$media}" />
@@ -69,8 +69,6 @@
 			<script src=”{$js_dir}plugins.min.js”></script>
 			<script src=”{$js_dir}app.min.js”></script>
 			<script src=”{$js_dir}portafolio.js”></script>
-			<script src="{$js_dir}activa-menu.js"></script>
-			<script src=”{$js_dir}component-carousels.js”></script>
 		{/if}
 		{$HOOK_HEADER}
 		<!--[if IE 8]>
@@ -129,23 +127,23 @@
 					</div>
 						<div class="" style="background: #bedb02">
 						{if isset($left_column_size) && !empty($left_column_size)}
-						<div id="left_column" class="column col-xs-12 col-sm-{$left_column_size|intval}" style="background: #bedb02">{$HOOK_LEFT_COLUMN}</div>
-					</div>
+						<div id="left_column" class="column col-xs-12 col-sm-{$left_column_size|intval}">{$HOOK_LEFT_COLUMN}</div>
 						{/if}
-					<div class="s">
+						</div>
+					<div class="" style="background: #bedb02">
 						{if isset($left_column_size) && isset($right_column_size)}{assign var='cols' value=(12 - $left_column_size - $right_column_size)}{else}{assign var='cols' value=12}{/if}
-						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}" style="background: #bedb02"></div>
+						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}"></div>
 						{/if}
 					</div>
 					<!-- *******************************
       BOTON SUBIR
       ******************************* -->
-      <div class="btn-back-top hidden-xs">
+      {* <div class="btn-back-top hidden-xs">
         <a href="#" data-scroll id="back-top" class="btn-circle btn-circle-primary btn-circle-sm btn-circle-raised ">
           <i class="zmdi zmdi-long-arrow-up"></i>
         </a>
       </div>
-    </div>
+    </div> *}
     <!-- /.Botón Subir -->
 					<script type="text/javascript">
       // Modifica el Navbar al hacer scroll //

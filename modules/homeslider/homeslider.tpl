@@ -77,4 +77,3 @@
 	{/if}
 <!-- /Module HomeSlider -->
 {/if}
-</div>

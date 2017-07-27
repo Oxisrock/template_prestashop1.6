@@ -62,12 +62,13 @@
 			</p>
 		{/if}
 		<!-- left infos-->
-		<div class="pb-left-column col-xs-12 col-sm-4 col-md-5">
+		<div class="">
 			<!-- product img-->
-			<div id="image-block" class="animated fadeInUp animation-delay-6 img-responsive">
+			<div class="col-md-6">
+			<div id="carousel-product" class="ms-carousel ms-carousel-thumb carousel slide" data-ride="carousel" data-interval="0">
 				{if $product->new}
 					<span class="new-box">
-						<span class="new-label">{l s='New'}</span>
+						<span class="new-label btn btn-info btn-block btn-raised mt-2 no-mb ">{l s='New'}</span>
 					</span>
 				{/if}
 				{if $product->on_sale}
@@ -84,7 +85,7 @@
 								<img itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}"/>
 							</a>
 						{else}
-							<img id="bigpic" itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
+							<img class="animated zoomInUp animation-delay-5" id="bigpic" itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
 							{if !$content_only}
 								<span class="span_link no-print">{l s='View larger'}</span>
 							{/if}
@@ -100,7 +101,16 @@
 						{/if}
 					</span>
 				{/if}
+				<div class="box-cart-bottom">
+					<div{if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || (isset($restricted_country_mode) && $restricted_country_mode) || $PS_CATALOG_MODE} class="unvisible"{/if}>
+						<p id="add_to_cart" class="buttons_bottom_block no-print">
+							<button type="submit" name="Submit" class="exclusive btn btn-success btn-block btn-raised mt-2 no-mb">
+								<span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
+							</button>
+						</p>
+					</div>
 			</div> <!-- end image-block -->
+		</div>
 			{if isset($images) && count($images) > 0}
 				<!-- thumbnails -->
 				<div id="views_block" class="clearfix {if isset($images) && count($images) < 2}hidden{/if}">
@@ -384,14 +394,6 @@
 							</div> <!-- end attributes -->
 						{/if}
 					</div> <!-- end product_attributes -->
-					<div class="box-cart-bottom">
-						<div{if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || (isset($restricted_country_mode) && $restricted_country_mode) || $PS_CATALOG_MODE} class="unvisible"{/if}>
-							<p id="add_to_cart" class="buttons_bottom_block no-print">
-								<button type="submit" name="Submit" class="exclusive">
-									<span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
-								</button>
-							</p>
-						</div>
 						{if isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS}{$HOOK_PRODUCT_ACTIONS}{/if}
 					</div> <!-- end box-cart-bottom -->
 				</div> <!-- end box-info-product -->

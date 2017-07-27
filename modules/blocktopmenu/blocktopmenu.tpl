@@ -74,9 +74,15 @@
 								<li>
 									<a href="javascript:void(0)" class="animated fadeIn animation-delay-2" title="Tus Favoritos"><i class="fa fa-heart-o fa-lg color-danger" aria-hidden="true"></i></a>
 								</li>
-								<li>
-									<a href="javascript:void(0)" class="animated fadeIn animation-delay-2" title="Tus Compras"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="badge">7</span></a>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
+										<i class="zmdi zmdi-chevron-down"></i>
+									</a>
+									<ul class="dropdown-menu">
+										<li>
 
+										</li>
+									</ul>
 								</li>
 								<!-- <li class="btn-navbar-menu"><a href="javascript:void(0)" class="sb-toggle-left"><i class="zmdi zmdi-menu"></i></a></li> -->
 							</ul>

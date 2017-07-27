@@ -45,18 +45,5 @@ $(document).ready(function(){
 	else
 		$('#homepage-slider').addClass('col-xs-12');
 
-	if (!!$.prototype.bxSlider)
-		$('#homeslider').bxSlider({
-			useCSS: false,
-			maxSlides: 1,
-			slideWidth: homeslider_width,
-			infiniteLoop: homeslider_loop,
-			hideControlOnEnd: true,
-			pager: true,
-			autoHover: true,
-			auto: homeslider_loop,
-			speed: parseInt(homeslider_speed),
-			pause: homeslider_pause,
-			controls: true
-		});
+	
 });
