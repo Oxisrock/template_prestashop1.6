@@ -23,6 +23,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {if !$opc}
 	{assign var='current_step' value='address'}
 	{capture name=path}{l s='Addresses'}{/capture}
@@ -41,7 +42,7 @@
 <div class="addresses clearfix">
 	<input type="hidden" name="id_address_delivery" id="id_address_delivery" value="{$cart->id_address_delivery}"/>
 	<p id="address_invoice_form" class="select" {if $cart->id_address_invoice == $cart->id_address_delivery}style="display: none;"{/if}>
-	
+
 	{if $addresses|@count >= 1}
     <div class="form-group selector1">
 		<label for="id_address_invoice" class="strong">{l s='Choose a billing address:'}</label>
@@ -110,3 +111,4 @@
 {capture}<a class="button button-small btn btn-default" href="{$smarty.capture.addressUrlAdd}" title="{l s='Update' js=1}"><span>{l s='Update' js=1}<i class="icon-chevron-right right"></i></span></a>{/capture}
 {addJsDefL name=liUpdate}{$smarty.capture.default|@addcslashes:'\''}{/addJsDefL}
 {/strip}
+</div>

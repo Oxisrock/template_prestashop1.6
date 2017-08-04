@@ -52,7 +52,7 @@
 					{/foreach}
 					<![endif]-->
 				{else}
-					{*<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" />*}
+					{* <link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" /> *}
 				{/if}
 			{/foreach}
 			 <link rel="stylesheet" href="{$css_dir}custom.css" type="text/css" media="{$media}" />
@@ -60,6 +60,10 @@
 			 <link rel="stylesheet" href="{$css_dir}plugins.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}preload.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}style.light-blue-300.min.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}my-account.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}contact-form.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}general.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}order-opc.css" type="text/css" media="{$media}" />
 		{/if}
 		{if isset($js_defer) && !$js_defer && isset($js_files) && isset($js_def)}
 			{$js_def}
@@ -98,7 +102,7 @@
 									<div id="header_logo" class="ms-title trans">
 										<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
 											<div class="animated fadeInRight animation-delay-6">
-												<img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if isset($logo_image_width) && $logo_image_width} width="{$logo_image_width}"{/if}{if isset($logo_image_height) && $logo_image_height} height="{$logo_image_height}"{/if}/>
+												<img style="background: none;" class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if isset($logo_image_width) && $logo_image_width} width="{$logo_image_width}"{/if}{if isset($logo_image_height) && $logo_image_height} height="{$logo_image_height}"{/if}/>
 											</div>
 										</a>
 									</div>
@@ -114,9 +118,9 @@
 				</header>
 			</div>
 				<div id="columns" class="container container-full">
-					{if $page_name !='index' && $page_name !='pagenotfound'}
+					{* {if $page_name !='index' && $page_name !='pagenotfound'}
 						<h1 class="right-line">{include file="$tpl_dir./breadcrumb.tpl"}</h1>
-					{/if}
+					{/if} *}
 				</div>
 					{* Slider Home  *}
 					<div id="slider_row" class="">

@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 <div class="paiement_block">
     <div id="HOOK_TOP_PAYMENT">{$HOOK_TOP_PAYMENT}</div>
     {if $HOOK_PAYMENT}
@@ -316,3 +317,4 @@
 </div> <!-- end opc_payment_methods -->
 {/if}
 </div> <!-- end HOOK_TOP_PAYMENT -->
+</div>

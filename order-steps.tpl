@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 {* Assign a value to 'current_step' to display current style *}
 {capture name="url_back"}
 {if isset($back) && $back}back={$back}{/if}
@@ -77,3 +77,4 @@
 </ul>
 <!-- /Steps -->
 {/if}
+</div>

@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {if !isset($addresses_style)}
     {$addresses_style.company = 'address_company'}
     {$addresses_style.vat_number = 'address_company'}
@@ -142,3 +143,4 @@
 
     {include file="$tpl_dir./shopping-cart-advanced.tpl"}
 {/if}
+</div>

@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 <div class="order_carrier_content box">
     {if isset($virtual_cart) && $virtual_cart}
         <input id="input_virtual_carrier" class="hidden" type="hidden" name="id_carrier" value="0" />
@@ -358,3 +359,4 @@
         {addJsDefL name=msg_order_carrier}{l s='You must agree to the terms of service before continuing.' js=1}{/addJsDefL}
     {/if}
 {/strip}
+</div>

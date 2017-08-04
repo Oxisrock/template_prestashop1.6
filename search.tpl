@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 {capture name=path}{l s='Search'}{/capture}
 
 <h1
@@ -86,3 +86,4 @@ class="page-heading {if !isset($instant_search) || (isset($instant_search) && !$
         </div>
     </div>
 {/if}
+</div>

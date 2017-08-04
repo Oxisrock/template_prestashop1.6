@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {assign var='have_non_virtual_products' value=false}
 {foreach $products as $product}
     {if $product.is_virtual == 0}
@@ -99,3 +100,4 @@
     </div>
 {/if}
 
+</div>

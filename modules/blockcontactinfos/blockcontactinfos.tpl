@@ -23,7 +23,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 <!-- MODULE Block contact infos -->
 <section id="block_contact_infos" class="footer-block col-xs-12 col-sm-4">
 	<div>
@@ -36,13 +36,13 @@
             {/if}
             {if $blockcontactinfos_phone != ''}
             	<li>
-            		<i class="icon-phone"></i>{l s='Call us now:' mod='blockcontactinfos'} 
+            		<i class="icon-phone"></i>{l s='Call us now:' mod='blockcontactinfos'}
             		<span>{$blockcontactinfos_phone|escape:'html':'UTF-8'}</span>
             	</li>
             {/if}
             {if $blockcontactinfos_email != ''}
             	<li>
-            		<i class="icon-envelope-alt"></i>{l s='Email:' mod='blockcontactinfos'} 
+            		<i class="icon-envelope-alt"></i>{l s='Email:' mod='blockcontactinfos'}
             		<span>{mailto address=$blockcontactinfos_email|escape:'html':'UTF-8' encode="hex"}</span>
             	</li>
             {/if}
@@ -50,3 +50,4 @@
     </div>
 </section>
 <!-- /MODULE Block contact infos -->
+</div>

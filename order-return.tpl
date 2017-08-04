@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {include file="./errors.tpl"}
 {if isset($orderRet)}
 	<div class="box">
@@ -109,3 +110,4 @@
 	{/if}
 {/if}
 
+</div>

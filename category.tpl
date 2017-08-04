@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {include file="$tpl_dir./errors.tpl"}
 {if isset($category)}
 	{if $category->id AND $category->active}
@@ -120,3 +121,4 @@
 		<p class="alert alert-warning">{l s='This category is currently unavailable.'}</p>
 	{/if}
 {/if}
+</div>

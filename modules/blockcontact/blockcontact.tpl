@@ -22,7 +22,6 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
 <div id="contact_block" class="container container-full">
 	<h4 class="title_block">
 		{l s='Contact Us' mod='blockcontact'}

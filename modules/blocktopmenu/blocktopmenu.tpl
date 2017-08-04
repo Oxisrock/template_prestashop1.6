@@ -27,13 +27,13 @@
 									</ul>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">Nosotros</span></a>
+									<a href="index.php?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Nosotros'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="javascript:void(0)"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">Preguntas y Descargas</span></a>
+									<a href="javascript:void(0)"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Preguntas y Descargas'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?controller=contact"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm"> Soporte</span></a>
+									<a href="index.php?controller=contact"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Soporte'}</span></a>
 								</li>
 								<li class="buscar oculto">
 										<form id="buscador">
@@ -46,9 +46,15 @@
 							</ul>
 							<ul class="nav navbar-nav navbar-right tablet">
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-user-circle-o color-royal-light" style="color:#154C9B;" aria-hidden="true"></i><span class="hidden-sm">Tu Cuenta</span>
+								{if !$is_logged}
+									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-user-circle-o color-royal-light" style="color:#154C9B;" aria-hidden="true"></i><span class="hidden-sm"> Mi Cuenta</span>
 										<i class="zmdi zmdi-chevron-down"></i>
 									</a>
+									{else}
+										<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-user-circle-o color-royal-light" style="color:#154C9B;" aria-hidden="true"></i><span class="hidden-sm"> {$cookie->customer_firstname} {$cookie->customer_lastname} </span>
+											<i class="zmdi zmdi-chevron-down"></i>
+										</a>
+									{/if}
 									<ul class="dropdown-menu">
 										{if !$is_logged}
 										<li>
@@ -62,10 +68,10 @@
 										{if $is_logged}
 										<li>
 											<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='View my customer account' mod='blockuserinfo'}" class="account" rel="nofollow">
-	                    <i class="fa fa-pencil" aria-hidden="true"></i>{l s='My account' mod='blockuserinfo'} Editar Perfil</a>
+	                    <i class="fa fa-pencil" aria-hidden="true"></i>{l s='Editar Perfil' mod='blockuserinfo'}</a>
 										</li>
 										<li>
-											<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" ><i class="fa fa-user" aria-hidden="true"></i>
+											<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" ><i class="fa fa-user-times" aria-hidden="true"></i>
 												{l s='Deslogear' mod='blockuserinfo'}</a>
 										</li>
 										{/if}
@@ -76,18 +82,36 @@
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
-										<i class="zmdi zmdi-chevron-down"></i>
+										<span class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</span><i class="zmdi zmdi-chevron-down"></i>
 									</a>
 									<ul class="dropdown-menu">
 										<li>
-											{if isset($blockcart_top) && $blockcart_top}
-												<div class="col-sm-4 clearfix{if $PS_CATALOG_MODE} header_user_catalog{/if}">
-											{/if}
-											<div class="shopping_cart">
-												<a href="{$link->getPageLink($order_process, true)|escape:'html':'UTF-8'}" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
-													Carrito
-												</a>
-											</div>
+											<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
+												<span class="ajax_cart_quantity{if $cart_qties == 0} unvisible{/if}">{$cart_qties}</span>
+												<span class="ajax_cart_product_txt{if $cart_qties != 1} unvisible{/if}">{l s='Product' mod='blockcart'}</span>
+												<span class="ajax_cart_product_txt_s{if $cart_qties < 2} unvisible{/if}">{l s='Products' mod='blockcart'}</span>
+												<span class="ajax_cart_total{if $cart_qties == 0} unvisible{/if}">
+													{if $cart_qties > 0}
+														{if $priceDisplay == 1}
+															{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
+															{convertPrice price=$cart->getOrderTotal(false, $blockcart_cart_flag)}
+														{else}
+															{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
+															{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
+														{/if}
+													{/if}
+												</span>
+												{if $cart_qties > 0 }
+												<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">{l s='(carrito lleno)' mod='blockcart'}</span>
+												{else}
+												<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">{l s='(Carrito Vacio)' mod='blockcart'}</span>
+												{/if}
+												{* {include file="$modules_dir./blockcart.tpl"} *}
+												{* {if $ajax_allowed && isset($blockcart_top) && !$blockcart_top}
+													<span class="block_cart_expand{if !isset($colapseExpandStatus) || (isset($colapseExpandStatus) && $colapseExpandStatus eq 'expanded')} unvisible{/if}">&nbsp;</span>
+													<span class="block_cart_collapse{if isset($colapseExpandStatus) && $colapseExpandStatus eq 'collapsed'} unvisible{/if}">&nbsp;</span>
+												{/if} *}
+											</a>
 										</li>
 									</ul>
 								</li>
@@ -108,9 +132,9 @@
 			      <header class="ms-slidebar-header">
 			        <div class="ms-slidebar-login">
 			          <a href="javascript:void(0)" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
-			            <i class="fa fa-user" aria-hidden="true"></i> Ingresar</a>
+			            <i class="fa fa-user" aria-hidden="true"></i> {l s='Ingresar'}</a>
 			          <a href="javascript:void(0)" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
-			            <i class="fa fa-user-plus" aria-hidden="true"></i> Registrar</a>
+			            <i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Registrar'}</a>
 			        </div>
 			        <div class="ms-slidebar-title">
 			          <form class="search-form">

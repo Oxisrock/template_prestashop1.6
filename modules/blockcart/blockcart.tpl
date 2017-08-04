@@ -23,6 +23,13 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <!-- MODULE Block cart -->
+<ul class="nav navbar-nav" style="display: none ;">
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
+		<i class="zmdi zmdi-chevron-down"></i>
+	</a>
+	<ul class="dropdown-menu">
+		<li>
 {if isset($blockcart_top) && $blockcart_top}
 <div class="col-sm-4 clearfix{if $PS_CATALOG_MODE} header_user_catalog{/if}">
 {/if}
@@ -350,3 +357,8 @@
 {addJsDefL name=toBeDetermined}{l s='To be determined' mod='blockcart' js=1}{/addJsDefL}
 {/strip}
 <!-- /MODULE Block cart -->
+
+</li>
+</ul>
+</li>
+</ul>

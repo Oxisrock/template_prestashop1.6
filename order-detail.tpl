@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {if isset($order)}
 <div class="box box-small clearfix">
 	{if isset($reorderingAllowed) && $reorderingAllowed}
@@ -467,3 +468,4 @@
 <p class="alert alert-info"><i class="icon-info-sign"></i>{l s='You cannot return merchandise with a guest account'}</p>
 {/if}
 {/if}
+</div>

@@ -1,3 +1,4 @@
+<div class="container container-full">
 <div id="opc_new_account" class="opc-main-block">
     <div id="opc_new_account-overlay" class="opc-overlay" style="display: none;"></div>
     <h2>{l s='Account'}</h2>
@@ -424,3 +425,4 @@
         {addJsDef vatnumber_ajax_call=$vatnumber_ajax_call}
     {/if}
 {/strip}
+</div>

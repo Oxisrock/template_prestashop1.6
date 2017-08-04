@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 {if $opc}
     {assign var="back_order_page" value="order-opc.php"}
 {else}
@@ -96,3 +96,4 @@
         {addJsDefL name=liUpdate}{$smarty.capture.default|@addcslashes:'\''}{/addJsDefL}
     {/strip}
 {/if}
+</div>
