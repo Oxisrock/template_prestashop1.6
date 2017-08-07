@@ -33,6 +33,8 @@
 </p>
 <div class="block-center" id="block-history">
 	{if $ordersSlip && count($ordersSlip)}
+	<div class="card card-primary animated zoomInDown animation-delay-5">
+    <div class="card-block">
 		<table id="order-list" class="table table-bordered footab">
 			<thead>
 				<tr>
@@ -67,6 +69,8 @@
 				{/foreach}
 			</tbody>
 		</table>
+	</div>
+</div>
 		<div id="block-order-detail" class="unvisible">&nbsp;</div>
 	{else}
 		<p class="alert alert-primary">{l s='You have not received any credit slips.'}</p>

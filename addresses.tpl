@@ -52,8 +52,8 @@
                     </li>
                 {/foreach}
                 <li class="address_update">
-                <a class="btn btn-raised btn-primary" href="{$link->getPageLink('address', true, null, "id_address={$address.object.id|intval}")|escape:'html':'UTF-8'}" title="{l s='Update'}"><span>{l s='Update'}<i class="icon-chevron-right right"></i></span></a>
-                <a class="btn btn-raised btn-danger" href="{$link->getPageLink('address', true, null, "id_address={$address.object.id|intval}&delete")|escape:'html':'UTF-8'}" data-id="addresses_confirm" title="{l s='Delete'}"><span>{l s='Delete'}<i class="icon-remove right"></i></span></a></li>
+                <a class="btn btn-raised btn-primary" href="{$link->getPageLink('address', true, null, "id_address={$address.object.id|intval}")|escape:'html':'UTF-8'}" title="{l s='Update'}"><span><i class="fa fa-refresh"></i></span></a>
+                <a class="btn btn-raised btn-danger" href="{$link->getPageLink('address', true, null, "id_address={$address.object.id|intval}&delete")|escape:'html':'UTF-8'}" data-id="addresses_confirm" title="{l s='Delete'}"><span><i class="fa fa-times"></i></span></a></li>
             </ul>
         </div>
 			</div>

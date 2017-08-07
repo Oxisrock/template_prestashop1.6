@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 {capture name=path}{l s='Your shopping cart'}{/capture}
 
 <h1 id="cart_title" class="page-heading">{l s='Shopping-cart summary'}
@@ -42,15 +42,19 @@
 {assign var='current_step' value='summary'}
 {include file="$tpl_dir./order-steps.tpl"}
 {include file="$tpl_dir./errors.tpl"}
-
+{if $cart_qties > 0 }
+<p class="alert alert-success">{l s='Some products are in the shopping carts.'}</p>
+{else}
+<p class="alert alert-warning">{l s='Your shopping cart is empty.'}</p>
+{/if}
 {if isset($empty)}
-	<p class="alert alert-warning">{l s='Your shopping cart is empty.'}</p>
+	{* <p class="alert alert-warning">{l s='Your shopping cart is empty.'}</p> *}
 {elseif $PS_CATALOG_MODE}
 	<p class="alert alert-warning">{l s='This store has not accepted your new order.'}</p>
 {else}
-	<p id="emptyCartWarning" class="alert alert-warning unvisible">{l s='Your shopping cart is empty.'}</p>
+	{* <p id="emptyCartWarning" class="alert alert-warning unvisible">{l s='Your shopping cart is empty.'}</p> *}
 	{if isset($lastProductAdded) AND $lastProductAdded}
-		<div class="cart_last_product">
+		{* <div class="cart_last_product">
 			<div class="cart_last_product_header">
 				<div class="left">{l s='Last product added'}</div>
 			</div>
@@ -71,7 +75,7 @@
 					</small>
 				{/if}
 			</div>
-		</div>
+		</div> *}
 	{/if}
 	{assign var='total_discounts_num' value="{if $total_discounts != 0}1{else}0{/if}"}
 	{assign var='use_show_taxes' value="{if $use_taxes && $show_taxes}2{else}0{/if}"}
@@ -79,6 +83,8 @@
 	{* eu-legal *}
 	{hook h="displayBeforeShoppingCartBlock"}
 	<div id="order-detail-content" class="table_block table-responsive">
+		<div class="card card-primary animated zoomInDown animation-delay-5">
+	    <div class="card-block">
 		<table id="cart_summary" class="table table-bordered {if $PS_STOCK_MANAGEMENT}stock-management-on{else}stock-management-off{/if}">
 			<thead>
 				<tr>
@@ -92,7 +98,7 @@
 					{/if}
 					<th class="cart_unit item text-right">{l s='Unit price'}</th>
 					<th class="cart_quantity item text-center">{l s='Qty'}</th>
-					<th class="cart_delete last_item">&nbsp;</th>
+					<th class="cart_delete last_item"><i class="fa fa-trash-o" /></th>
 					<th class="cart_total item text-right">{l s='Total'}</th>
 				</tr>
 			</thead>
@@ -380,16 +386,17 @@
 										</div>
 									{/if}
 								</td>
-								<td class="cart_delete text-center">
+								<td class="text-center">
 									{if isset($cannotModify) AND $cannotModify == 1}
 									{else}
 										<a
 											id="{$product.id_product}_{$product.id_product_attribute}_{$id_customization}_{$product.id_address_delivery|intval}"
-											class="cart_quantity_delete"
-											href="{$link->getPageLink('cart', true, NULL, "delete=1&amp;id_product={$product.id_product|intval}&amp;ipa={$product.id_product_attribute|intval}&amp;id_customization={$id_customization}&amp;id_address_delivery={$product.id_address_delivery}&amp;token={$token_cart}")|escape:'html':'UTF-8'}"
+											class="btn btn-raised btn-danger"
+											href="{$link->getPageLink('cart', true, NULL, "
+											delete=1&amp;id_product={$product.id_product|intval}&amp;ipa={$product.id_product_attribute|intval}&amp;id_customization={$id_customization}&amp;id_address_delivery={$product.id_address_delivery}&amp;token={$token_cart}")|escape:'html':'UTF-8'}"
 											rel="nofollow"
 											title="{l s='Delete'}">
-											<i class="icon-trash"></i>
+											<i class="fa fa-trash-o"></i>
 										</a>
 									{/if}
 								</td>
@@ -434,9 +441,9 @@
 								{if strlen($discount.code)}
 									<a
 										href="{if $opc}{$link->getPageLink('order-opc', true)}{else}{$link->getPageLink('order', true)}{/if}?deleteDiscount={$discount.id_discount}"
-										class="price_discount_delete"
+										class="btn btn-raised btn-danger"
 										title="{l s='Delete'}">
-										<i class="icon-trash"></i>
+										<i class="fa fa-trash-o"></i>
 									</a>
 								{/if}
 							</td>
@@ -448,6 +455,8 @@
 				</tbody>
 			{/if}
 		</table>
+	</div>
+</div>
 	</div> <!-- end order-detail-content -->
 
 	{if $show_option_allow_separate_package}
@@ -479,6 +488,8 @@
 			{if !isset($formattedAddresses) || (count($formattedAddresses.invoice) == 0 && count($formattedAddresses.delivery) == 0) || (count($formattedAddresses.invoice.formated) == 0 && count($formattedAddresses.delivery.formated) == 0)}
 				{if $delivery->id}
 					<div class="col-xs-12 col-sm-6"{if !$have_non_virtual_products} style="display: none;"{/if}>
+						<div class="card card-primary animated zoomInDown animation-delay-5">
+					    <div class="card-block">
 						<ul id="delivery_address" class="address item box">
 							<li><h3 class="page-subheading">{l s='Delivery address'}&nbsp;<span class="address_alias">({$delivery->alias})</span></h3></li>
 							{if $delivery->company}<li class="address_company">{$delivery->company|escape:'html':'UTF-8'}</li>{/if}
@@ -488,6 +499,8 @@
 							<li class="address_city">{$delivery->postcode|escape:'html':'UTF-8'} {$delivery->city|escape:'html':'UTF-8'}</li>
 							<li class="address_country">{$delivery->country|escape:'html':'UTF-8'} {if $delivery_state}({$delivery_state|escape:'html':'UTF-8'}){/if}</li>
 						</ul>
+							</div>
+						</div>
 					</div>
 				{/if}
 				{if $invoice->id}
@@ -544,14 +557,14 @@
 	{/if}
 	<div id="HOOK_SHOPPING_CART">{$HOOK_SHOPPING_CART}</div>
 	<p class="cart_navigation clearfix">
+		<a href="{if (isset($smarty.server.HTTP_REFERER) && ($smarty.server.HTTP_REFERER == $link->getPageLink('order', true) || $smarty.server.HTTP_REFERER == $link->getPageLink('order-opc', true) || strstr($smarty.server.HTTP_REFERER, 'step='))) || !isset($smarty.server.HTTP_REFERER)}{$link->getPageLink('index')}{else}{$smarty.server.HTTP_REFERER|escape:'html':'UTF-8'|secureReferrer}{/if}" class="btn btn-raised btn-success" title="{l s='Continue shopping'}">
+			<i class="fa fa-shopping-cart"></i><span>{l s='Continue shopping'}</span>
+		</a>
 		{if !$opc}
-			<a  href="{if $back}{$link->getPageLink('order', true, NULL, 'step=1&amp;back={$back}')|escape:'html':'UTF-8'}{else}{$link->getPageLink('order', true, NULL, 'step=1')|escape:'html':'UTF-8'}{/if}" class="button btn btn-default standard-checkout button-medium" title="{l s='Proceed to checkout'}">
-				<span>{l s='Proceed to checkout'}<i class="icon-chevron-right right"></i></span>
+			<a href="{if $back}{$link->getPageLink('order', true, NULL, 'step=1&amp;back={$back}')|escape:'html':'UTF-8'}{else}{$link->getPageLink('order', true, NULL, 'step=1')|escape:'html':'UTF-8'}{/if}" class="btn btn-raised btn-primary" title="{l s='Proceed to checkout'}">
+				<i class="zmdi zmdi-chevron-right"></i><span>{l s='Proceed to checkout'}</span>
 			</a>
 		{/if}
-		<a href="{if (isset($smarty.server.HTTP_REFERER) && ($smarty.server.HTTP_REFERER == $link->getPageLink('order', true) || $smarty.server.HTTP_REFERER == $link->getPageLink('order-opc', true) || strstr($smarty.server.HTTP_REFERER, 'step='))) || !isset($smarty.server.HTTP_REFERER)}{$link->getPageLink('index')}{else}{$smarty.server.HTTP_REFERER|escape:'html':'UTF-8'|secureReferrer}{/if}" class="button-exclusive btn btn-default" title="{l s='Continue shopping'}">
-			<i class="icon-chevron-left"></i>{l s='Continue shopping'}
-		</a>
 	</p>
 	<div class="clear"></div>
 	<div class="cart_navigation_extra">
@@ -563,3 +576,4 @@
 {addJsDefL name=txtProducts}{l s='products' js=1}{/addJsDefL}
 {/strip}
 {/if}
+</div>

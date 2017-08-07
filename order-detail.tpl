@@ -24,13 +24,15 @@
 *}
 <div class="container container-full">
 {if isset($order)}
+<div class="card card-primary animated zoomInDown animation-delay-5">
+	<div class="card-block">
 <div class="box box-small clearfix">
 	{if isset($reorderingAllowed) && $reorderingAllowed}
 	<form id="submitReorder" action="{if isset($opc) && $opc}{$link->getPageLink('order-opc', true)}{else}{$link->getPageLink('order', true)}{/if}" method="post" class="submit">
 		<input type="hidden" value="{$order->id}" name="id_order"/>
 		<input type="hidden" value="" name="submitReorder"/>
 
-		<a href="#" onclick="$(this).closest('form').submit(); return false;" class="button btn btn-default button-medium pull-right"><span>{l s='Reorder'}<i class="icon-chevron-right right"></i></span></a>
+		<a href="#" onclick="$(this).closest('form').submit(); return false;" class="btn btn-raised btn-primary pull-right" title="{l s='Reorder'}"><span><i class="fa fa-refresh"></i></span></a>
 	</form>
 	{/if}
 	<p class="dark">
@@ -461,11 +463,13 @@
 		<div class="submit">
 			<input type="hidden" name="id_order" value="{$order->id|intval}" />
 			<input type="submit" class="unvisible" name="submitMessage" value="{l s='Send'}"/>
-			<button type="submit" name="submitMessage" class="button btn btn-default button-medium"><span>{l s='Send'}<i class="icon-chevron-right right"></i></span></button>
+			<button type="submit" name="submitMessage" class="btn btn-raised btn-success pull-right" title="{l s='Send'}"><span><i class="fa fa-envelope-o"></i></span></button>
 		</div>
 	</form>
 {else}
 <p class="alert alert-info"><i class="icon-info-sign"></i>{l s='You cannot return merchandise with a guest account'}</p>
 {/if}
 {/if}
+</div>
+</div>
 </div>
