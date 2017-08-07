@@ -52,7 +52,7 @@
 					{/foreach}
 					<![endif]-->
 				{else}
-					{* <link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" /> *}
+					<link rel="stylesheet" href="{$css_uri|escape:'html':'UTF-8'}" type="text/css" media="{$media|escape:'html':'UTF-8'}" />
 				{/if}
 			{/foreach}
 			 <link rel="stylesheet" href="{$css_dir}custom.css" type="text/css" media="{$media}" />
@@ -60,10 +60,9 @@
 			 <link rel="stylesheet" href="{$css_dir}plugins.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}preload.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}style.light-blue-300.min.css" type="text/css" media="{$media}" />
-			 <link rel="stylesheet" href="{$css_dir}my-account.css" type="text/css" media="{$media}" />
-			 <link rel="stylesheet" href="{$css_dir}contact-form.css" type="text/css" media="{$media}" />
-			 <link rel="stylesheet" href="{$css_dir}general.css" type="text/css" media="{$media}" />
-			 <link rel="stylesheet" href="{$css_dir}order-opc.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}comparator.css" type="text/css" media="{$media}" />
+			 {*<link rel="stylesheet" href="{$css_dir}contact-form.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}order-opc.css" type="text/css" media="{$media}" /> *}
 		{/if}
 		{if isset($js_defer) && !$js_defer && isset($js_files) && isset($js_def)}
 			{$js_def}

@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {capture name=path}
 	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 		{l s='My account'}
@@ -37,6 +38,8 @@
 {/if}
 <div class="block-center" id="block-history">
 	{if $orders && count($orders)}
+	<div class="card card-primary animated zoomInDown animation-delay-5">
+    <div class="card-block">
 		<table id="order-list" class="table table-bordered footab">
 			<thead>
 				<tr>
@@ -86,18 +89,18 @@
 							{/if}
 						</td>
 						<td class="history_detail">
-							<a class="btn btn-default button button-small" href="javascript:showOrder(1, {$order.id_order|intval}, '{$link->getPageLink('order-detail', true, NULL, "id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}');">
+							<a class="btn btn-raised btn-success" href="javascript:showOrder(1, {$order.id_order|intval}, '{$link->getPageLink('order-detail', true, NULL, "id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}');" title="{l s='Details'}">
 								<span>
-									{l s='Details'}<i class="icon-chevron-right right"></i>
+									<i class="fa fa-th-list"></i>
 								</span>
 							</a>
 							{if isset($opc) && $opc}
-								<a class="link-button" href="{$link->getPageLink('order-opc', true, NULL, "submitReorder&id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}" title="{l s='Reorder'}">
+								<a class="btn btn-raised btn-primary" href="{$link->getPageLink('order-opc', true, NULL, "submitReorder&id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}" title="{l s='Reorder'}">
 							{else}
-								<a class="link-button" href="{$link->getPageLink('order', true, NULL, "submitReorder&id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}" title="{l s='Reorder'}">
+								<a class="btn btn-raised btn-primary" href="{$link->getPageLink('order', true, NULL, "submitReorder&id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}" title="{l s='Reorder'}">
 							{/if}
 								{if isset($reorderingAllowed) && $reorderingAllowed}
-									<i class="icon-refresh"></i>{l s='Reorder'}
+									<i class="fa fa-refresh"></i>
 								{/if}
 							</a>
 						</td>
@@ -105,6 +108,8 @@
 				{/foreach}
 			</tbody>
 		</table>
+	</div>
+</div>
 		<div id="block-order-detail" class="unvisible">&nbsp;</div>
 	{else}
 		<p class="alert alert-warning">{l s='You have not placed any orders.'}</p>
@@ -112,15 +117,14 @@
 </div>
 <ul class="footer_links clearfix">
 	<li>
-		<a class="btn btn-default button button-small" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
+		<a class="btn-circle btn-circle-raised btn-circle-primary" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Back to Your Account'}">
 			<span>
-				<i class="icon-chevron-left"></i> {l s='Back to Your Account'}
+				<i class="zmdi zmdi-chevron-left"></i>
 			</span>
 		</a>
-	</li>
-	<li>
-		<a class="btn btn-default button button-small" href="{$base_dir}">
-			<span><i class="icon-chevron-left"></i> {l s='Home'}</span>
+		<a class="btn-circle btn-circle-raised btn-circle-success" href="{$base_dir}" title="{l s='Home'}">
+			<span><i class="zmdi zmdi-home"></i></span>
 		</a>
 	</li>
 </ul>
+</div>

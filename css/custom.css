@@ -5,6 +5,12 @@
 	right: 5%;
 	width: 35%;
 }
+html {
+  width: 100%}
+
+body {
+  margin: 0; }
+
 ul{
 	list-style: none;
 }

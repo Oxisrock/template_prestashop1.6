@@ -69,22 +69,20 @@
 		</table>
 		<div id="block-order-detail" class="unvisible">&nbsp;</div>
 	{else}
-		<p class="alert alert-warning">{l s='You have not received any credit slips.'}</p>
+		<p class="alert alert-primary">{l s='You have not received any credit slips.'}</p>
 	{/if}
 </div><!-- #block-history -->
 
 <ul class="footer_links clearfix">
 	<li>
-		<a class="btn btn-default button button-small" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
+		<a class="btn-circle btn-circle-raised btn-circle-primary" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Back to your account'}">
 			<span>
-				<i class="icon-chevron-left"></i> {l s='Back to your account'}
+				<i class="zmdi zmdi-chevron-left"></i>
 			</span>
 		</a>
-	</li>
-	<li>
-		<a class="btn btn-default button button-small" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">
+		<a class="btn-circle btn-circle-raised btn-circle-success" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{l s='Home'}">
 			<span>
-				<i class="icon-chevron-left"></i> {l s='Home'}
+				<i class="zmdi zmdi-home"></i>
 			</span>
 		</a>
 	</li>

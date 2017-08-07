@@ -40,6 +40,8 @@
 	</p>
 	{include file="$tpl_dir./errors.tpl"}
 	<p class="required"><sup>*</sup>{l s='Required field'}</p>
+	<div class="card card-success animation-delay-5">
+  <div class="card-block ">
 	<form autocomplete="off" action="{$link->getPageLink('address', true)|escape:'html':'UTF-8'}" method="post" class="" id="add_address">
 		<fieldset>
 		<!--h3 class="page-subheading">{if isset($id_address)}{l s='Your address'}{else}{l s='New address'}{/if}</h3-->
@@ -258,7 +260,7 @@
 			{if isset($mod)}<input type="hidden" name="mod" value="{$mod}" />{/if}
 			{if isset($select_address)}<input type="hidden" name="select_address" value="{$select_address|intval}" />{/if}
 			<input type="hidden" name="token" value="{$token}" />
-			<button type="submit" name="submitAddress" id="submitAddress" class="btn btn-raised btn-primary pull-right">
+			<button type="submit" name="submitAddress" id="submitAddress" class="btn btn-raised btn-success pull-right">
 				<span>
 					{l s='Save'}
 					<i class="icon-chevron-right right"></i>
@@ -268,10 +270,13 @@
 	</fieldset>
 	</form>
 </div>
+</div>
+</div>
 <ul class="footer_links clearfix">
 	<li>
-		<a class="btn btn-raised btn-primary" href="{$link->getPageLink('addresses', true)|escape:'html':'UTF-8'}">
-			<span><i class="icon-chevron-left"></i> {l s='Back to your addresses'}</span>
+		<a class="btn-circle btn-circle-raised btn-circle-primary" href="{$link->getPageLink('addresses', true)|escape:'html':'UTF-8'}" title="{l s='Back to your addresses'}">
+			{*<span><i class="icon-chevron-left"></i> {l s='Back to your addresses'}</span>*}
+			<i class="zmdi zmdi-chevron-left"></i>
 		</a>
 	</li>
 </ul>

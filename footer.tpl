@@ -55,6 +55,7 @@
 				</div><!-- #columns -->
 			</div><!-- .columns-container -->
 			{if isset($HOOK_FOOTER)}
+			<div class="container-full">
 						<aside class="ms-footbar" style="background-color: #2061A8;">
         <div class="container">
           <div class="row">

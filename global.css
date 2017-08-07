@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.banesp
-{
-  margin-top: 50px;
-}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -2251,7 +2247,7 @@ input[type="button"].btn-block {
 .nav-tabs {
   border-bottom: 1px solid #ddd; }
   .nav-tabs > li {
-    float: none;
+    float: left;
     margin-bottom: -1px; }
     .nav-tabs > li > a {
       margin-right: 2px;
@@ -6465,9 +6461,7 @@ table.table_block td {
   @media (min-width: 768px) {
     #home-page-tabs {
       padding: 10px 0;
-      margin: 0 0 0 -18px;
-      text-align: center;
-       } }
+      margin: 0 0 0 -18px; } }
   #home-page-tabs > li {
     margin-bottom: 0; }
     @media (min-width: 991px) {
@@ -6502,9 +6496,7 @@ table.table_block td {
     @media (min-width: 768px) {
       #home-page-tabs > li.active a,
       #home-page-tabs > li a:hover {
-        margin: -9px 0;
-        background: red;
-        } }
+        margin: -9px 0; } }
     @media (min-width: 768px) and (max-width: 991px) {
       #home-page-tabs > li.active a,
       #home-page-tabs > li a:hover {

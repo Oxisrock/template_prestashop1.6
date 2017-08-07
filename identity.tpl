@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 {capture name=path}
     <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
         {l s='My account'}
@@ -53,6 +53,8 @@
         <p class="required">
             <sup>*</sup>{l s='Required field'}
         </p>
+        <div class="card card-success animation-delay-5">
+        <div class="card-block">
         <form action="{$link->getPageLink('identity', true)|escape:'html':'UTF-8'}" method="post" class="std">
             <fieldset>
                 <div class="clearfix">
@@ -148,8 +150,9 @@
                     <input class="is_required validate form-control" type="password" data-validate="isPasswd" name="confirmation" id="confirmation" />
                 </div>
                 {if isset($newsletter) && $newsletter}
+                <div class="form-group no-mt">
                     <div class="checkbox">
-                        <label for="newsletter">
+                        <label>
                             <input type="checkbox" id="newsletter" name="newsletter" value="1" {if isset($smarty.post.newsletter) && $smarty.post.newsletter == 1} checked="checked"{/if}/>
                             {l s='Sign up for our newsletter!'}
                             {if isset($required_fields) && array_key_exists('newsletter', $field_required)}
@@ -157,8 +160,10 @@
                             {/if}
                         </label>
                     </div>
+                  </div>
                 {/if}
                 {if isset($optin) && $optin}
+                  <div class="form-group no-mt">
                     <div class="checkbox">
                         <label for="optin">
                             <input type="checkbox" name="optin" id="optin" value="1" {if isset($smarty.post.optin) && $smarty.post.optin == 1} checked="checked"{/if}/>
@@ -168,6 +173,7 @@
                             {/if}
                         </label>
                     </div>
+                  </div>
                 {/if}
 			{if $b2b_enable}
 				<h1 class="page-subheading">
@@ -194,27 +200,28 @@
 			{$HOOK_CUSTOMER_IDENTITY_FORM}
 		{/if}
                 <div class="form-group">
-                    <button type="submit" name="submitIdentity" class="btn btn-default button button-medium">
+                    <button type="submit" name="submitIdentity" class="btn btn-raised btn-success pull-right">
                         <span>{l s='Save'}<i class="icon-chevron-right right"></i></span>
                     </button>
                 </div>
             </fieldset>
         </form> <!-- .std -->
+      </div>
+    </div>
     {/if}
 </div>
 <ul class="footer_links clearfix">
 	<li>
-        <a class="btn btn-default button button-small" href="{$link->getPageLink('my-account', true)}">
+        <a class="btn-circle btn-circle-raised btn-circle-primary" href="{$link->getPageLink('my-account', true)}" title="{l s='Back to your account'}">
             <span>
-                <i class="icon-chevron-left"></i>{l s='Back to your account'}
+                <i class="zmdi zmdi-chevron-left"></i>
             </span>
         </a>
-    </li>
-	<li>
-        <a class="btn btn-default button button-small" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">
+        <a class="btn-circle btn-circle-raised btn-circle-success" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{l s='Home'}">
             <span>
-                <i class="icon-chevron-left"></i>{l s='Home'}
+                <i class="zmdi zmdi-home"></i>
             </span>
         </a>
     </li>
 </ul>
+</div>

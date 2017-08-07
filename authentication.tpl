@@ -51,10 +51,12 @@
 	</div>
 	{/if}-->
 	<div class="row">
-		<div class="col-xs-12 col-sm-6">
-			<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="create-account_form" class="box">
-				<h3 class="page-subheading">{l s='Create an account'}</h3>
-				<div class="form_content clearfix">
+			<div class="col-xs-12 col-sm-6">
+				<div class="card card-primary animation-delay-5">
+			    <div class="card-block">
+				<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="create-account_form" class="box">
+					<h3 class="page-subheading">{l s='Create an account'}</h3>
+					<div class="form_content clearfix">
 					<p>{l s='Please enter your email address to create an account.'}</p>
 					<div class="alert alert-danger" id="create_account_error" style="display:none"></div>
 					<div class="form-group">
@@ -63,9 +65,9 @@
 					</div>
 					<div class="submit">
 						{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'html':'UTF-8'}" />{/if}
-						<button class="btn btn-default button button-medium exclusive" type="submit" id="SubmitCreate" name="SubmitCreate">
+						<button class="btn btn-raised btn-success" type="submit" id="SubmitCreate" name="SubmitCreate">
 							<span>
-								<i class="icon-user left"></i>
+								<i class="fa fa-user-plus"></i>
 								{l s='Create an account'}
 							</span>
 						</button>
@@ -74,7 +76,11 @@
 				</div>
 			</form>
 		</div>
+	</div>
+</div>
 		<div class="col-xs-12 col-sm-6">
+			<div class="card card-success animation-delay-5">
+				<div class="card-block">
 			<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="login_form" class="box">
 				<h3 class="page-subheading">{l s='Already registered?'}</h3>
 				<div class="form_content clearfix">
@@ -89,9 +95,9 @@
 					<p class="lost_password form-group"><a href="{$link->getPageLink('password')|escape:'html':'UTF-8'}" title="{l s='Recover your forgotten password'}" rel="nofollow">{l s='Forgot your password?'}</a></p>
 					<p class="submit">
 						{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'html':'UTF-8'}" />{/if}
-						<button type="submit" id="SubmitLogin" name="SubmitLogin" class="button btn btn-default button-medium">
+						<button type="submit" id="SubmitLogin" name="SubmitLogin" class="btn btn-raised btn-primary pull-right">
 							<span>
-								<i class="icon-lock left"></i>
+								<i class="fa fa-user"></i>
 								{l s='Sign in'}
 							</span>
 						</button>
@@ -100,6 +106,7 @@
 			</form>
 		</div>
 	</div>
+</div>
 	{if isset($inOrderProcess) && $inOrderProcess && $PS_GUEST_CHECKOUT_ENABLED}
 		<form action="{$link->getPageLink('authentication', true, NULL, "back=$back")|escape:'html':'UTF-8'}" method="post" id="new_account_form" class="std clearfix">
 			<div class="box">
