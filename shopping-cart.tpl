@@ -520,6 +520,8 @@
 				{foreach from=$formattedAddresses key=k item=address}
 					<div class="col-xs-12 col-sm-6"{if $k == 'delivery' && !$have_non_virtual_products} style="display: none;"{/if}>
 						<ul class="address {if $address@last}last_item{elseif $address@first}first_item{/if} {if $address@index % 2}alternate_item{else}item{/if} box">
+							<div class="card card-primary animated zoomInDown animation-delay-5">
+						    <div class="card-block">
 							<li>
 								<h3 class="page-subheading">
 									{if $k eq 'invoice'}
@@ -532,6 +534,7 @@
 									{/if}
 								</h3>
 							</li>
+							<div class="text-center">
 							{foreach $address.ordered as $pattern}
 								{assign var=addressKey value=" "|explode:$pattern}
 								{assign var=addedli value=false}
@@ -549,6 +552,9 @@
 									{/if}
 								{/foreach}
 							{/foreach}
+						</div>
+						</div>
+					</div>
 						</ul>
 					</div>
 				{/foreach}
@@ -558,7 +564,7 @@
 	<div id="HOOK_SHOPPING_CART">{$HOOK_SHOPPING_CART}</div>
 	<p class="cart_navigation clearfix">
 		<a href="{if (isset($smarty.server.HTTP_REFERER) && ($smarty.server.HTTP_REFERER == $link->getPageLink('order', true) || $smarty.server.HTTP_REFERER == $link->getPageLink('order-opc', true) || strstr($smarty.server.HTTP_REFERER, 'step='))) || !isset($smarty.server.HTTP_REFERER)}{$link->getPageLink('index')}{else}{$smarty.server.HTTP_REFERER|escape:'html':'UTF-8'|secureReferrer}{/if}" class="btn btn-raised btn-success" title="{l s='Continue shopping'}">
-			<i class="fa fa-shopping-cart"></i><span>{l s='Continue shopping'}</span>
+			<i class="zmdi zmdi-chevron-left"></i><span>{l s='Return'}</span>
 		</a>
 		{if !$opc}
 			<a href="{if $back}{$link->getPageLink('order', true, NULL, 'step=1&amp;back={$back}')|escape:'html':'UTF-8'}{else}{$link->getPageLink('order', true, NULL, 'step=1')|escape:'html':'UTF-8'}{/if}" class="btn btn-raised btn-primary" title="{l s='Proceed to checkout'}">

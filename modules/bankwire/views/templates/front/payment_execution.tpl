@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 {capture name=path}
     <a href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}" title="{l s='Go back to the Checkout' mod='bankwire'}">{l s='Checkout' mod='bankwire'}</a><span class="navigation-pipe">{$navigationPipe}</span>{l s='Bank-wire payment' mod='bankwire'}
 {/capture}
@@ -82,12 +82,13 @@
             </p>
         </div><!-- .cheque-box -->
         <p class="cart_navigation clearfix" id="cart_navigation">
-            <a class="button-exclusive btn btn-default" href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}">
+            <a class="btn btn-raised btn-primary" href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}">
                 <i class="icon-chevron-left"></i>{l s='Other payment methods' mod='bankwire'}
             </a>
-            <button class="button btn btn-default button-medium" type="submit">
-                <span>{l s='I confirm my order' mod='bankwire'}<i class="icon-chevron-right right"></i></span>
+            <button class="btn btn-raised btn-success" type="submit">
+                <span>{l s='I confirm my order' mod='bankwire'}</span>  <i class="zmdi zmdi-chevron-right"></i>
             </button>
         </p>
     </form>
 {/if}
+</div>

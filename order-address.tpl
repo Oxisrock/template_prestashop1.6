@@ -67,10 +67,10 @@
 					{/section}
 					</select><span class="waitimage"></span>
 				{else}
-					<a href="{$link->getPageLink('address', true, NULL, "back={$back_order_page}?step=1&select_address=1{if $back}&mod={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Add'}" class="button button-small btn btn-default">
+					<a href="{$link->getPageLink('address', true, NULL, "back={$back_order_page}?step=1&select_address=1{if $back}&mod={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Add'}" class="btn btn-raised btn-primary">
 						<span>
 							{l s='Add a new address'}
-							<i class="icon-chevron-right right"></i>
+							<i class="fa fa-plus"></i>
 						</span>
 					</a>
 				{/if}
@@ -79,17 +79,25 @@
 	</div> <!-- end row -->
 	<div class="row">
 		<div class="col-xs-12 col-sm-6"{if $cart->isVirtualCart()} style="display:none;"{/if}>
+			<div class="card card-primary animated zoomInDown animation-delay-5">
+		    <div class="card-block">
 			<ul class="address item box" id="address_delivery">
 			</ul>
 		</div>
+	</div>
+		</div>
 		<div class="col-xs-12 col-sm-6">
+			<div class="card card-primary animated zoomInDown animation-delay-5">
+		    <div class="card-block">
 			<ul class="address alternate_item{if $cart->isVirtualCart()} full_width{/if} box" id="address_invoice">
 			</ul>
 		</div>
+	</div>
+		</div>
 	</div> <!-- end row -->
 	<p class="address_add submit">
-		<a href="{$link->getPageLink('address', true, NULL, "back={$back_order_page}?step=1{if $back}&mod={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Add'}" class="button button-small btn btn-default">
-			<span>{l s='Add a new address'}<i class="icon-chevron-right right"></i></span>
+		<a href="{$link->getPageLink('address', true, NULL, "back={$back_order_page}?step=1{if $back}&mod={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Add'}" class="btn btn-raised btn-primary">
+			<span>{l s='Add a new address'} <i class="fa fa-plus"></i> </span>
 		</a>
 	</p>
 	{if !$opc}
@@ -103,12 +111,12 @@
 			<p class="cart_navigation clearfix">
 				<input type="hidden" class="hidden" name="step" value="2" />
 				<input type="hidden" name="back" value="{$back}" />
-				<a href="{$link->getPageLink($back_order_page, true, NULL, "{if $back}back={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Previous'}" class="button-exclusive btn btn-default">
-					<i class="icon-chevron-left"></i>
-					{l s='Continue Shopping'}
+				<a href="{$link->getPageLink($back_order_page, true, NULL, "{if $back}back={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Previous'}" class="btn btn-raised btn-success">
+					<i class="zmdi zmdi-chevron-left"></i>
+					{l s='Return'}
 				</a>
-				<button type="submit" name="processAddress" class="button btn btn-default button-medium">
-					<span>{l s='Proceed to checkout'}<i class="icon-chevron-right right"></i></span>
+				<button type="submit" name="processAddress" class="btn btn-raised btn-primary">
+					<i class="zmdi zmdi-chevron-right"></i><span>{l s='Proceed to checkout'}<i class="icon-chevron-right right"></i></span>
 				</button>
 			</p>
 		</form>
@@ -135,7 +143,7 @@
 {addJsDefL name=titleInvoice}{$smarty.capture.default|@addcslashes:'\''}{/addJsDefL}
 {capture}<h3 class="page-subheading">{l s='Your delivery address' js=1}</h3>{/capture}
 {addJsDefL name=titleDelivery}{$smarty.capture.default|@addcslashes:'\''}{/addJsDefL}
-{capture}<a class="button button-small btn btn-default" href="{$smarty.capture.addressUrlAdd}" title="{l s='Update' js=1}"><span>{l s='Update' js=1}<i class="icon-chevron-right right"></i></span></a>{/capture}
+{capture}<a class="btn btn-raised btn-success" href="{$smarty.capture.addressUrlAdd}" title="{l s='Update' js=1}"><span>{l s='Update' js=1} <i class="fa fa-refresh"></i> </span></a>{/capture}
 {addJsDefL name=liUpdate}{$smarty.capture.default|@addcslashes:'\''}{/addJsDefL}
 {/strip}
 </div>

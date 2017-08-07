@@ -28,6 +28,8 @@
     {if $HOOK_PAYMENT}
         {if !$opc}
             <div id="order-detail-content" class="table_block table-responsive">
+              <div class="card card-primary animated zoomInDown animation-delay-5">
+          	    <div class="card-block">
                 <table id="cart_summary" class="table table-bordered">
                     <thead>
                     <tr>
@@ -292,7 +294,9 @@
                         </tbody>
                     {/if}
                 </table>
-            </div> <!-- end order-detail-content -->
+              </div>
+            </div>
+          </div> <!-- end order-detail-content -->
         {/if}
         {if $opc}
             <div id="opc_payment_methods-content">
@@ -308,9 +312,9 @@
     {/if}
     {if !$opc}
     <p class="cart_navigation clearfix">
-        <a href="{$link->getPageLink('order', true, NULL, "step=2")|escape:'html':'UTF-8'}" title="{l s='Previous'}" class="button-exclusive btn btn-default">
-            <i class="icon-chevron-left"></i>
-            {l s='Continue shopping'}
+        <a href="{$link->getPageLink('order', true, NULL, "step=2")|escape:'html':'UTF-8'}" title="{l s='Previous'}" class="btn btn-raised btn-success">
+            <i class="zmdi zmdi-chevron-left"></i>
+            {l s='Return'}
         </a>
     </p>
     {else}
