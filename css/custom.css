@@ -5,6 +5,9 @@
 	right: 5%;
 	width: 35%;
 }
+.active:active {
+	background: #000!important;
+}
 html {
   width: 100%}
 
