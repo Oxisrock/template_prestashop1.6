@@ -60,4 +60,6 @@
 <ul class="footer_links clearfix">
 <li><a class="btn-circle btn-circle-raised btn-circle-success" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{l s='Home'}">{*<span>{l s='Home'}</span>*}<i class="zmdi zmdi-home"></i></a></li>
 </ul>
+<div class="" style="background: #000; margin-bottom: 20%;">
+</div>
 </div>

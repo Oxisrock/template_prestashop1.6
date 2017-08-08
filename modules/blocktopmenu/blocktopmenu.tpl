@@ -59,10 +59,10 @@
 										{if !$is_logged}
 										<li>
 											<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}"  rel="nofollow" title="{l s='Log in to your customer account' mod='blockuserinfo'}">
-												<i class="fa fa-user" aria-hidden="true"></i>{l s='Iniciar Sesion' mod='blockuserinfo'}</a>
+												<i class="fa fa-user" aria-hidden="true"></i>{l s='Sign in' mod='blockuserinfo'}</a>
 										</li>
 										<li>
-											<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" data-toggle="modal" data-target="#ms-account-modal"><i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Registrate' mod='blockuserinfo'}</a>
+											<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" data-toggle="modal" data-target="#ms-account-modal"><i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Sign up' mod='blockuserinfo'}</a>
 										</li>
 											{/if}
 										{if $is_logged}
@@ -72,7 +72,7 @@
 										</li>
 										<li>
 											<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" ><i class="fa fa-user-times" aria-hidden="true"></i>
-												{l s='Deslogear' mod='blockuserinfo'}</a>
+												{l s='Sign out' mod='blockuserinfo'}</a>
 										</li>
 										{/if}
 									</ul>

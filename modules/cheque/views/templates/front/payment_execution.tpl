@@ -22,7 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
+<div class="container container-full">
 {capture name=path}{l s='Check payment' mod='cheque'}{/capture}
 
 <h1 class="page-heading">{l s='Order summary' mod='cheque'}</h1>
@@ -33,7 +33,7 @@
 {if isset($nbProducts) && $nbProducts <= 0}
 	<p class="alert alert-warning">{l s='Your shopping cart is empty.' mod='cheque'}</p>
 {else}
-
+	<div class="card card-primary">
 	<form action="{$link->getModuleLink('cheque', 'validation', [], true)|escape:'html':'UTF-8'}" method="post">
 		<div class="box cheque-box">
 			<h3 class="page-subheading">{l s='Check payment' mod='cheque'}</h3>
@@ -74,12 +74,15 @@
 			</p>
 		</div>
 		<p class="cart_navigation clearfix" id="cart_navigation">
-			<a href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}" class="button-exclusive btn btn-default">
+			<a href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}" class="btn btn-raised btn-success">
 				<i class="icon-chevron-left"></i>{l s='Other payment methods' mod='cheque'}
 			</a>
-			<button type="submit" class="button btn btn-default button-medium">
-				<span>{l s='I confirm my order' mod='cheque'}<i class="icon-chevron-right right"></i></span>
+			<button type="submit" class="btn btn-raised btn-primary">
+				<span>{l s='I confirm my order' mod='cheque'}</span> <i class="zmdi zmdi-chevron-right"></i>
 			</button>
 		</p>
 	</form>
+</div>
+</div>
 {/if}
+</div>

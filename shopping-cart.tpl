@@ -46,6 +46,23 @@
 <p class="alert alert-success">{l s='Some products are in the shopping carts.'}</p>
 {else}
 <p class="alert alert-warning">{l s='Your shopping cart is empty.'}</p>
+
+<ul class="footer_links clearfix">
+	<li>
+		<a class="btn-circle btn-circle-raised btn-circle-primary" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Back to your account'}">
+			<span>
+				<i class="zmdi zmdi-chevron-left"></i>
+			</span>
+		</a>
+		<a class="btn-circle btn-circle-raised btn-circle-success" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{l s='Home'}">
+			<span>
+				<i class="zmdi zmdi-home"></i>
+			</span>
+		</a>
+	</li>
+</ul>
+<div class="" style="background: #000; margin-bottom: 20%;">
+</div>
 {/if}
 {if isset($empty)}
 	{* <p class="alert alert-warning">{l s='Your shopping cart is empty.'}</p> *}

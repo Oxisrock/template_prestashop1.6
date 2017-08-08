@@ -55,7 +55,7 @@
 				</div><!-- #columns -->
 			</div><!-- .columns-container -->
 			{if isset($HOOK_FOOTER)}
-			<div class="container-full">
+			<div class="footer" style="z-index:-9999;">
 						<aside class="ms-footbar" style="background-color: #2061A8;">
         <div class="container">
           <div class="row">
@@ -169,8 +169,9 @@
           <p class="font"><a href="javascript:void(0)">Condiciones</a> <span class="hidden-xs">&nbsp; &#8226; &nbsp;</span> <br class="visible-xs"> Copyright &copy; Blue Horizon 2017 - Powered by <a href="">Slice Group</a></p>
         </div>
       </footer>
-		</div><!-- #page -->
+		</div>
 {/if}
 {include file="$tpl_dir./global.tpl"}
+		</div><!-- #page -->
 	</body>
 </html>
