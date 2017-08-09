@@ -462,7 +462,7 @@
 		</p>
 		<div class="submit">
 			<input type="hidden" name="id_order" value="{$order->id|intval}" />
-			<input type="submit" class="unvisible" name="submitMessage" value="{l s='Send'}"/>
+			<input type="submit" class="unvisible" name="submitMessage" value="{l s='Send'}" style="display: none;"/>
 			<button type="submit" name="submitMessage" class="btn btn-raised btn-success pull-right" title="{l s='Send'}"><span><i class="fa fa-envelope-o"></i></span></button>
 		</div>
 	</form>

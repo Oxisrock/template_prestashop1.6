@@ -88,11 +88,9 @@
 								-
 							{/if}
 						</td>
-						<td class="history_detail">
+						<td class="">
 							<a class="btn btn-raised btn-success" href="javascript:showOrder(1, {$order.id_order|intval}, '{$link->getPageLink('order-detail', true, NULL, "id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}');" title="{l s='Details'}">
-								<span>
 									<i class="fa fa-th-list"></i>
-								</span>
 							</a>
 							{if isset($opc) && $opc}
 								<a class="btn btn-raised btn-primary" href="{$link->getPageLink('order-opc', true, NULL, "submitReorder&id_order={$order.id_order|intval}")|escape:'html':'UTF-8'}" title="{l s='Reorder'}">
