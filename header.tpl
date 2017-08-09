@@ -96,7 +96,6 @@
 					{if $smarty.capture.displayNav}
 						<div class="ms-header ms-header-white" id="gotas">
 							<div class="container container-full">
-								<div class="row">
 									{* Logo*}
 									<div id="header_logo" class="ms-title trans">
 										<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
@@ -106,7 +105,6 @@
 										</a>
 									</div>
 									<div id="header_menu" class="ms-title">{$smarty.capture.displayNav}</div>
-								</div>
 								</div>
 							</div>
 					{/if}

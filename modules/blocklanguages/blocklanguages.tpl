@@ -24,20 +24,21 @@
 *}
 <!-- Block languages module -->
 {if count($languages) > 1}
+<div id="claro" class="header-right" style="margin-left: 6em;">
+	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8" title="Ingresar">
+				<i class="zmdi zmdi-account"></i>
+			</a>
+			<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+				<img src="{$img_dir}lang_esp.png" />
+			</a>
+	<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+				<img src="{$img_dir}lang_eng.png" />
+			</a>
+			</div>
 <div class="header-right ">
 	<div class="languages-block">
 		{foreach from=$languages key=k item=language name="languages"}
 			{if $language.iso_code == $lang_iso}
-			<div id="claro" class="header-right">
-				<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
-              <img src="{$img_dir}lang_eng.png" />
-            </a>
-						</div>
-						<div id="claro" class="header-right">
-            <a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
-              <img src="{$img_dir}lang_esp.png" />
-            </a>
-					</div>
 			{/if}
 		{/foreach}
 		<ul id="first-languages" class="languages-block_ul toogle_content" style="display: none;">
