@@ -23,9 +23,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <!-- Block search module TOP -->
-<div class="animated fadeInLeft animation-delay-6 ms-title" style="padding-bottom: 7px; margin-bottom: 20px">
-<div id="search_block_top buscador1">
-	<div class="col-md-10">
+<div class="animated fadeInLeft animation-delay-6 ms-title">
+<div id="search_block_top buscador1" style="padding-bottom: 7px; margin-bottom: 20px">
 	<form id="searchbox" class="form-group" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}" >
 		<input class="form-control" type="hidden" name="controller" value="search" />
 		<input class="form-control" type="hidden" name="orderby" value="position" />
@@ -37,5 +36,4 @@
 	</form>
 		</div>
 	</div>
-</div>
 <!-- /Block search module TOP -->

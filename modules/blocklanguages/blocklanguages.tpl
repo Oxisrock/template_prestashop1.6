@@ -25,14 +25,22 @@
 <!-- Block languages module -->
 {if count($languages) > 1}
 <div class="header-right ">
-	<div id="claro" class="languages-block btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+	<div class="languages-block">
 		{foreach from=$languages key=k item=language name="languages"}
 			{if $language.iso_code == $lang_iso}
-					<a class="current"><img src="{$img_dir}lang_esp.png" /></a>
-				<a class="current"><img src="{$img_dir}lang_eng.png" /></a>
+			<div id="claro" class="header-right">
+				<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+              <img src="{$img_dir}lang_eng.png" />
+            </a>
+						</div>
+						<div id="claro" class="header-right">
+            <a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+              <img src="{$img_dir}lang_esp.png" />
+            </a>
+					</div>
 			{/if}
 		{/foreach}
-		<ul id="first-languages" class="languages-block_ul toogle_content">
+		<ul id="first-languages" class="languages-block_ul toogle_content" style="display: none;">
 			{foreach from=$languages key=k item=language name="languages"}
 				<li {if $language.iso_code == $lang_iso}class="selected"{/if}>
 				{if $language.iso_code != $lang_iso}

@@ -368,6 +368,8 @@
                 {/if}
 			{/if}
 		</div> <!-- end delivery_options_address -->
+		<div class="" style="background: #000; margin-bottom: 10%;">
+		</div>
 		{if !$opc}
 				<p class="cart_navigation clearfix">
 					<input type="hidden" name="step" value="3" />

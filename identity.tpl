@@ -46,6 +46,8 @@
             {l s='Your personal information has been successfully updated.'}
             {if isset($pwd_changed)}<br />{l s='Your password has been sent to your email:'} {$email}{/if}
         </p>
+        <div class="" style="background: #000; margin-bottom: 25%;">
+        </div>
     {else}
         <p class="info-title">
             {l s='Please be sure to update your personal information if it has changed.'}
@@ -209,6 +211,8 @@
       </div>
     </div>
     {/if}
+</div>
+<div class="" style="background: #000; margin-bottom: 10%;">
 </div>
 <ul class="footer_links clearfix">
 	<li>
