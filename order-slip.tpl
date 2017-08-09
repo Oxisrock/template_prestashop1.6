@@ -76,7 +76,8 @@
 		<p class="alert alert-primary">{l s='You have not received any credit slips.'}</p>
 	{/if}
 </div><!-- #block-history -->
-
+<div class="" style="background: #000; margin-bottom: 20%;">
+</div>
 <ul class="footer_links clearfix">
 	<li>
 		<a class="btn-circle btn-circle-raised btn-circle-primary" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Back to your account'}">
@@ -91,6 +92,4 @@
 		</a>
 	</li>
 </ul>
-<div class="" style="background: #000; margin-bottom: 20%;">
-</div>
 </div>

@@ -59,11 +59,11 @@
 			<input type="hidden" name="order_qte_input[{$key|intval}]" value="{$value|intval}"/>
 		{/foreach}
 		<input type="hidden" name="id_order" value="{$id_order|intval}"/>
-		<input class="unvisible" type="submit" name="submitReturnMerchandise" value="{l s='Make an RMA slip'}"/>
+		<input class="unvisible" type="submit" name="submitReturnMerchandise" value="{l s='Make an RMA slip'}" style="display: none;"/>
 		<p>
-	        <button type="submit" name="submitReturnMerchandise" class="btn btn-default button button-small">
+	        <button type="submit" name="submitReturnMerchandise" class="btn btn-raised btn-success">
 	        	<span>
-	        		{l s='Make an RMA slip'}<i class="icon-chevron-right right"></i>
+	        		{l s='Make an RMA slip'}<i class="zmdi zmdi-chevron-right"></i>
 	        	</span>
 	        </button>
 	   	</p>
@@ -90,6 +90,8 @@
 	{l s='Here is a list of pending merchandise returns'}.
 </p>
 <div class="block-center" id="block-history">
+	<div class="card card-primary animated zoomInDown animation-delay-5">
+    <div class="card-block">
 	{if $ordersReturn && count($ordersReturn)}
 	<table id="order-list" class="table table-bordered footab">
 		<thead>
@@ -129,7 +131,7 @@
 					<td class="history_invoice">
 						{if $return.state == 2}
 							<a class="link-button" href="{$link->getPageLink('pdf-order-return', true, NULL, "id_order_return={$return.id_order_return|intval}")|escape:'html':'UTF-8'}" title="{l s='Order return'} {l s='#'}{$return.id_order_return|string_format:"%06d"}">
-								<i class="icon-file-text"></i> {l s='Print out'}
+								<i class="fa fa-file-text"></i> {l s='Print out'}
 							</a>
 						{else}
 							--
@@ -144,21 +146,25 @@
 		<p class="alert alert-warning">{l s='You have no merchandise return authorizations.'}</p>
 	{/if}
 </div>
+</div>
+</div>
+
+<div class="" style="background: #000; margin-bottom: 20%;">
+</div>
 
 <ul class="footer_links clearfix">
 	<li>
-		<a class="btn btn-default button button-small" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
+		<a class="btn btn-raised btn-primary" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 			<span>
-				<i class="icon-chevron-left"></i> {l s='Back to your account'}
+				<i class="zmdi zmdi-chevron-left"></i> {l s='Back to your account'}
 			</span>
 		</a>
-	</li>
-	<li>
-		<a class="btn btn-default button button-small" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">
+		<a class="btn btn-raised btn-success" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">
 			<span>
-				<i class="icon-chevron-left"></i> {l s='Home'}
+				<i class="fa fa-home"></i> {l s='Home'}
 			</span>
 		</a>
 	</li>
 </ul>
 </div>
+<div>

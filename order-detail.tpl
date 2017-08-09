@@ -23,9 +23,9 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <div class="container container-full">
+	<div class="card card-primary animated zoomInDown animation-delay-5">
+		<div class="card-block">
 {if isset($order)}
-<div class="card card-primary animated zoomInDown animation-delay-5">
-	<div class="card-block">
 <div class="box box-small clearfix">
 	{if isset($reorderingAllowed) && $reorderingAllowed}
 	<form id="submitReorder" action="{if isset($opc) && $opc}{$link->getPageLink('order-opc', true)}{else}{$link->getPageLink('order', true)}{/if}" method="post" class="submit">
@@ -44,15 +44,15 @@
 	<p><strong class="dark">{l s='Payment method'}</strong> <span class="color-myaccount">{$order->payment|escape:'html':'UTF-8'}</span></p>
 	{if $invoice AND $invoiceAllowed}
 	<p>
-		<i class="icon-file-text"></i>
+		<i class="fa fa-file-text"></i>
 		<a target="_blank" href="{$link->getPageLink('pdf-invoice', true)}?id_order={$order->id|intval}{if $is_guest}&amp;secure_key={$order->secure_key|escape:'html':'UTF-8'}{/if}">{l s='Download your invoice as a PDF file.'}</a>
 	</p>
 	{/if}
 	{if $order->recyclable}
-	<p><i class="icon-repeat"></i>&nbsp;{l s='You have given permission to receive your order in recycled packaging.'}</p>
+	<p><i class="fa fa-refresh"></i>&nbsp;{l s='You have given permission to receive your order in recycled packaging.'}</p>
 	{/if}
 	{if $order->gift}
-		<p><i class="icon-gift"></i>&nbsp;{l s='You have requested gift wrapping for this order.'}</p>
+		<p><i class="fa fa-gift"></i>&nbsp;{l s='You have requested gift wrapping for this order.'}</p>
 		<p><strong class="dark">{l s='Message'}</strong> {$order->gift_message|nl2br}</p>
 	{/if}
 </div>
@@ -116,10 +116,14 @@
 		</div>
 	</div>
 </div>
+<div class="card card-primary animated zoomInDown animation-delay-5">
+	<div class="card-block">
 {$HOOK_ORDERDETAILDISPLAYED}
 {if !$is_guest}<form action="{$link->getPageLink('order-follow', true)|escape:'html':'UTF-8'}" method="post">{/if}
 <div id="order-detail-content" class="table_block table-responsive">
 	<table class="table table-bordered">
+		<div class="card card-primary animated zoomInDown animation-delay-5">
+			<div class="card-block">
 		<thead>
 			<tr>
 				{if $return_allowed}<th class="first_item"><input type="checkbox" /></th>{/if}
@@ -190,6 +194,8 @@
 			</tr>
 		</tfoot>
 		<tbody>
+		</div>
+	</div>
 		{foreach from=$products item=product name=products}
 			{if !isset($product.deleted)}
 				{assign var='productId' value=$product.product_id}
@@ -309,8 +315,8 @@
 						<td class="return_quantity">
 							<input class="order_qte_input form-control grey" name="order_qte_input[{$product.id_order_detail|intval}]" type="text" size="2" value="{$productQuantity|intval}" />
 							<div class="clearfix return_quantity_buttons">
-								<a href="#" class="return_quantity_down btn btn-default button-minus"><span><i class="icon-minus"></i></span></a>
-								<a href="#" class="return_quantity_up btn btn-default button-plus"><span><i class="icon-plus"></i></span></a>
+								<a href="#" class="return_quantity_down btn btn-raised btn-danger"><span><i class="fa fa-minus"></i></span></a>
+								<a href="#" class="return_quantity_up btn btn-raised btn-success"><span><i class="fa fa-plus"></i></span></a>
 							</div>
 							<label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$productQuantity|intval}</span></label></td>
 						{if $order->hasProductReturned()}
@@ -363,14 +369,18 @@
 			<textarea class="form-control" cols="67" rows="3" name="returnText"></textarea>
 		</p>
 		<p class="form-group">
-			<button type="submit" name="submitReturnMerchandise" class="btn btn-default button button-small"><span>{l s='Make an RMA slip'}<i class="icon-chevron-right right"></i></span></button>
+			<button type="submit" name="submitReturnMerchandise" class="btn btn-raised btn-success"><span>{l s='Make an RMA slip'}<i class="icon-chevron-right right"></i></span></button>
 			<input type="hidden" class="hidden" value="{$order->id|intval}" name="id_order" />
 		</p>
 	</div>
 {/if}
 {if !$is_guest}</form>{/if}
+</div>
+</div>
 {assign var='carriers' value=$order->getShipping()}
 {if $carriers|count > 0 && isset($carriers.0.carrier_name) && $carriers.0.carrier_name}
+<div class="card card-primary animated zoomInDown animation-delay-5">
+	<div class="card-block">
 	<table class="table table-bordered footab">
 		<thead>
 			<tr>
@@ -395,6 +405,8 @@
 			{/foreach}
 		</tbody>
 	</table>
+</div>
+</div>
 {/if}
 {if !$is_guest}
 	{if count($messages)}
@@ -429,6 +441,8 @@
 			</tbody>
 		</table>
 	</div>
+</div>
+</div>
 	{/if}
 	{if isset($errors) && $errors}
 		<div class="alert alert-danger">
@@ -445,6 +459,8 @@
 		{l s='Message successfully sent'}
 	</p>
 	{/if}
+	<div class="card card-success animated zoomInDown animation-delay-5">
+		<div class="card-block">
 	<form action="{$link->getPageLink('order-detail', true)|escape:'html':'UTF-8'}" method="post" class="std" id="sendOrderMessage">
 		<h3 class="page-heading bottom-indent">{l s='Add a message'}</h3>
 		<p>{l s='If you would like to add a comment about your order, please write it in the field below.'}</p>
@@ -466,6 +482,8 @@
 			<button type="submit" name="submitMessage" class="btn btn-raised btn-success pull-right" title="{l s='Send'}"><span><i class="fa fa-envelope-o"></i></span></button>
 		</div>
 	</form>
+</div>
+</div>
 {else}
 <p class="alert alert-info"><i class="icon-info-sign"></i>{l s='You cannot return merchandise with a guest account'}</p>
 {/if}
