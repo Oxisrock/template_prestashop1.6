@@ -119,7 +119,7 @@
 							</ul>
 						</div>
 						<!-- navbar-collapse collapse -->
-						<a href="javascript:void(0)" class="sb-toggle-left btn-navbar-menu visible-xs">
+						<a class="sb-toggle-left btn-navbar-menu visible-xs">
 							<i class="zmdi zmdi-menu"></i>
 						</a>
 					</div>

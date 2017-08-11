@@ -143,7 +143,7 @@
 	</table>
 	<div id="block-order-detail" class="unvisible">&nbsp;</div>
 	{else}
-		<p class="alert alert-warning">{l s='You have no merchandise return authorizations.'}</p>
+		<p class="alert alert-primary">{l s='You have no merchandise return authorizations.'}</p>
 	{/if}
 </div>
 </div>

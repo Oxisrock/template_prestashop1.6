@@ -28,11 +28,11 @@
 	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8" title="Ingresar">
 				<i class="zmdi zmdi-account"></i>
 			</a>
-			<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
-				<img src="{$img_dir}lang_esp.png" />
-			</a>
 	<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
 				<img src="{$img_dir}lang_eng.png" />
+			</a>
+	<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+				<img src="{$img_dir}lang_esp.png" />
 			</a>
 			</div>
 <div class="header-right ">

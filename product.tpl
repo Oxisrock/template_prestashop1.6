@@ -193,7 +193,7 @@
 													{/if}
 												{/strip}</h2>
 												<p id="reduction_percent" {if $productPriceWithoutReduction <= 0 || !$product->specificPrice || $product->specificPrice.reduction_type != 'percentage'} style="display:none;"{/if}>{strip}
-													<span id="reduction_percent_display">
+													<span id="reduction_percent_display" class="ms-tag ms-tag-warning">
 														{if $product->specificPrice && $product->specificPrice.reduction_type == 'percentage'}-{$product->specificPrice.reduction*100}%{/if}
 													</span>
 												{/strip}</p>
@@ -207,7 +207,7 @@
 												<p id="old_price"{if (!$product->specificPrice || !$product->specificPrice.reduction)} class="hidden"{/if}>{strip}
 													{if $priceDisplay >= 0 && $priceDisplay <= 2}
 														{hook h="displayProductPriceBlock" product=$product type="old_price"}
-														<span id="old_price_display"><span class="price">{if $productPriceWithoutReduction > $productPrice}{convertPrice price=$productPriceWithoutReduction|floatval}{/if}</span>{if $productPriceWithoutReduction > $productPrice && $tax_enabled && $display_tax_label == 1} {if $priceDisplay == 1}{l s='tax excl.'}{else}{l s='tax incl.'}{/if}{/if}</span>
+														<span id="old_price_display"><span class="ms-tag ms-tag-success" style="text-decoration: line-through;">{if $productPriceWithoutReduction > $productPrice}{convertPrice price=$productPriceWithoutReduction|floatval}{/if}</span>{if $productPriceWithoutReduction > $productPrice && $tax_enabled && $display_tax_label == 1} {if $priceDisplay == 1}{l s='tax excl.'}{else}{l s='tax incl.'}{/if}{/if}</span>
 													{/if}
 												{/strip}</p>
 												{if $priceDisplay == 2}

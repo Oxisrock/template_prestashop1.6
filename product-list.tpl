@@ -127,7 +127,7 @@
 															<link itemprop="availability" href="https://schema.org/LimitedAvailability" />{l s='Product available with different options'}
 
 													{else}
-															<link itemprop="availability" href="https://schema.org/OutOfStock" />{l s='Out of stock'}
+															<link itemprop="availability" href="https://schema.org/OutOfStock" /><span class="ms-tag ms-tag-danger">{l s='Out of stock'}</span>
 													{/if}
 												</span>
 											{/if}
@@ -152,8 +152,8 @@
 												<span>{l s='Add to cart'} </span>
 											</a>
 										{else}
-											<span class="btn btn-primary btn-sm btn-block btn-raised mt-2 no-mb">
-												<span>{l s='Add to cart'}</span>
+											<span class="btn btn-raised btn-danger">
+												<span>{l s='Out of stock'}</span>
 											</span>
 										{/if}
 									{/if}
