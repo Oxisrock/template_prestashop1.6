@@ -41,7 +41,7 @@
 			{if $language.iso_code == $lang_iso}
 			{/if}
 		{/foreach}
-		<ul id="first-languages" class="languages-block_ul toogle_content" style="display: none;">
+		<ul id="first-languages" class="languages-block_ul toogle_content"	>
 			{foreach from=$languages key=k item=language name="languages"}
 				<li {if $language.iso_code == $lang_iso}class="selected"{/if}>
 				{if $language.iso_code != $lang_iso}

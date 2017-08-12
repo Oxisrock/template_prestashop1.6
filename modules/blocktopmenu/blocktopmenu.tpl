@@ -11,7 +11,7 @@
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">
 								<li class="dropdown">
-									<a href="javascript:void(0)" class="dropdown-toggle animated fadeIn animation-delay-4" data-toggle="dropdown" data-hover="dropdown" data-name="home"><i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Tienda<i class="zmdi zmdi-chevron-down"></i>
+									<a href="javascript:void(0)" class="dropdown-toggle animated fadeIn animation-delay-4" data-toggle="dropdown" data-hover="dropdown" data-name="home"><i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i>{l s='My store'}<i class="zmdi zmdi-chevron-down"></i>
 									</a>
 									<ul class="dropdown-menu">
 										<li>
@@ -27,13 +27,13 @@
 									</ul>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Nosotros'}</span></a>
+									<a href="index.php?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="javascript:void(0)"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Preguntas y Descargas'}</span></a>
+									<a href="javascript:void(0)"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?controller=contact"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Soporte'}</span></a>
+									<a href="index.php?controller=contact"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Support'}</span></a>
 								</li>
 								<li class="buscar oculto">
 										<form id="buscador">
@@ -47,7 +47,7 @@
 							<ul class="nav navbar-nav navbar-right tablet">
 								<li class="dropdown">
 								{if !$is_logged}
-									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-user-circle-o color-royal-light" style="color:#154C9B;" aria-hidden="true"></i><span class="hidden-sm"> Mi Cuenta</span>
+									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-user-circle-o color-royal-light" style="color:#154C9B;" aria-hidden="true"></i><span class="hidden-sm"> {l s='My account'}</span>
 										<i class="zmdi zmdi-chevron-down"></i>
 									</a>
 									{else}
@@ -68,7 +68,7 @@
 										{if $is_logged}
 										<li>
 											<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='View my customer account' mod='blockuserinfo'}" class="account" rel="nofollow">
-	                    <i class="fa fa-pencil" aria-hidden="true"></i>{l s='Editar Perfil' mod='blockuserinfo'}</a>
+	                    <i class="fa fa-pencil" aria-hidden="true"></i>{l s='Edit Perfil' mod='blockuserinfo'}</a>
 										</li>
 										<li>
 											<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" ><i class="fa fa-user-times" aria-hidden="true"></i>

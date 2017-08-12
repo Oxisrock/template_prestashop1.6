@@ -26,6 +26,7 @@
 {if isset($category)}
 	{if $category->id AND $category->active}
     	{if $scenes || $category->description || $category->id_image}
+			<div class="container container-full">
 			<div class="content_scene_cat">
             	 {if $scenes}
                  	<div class="content_scene">
@@ -45,7 +46,7 @@
                     </div>
 				{else}
                     <!-- Category image -->
-                    <div class="content_scene_cat_bg"{if $category->id_image} style="background:url({$link->getCatImageLink($category->link_rewrite, $category->id_image, 'category_default')|escape:'html':'UTF-8'}) right center no-repeat; background-size:cover; min-height:{$categorySize.height}px;"{/if}>
+                    <div class="content_scene_cat_bg"{if $category->id_image} style="background:url({$link->getCatImageLink($category->link_rewrite, $category->id_image, 'category_default')|escape:'html':'UTF-8'}) right center no-repeat; background-size:cover; min-height:{$categorySize.height}px; width:auto;"{/if}>
                         {if $category->description}
                             <div class="cat_desc">
                             <span class="category-name">
@@ -69,11 +70,12 @@
                   {/if}
             </div>
 		{/if}
-		<div class="container container-full">
 		<h1 class="page-heading{if (isset($subcategories) && !$products) || (isset($subcategories) && $products) || !isset($subcategories) && $products} product-listing{/if}"><span class="cat-name">{$category->name|escape:'html':'UTF-8'}{if isset($categoryNameComplement)}&nbsp;{$categoryNameComplement|escape:'html':'UTF-8'}{/if}</span>{include file="$tpl_dir./category-count.tpl"}</h1>
 		{if isset($subcategories)}
         {if (isset($display_subcategories) && $display_subcategories eq 1) || !isset($display_subcategories) }
 				<!-- Subcategories -->
+				<div class="card card-primary animated zoomInDown animation-delay-5">
+					<div class="card-block">
 		<div id="subcategories">
 			<p class="subcategory-heading">{l s='Subcategories'}</p>
 			<ul class="clearfix">
@@ -96,6 +98,8 @@
 			{/foreach}
 			</ul>
 		</div>
+	</div>
+</div>
         {/if}
 		{/if}
 		{if $products}
@@ -109,17 +113,22 @@
 					{include file="$tpl_dir./pagination.tpl"}
                 </div>
 			</div>
+			<div class="card card-success animated zoomInDown animation-delay-5">
+				<div class="card-block">
 			{include file="./product-list.tpl" products=$products}
+		</div>
+	</div>
 			<div class="content_sortPagiBar">
-				<div class="bottom-pagination-content clearfix">
+				{* <div class="bottom-pagination-content clearfix">
 					{include file="./product-compare.tpl" paginationId='bottom'}
                     {include file="./pagination.tpl" paginationId='bottom'}
-				</div>
+				</div> *}
+				{include file="./pagination.tpl" paginationId='bottom'}
 			</div>
 		{/if}
 	{elseif $category->id}
 		<p class="alert alert-warning">{l s='This category is currently unavailable.'}</p>
 	{/if}
 {/if}
-{include file="$tpl_dir./cataloge.tpl"}
+{*{include file="$tpl_dir./cataloge.tpl"}*}
 </div>

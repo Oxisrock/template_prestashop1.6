@@ -37,8 +37,8 @@
         <div class="item active">
               <img src="{$img_dir}carusel01.jpg" alt="...">
               <div class="banner_der color-white">
-                <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">Descubre nuestros<br>
-                <span class="color-warning-light">Nuevos</span> Productos</h1>
+                <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">{l s= 'Discover our'}<br>
+                <span class="color-warning-light">{l s= 'News'}</span> {l s= 'Products'}</h1>
                 <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
               </div>
               <div class="carousel-caption">
@@ -49,8 +49,8 @@
           <div class="item">
               <img src="{$img_dir}carusel02.jpg" alt="...">
               <div class="banner_izq color-white">
-                <h1 class="animated fadeInRight animation-delay-15 font-smoothing superh1">Magníficos filtros<br>
-                <span class="color-danger-light">Purificadores</span> de Agua</h1>
+                <h1 class="animated fadeInRight animation-delay-15 font-smoothing superh1">{l s= 'Great Filters'}<br>
+                <span class="color-danger-light">{l s= 'Purifiers'}</span> {l s= 'of water'}</h1>
                 <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
               </div>
               <div class="carousel-caption">
@@ -61,8 +61,8 @@
           <div class="item">
               <img src="{$img_dir}carusel03.jpg" alt="...">
               <div class="banner_der color-white">
-                <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">Todo lo que <span class="color-warning-light">Necesites</span><br>
-                para tu Hogar</h1>
+                <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">{l s= 'All you'} <span class="color-warning-light">{l s= 'Need'}</span><br>
+                {l s= 'For your Home'}</h1>
                 <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
               </div>
               <div class="carousel-caption">

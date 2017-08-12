@@ -66,16 +66,16 @@
                 <ul class="list-unstyled ms-icon-list three_cols">
                   <li>
                     <a href="index.php">
-                      <i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
+                      <i class="fa fa-home" aria-hidden="true"></i> {l s='Home'}</a>
                   </li>
 									{if !$is_logged}
                   <li>
                     <a href="index.php?controller=authentication&back=my-account">
-                      <i class="fa fa-user-plus" aria-hidden="true"></i> Registro</a>
+                      <i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Register'}</a>
                   </li>
                   <li>
                     <a href="index.php?controller=authentication&back=my-account">
-                      <i class="fa fa-user" aria-hidden="true"></i> Ingresar</a>
+                      <i class="fa fa-user" aria-hidden="true"></i> {l s='Sign in'}</a>
                   </li>
 									{/if}
 									{if $is_logged}
@@ -85,32 +85,32 @@
 									</li>
 									<li>
 										<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}">
-											<i class="fa fa-user-times" aria-hidden="true"></i> Salir</a>
+											<i class="fa fa-user-times" aria-hidden="true"></i> {l s='Sign out'}</a>
 									</li>
 									{/if}
                   <li>
-                    <a href="javascript:void(0)">
-                      <i class="fa fa-tint" aria-hidden="true"></i> Tienda</a>
+                    <a href="">
+                      <i class="fa fa-tint" aria-hidden="true"></i> {l s='My store'}</a>
                   </li>
                   <li>
                     <a href="javascript:void(0)">
-                      <i class="zmdi zmdi-favorite-outline"></i> Favoritos</a>
+                      <i class="zmdi zmdi-favorite-outline"></i> {l s='Favorits'}</a>
                   </li>
                   <li>
                     <a href="index.php?id_cms=4&controller=cms&id_lang=1">
-                      <i class="fa fa-users" aria-hidden="true"></i> Somos</a>
+                      <i class="fa fa-users" aria-hidden="true"></i> {l s='About us'}</a>
                   </li>
                   <li>
                     <a href="javascript:void(0)">
-                      <i class="fa fa-download" aria-hidden="true"></i> Descargas</a>
+                      <i class="fa fa-download" aria-hidden="true"></i> {l s='Download'}</a>
                   </li>
                   <li>
                     <a href="javascript:void(0)">
-                      <i class="fa fa-question-circle" aria-hidden="true"></i> FAQ</a>
+                      <i class="fa fa-question-circle" aria-hidden="true"></i> {l s='FAQS'}</a>
                   </li>
                   <li>
                     <a href="index.php?controller=contact">
-                      <i class="fa fa-envelope" aria-hidden="true"></i> Contáctanos</a>
+                      <i class="fa fa-envelope" aria-hidden="true"></i> {l s='Contact Us'}</a>
                   </li>
                   <!-- <li>
                     <a href="javascript:void(0)">
@@ -124,7 +124,7 @@
               <div class="ms-footbar-block center-block text-center">
                 <img class="animated fadeInUp animation-delay-6 img-responsive center-block" src="{$img_dir}logob.svg" alt="Logo Blanco">
                 <br>
-                <h3 class="ms-footbar-title">Manténte en contacto</h3>
+                <h3 class="ms-footbar-title">{l s='Stay in contact'}</h3>
                 <div class="ms-footbar-social">
                   <a href="javascript:void(0)" class="btn-circle btn-twitter">
                     <i class="zmdi zmdi-twitter"></i>
@@ -141,7 +141,7 @@
 
             <div class="col-md-4 col-xs-6 ms-footer-col ms-footer-text-right" style="background-color: #2061A8;">
               <div class="ms-footbar-block">
-                <h3 class="ms-footbar-title">Contáctanos</h3>
+                <h3 class="ms-footbar-title">{l s='Contact Us'}</h3>
                 <address class="no-mb">
                   <p>
                     <i class="color-danger-light zmdi zmdi-pin mr-1"></i>3874 SW 30th Avenue</p>
@@ -166,7 +166,7 @@
 			{/if}
 			<footer class="ms-footer" style="background-color: #333;">
         <div class="container">
-          <p class="font"><a href="javascript:void(0)">Condiciones</a> <span class="hidden-xs">&nbsp; &#8226; &nbsp;</span> <br class="visible-xs"> Copyright &copy; Blue Horizon 2017 - Powered by <a href="">Slice Group</a></p>
+          <p class="font"><a href="javascript:void(0)">{l s='Terms'}</a> <span class="hidden-xs">&nbsp; &#8226; &nbsp;</span> <br class="visible-xs"> Copyright &copy; Blue Horizon 2017 - Powered by <a href="">Slice Group</a></p>
         </div>
       </footer>
 		</div>

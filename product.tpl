@@ -65,7 +65,7 @@
 		<!-- left infos-->
 		<div class="col-md-6">
 		<div id="carousel-product" class="ms-carousel ms-carousel-thumb carousel slide animated zoomInUp animation-delay-5" data-ride="carousel" data-interval="0">
-		<div class="card card-block">
+		<div class="card card-primary card-block">
 			<div class="carousel-inner" role="listbox">
                   <div class="item active">
 							<!-- Wrapper for slides -->
@@ -121,8 +121,8 @@
 							</a>
 						</span>
 					{/if}
-					<div id="thumbs_list">
-						<ul id="thumbs_list_frame">
+					<div id="thumbs_list" class="nav navbar-nav">
+						<ul id="thumbs_list_frame" class="nav navbar-nav" >
 						{if isset($images)}
 							{foreach from=$images item=image name=thumbnails}
 								{assign var=imageIds value="`$product->id`-`$image.id_image`"}
@@ -131,7 +131,11 @@
 								{else}
 									{assign var=imageTitle value=$product->name|escape:'html':'UTF-8'}
 								{/if}
-								<li id="thumbnail_{$image.id_image}"{if $smarty.foreach.thumbnails.last} class="last"{/if}>
+								<li id="thumbnail_{$image.id_image}"
+								style="border: 25px;
+    						border: 4px solid #4fc3f7;
+								margin-left: 1em;
+								" class="text-center"{if $smarty.foreach.thumbnails.last} class="last" {/if}>
 									<a{if $jqZoomEnabled && $have_image && !$content_only} href="javascript:void(0);" rel="{literal}{{/literal}gallery: 'gal1', smallimage: '{$link->getImageLink($product->link_rewrite, $imageIds, 'large_default')|escape:'html':'UTF-8'}',largeimage: '{$link->getImageLink($product->link_rewrite, $imageIds, 'thickbox_default')|escape:'html':'UTF-8'}'{literal}}{/literal}"{else} href="{$link->getImageLink($product->link_rewrite, $imageIds, 'thickbox_default')|escape:'html':'UTF-8'}"	data-fancybox-group="other-views" class="fancybox{if $image.id_image == $cover.id_image} shown{/if}"{/if} title="{$imageTitle}">
 										<img class="img-responsive" id="thumb_{$image.id_image}" src="{$link->getImageLink($product->link_rewrite, $imageIds, 'cart_default')|escape:'html':'UTF-8'}" alt="{$imageTitle}" title="{$imageTitle}"{if isset($cartSize)} height="{$cartSize.height}" width="{$cartSize.width}"{/if} itemprop="image" />
 									</a>
@@ -139,7 +143,7 @@
 							{/foreach}
 						{/if}
 						</ul>
-					</div> <!-- end thumbs_list -->
+			</div> <!-- end thumbs_list -->
 					{if isset($images) && count($images) > 2}
 						<a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
 							{l s='Next'}
@@ -162,7 +166,7 @@
 		<!-- end left infos-->
 		<!-- center infos -->
 		<div class="col-md-6">
-      <div class="card animated zoomInDown animation-delay-5">
+      <div class="card card-primary animated zoomInDown animation-delay-5">
         <div class="card-block">
 			{if $product->online_only}
 				<p class="online_only">{l s='Online only'}</p>
@@ -263,13 +267,13 @@
 						<div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short}</div>
 					{/if}
 
-					{if $product->description}
+					{* {if $product->description}
 						<p class="buttons_bottom_block">
 							<a href="javascript:{ldelim}{rdelim}" class="button">
 								{l s='More details'}
 							</a>
 						</p>
-					{/if}
+					{/if} *}
 					<!--{if $packItems|@count > 0}
 						<div class="short_description_pack">
 						<h3>{l s='Pack content'}</h3>
@@ -483,7 +487,7 @@
 <div class="card card-success animated fadeInUp animation-delay-10">
 	<div class="card-block text-center">
 	<div class="box-cart-bottom">
-		<p>{l s='Metods Pays'}</p>
+		<h2>{l s='Metods Pays'}</h2>
  	 {if isset($HOOK_PRODUCT_ACTIONS) && $HOOK_PRODUCT_ACTIONS}{$HOOK_PRODUCT_ACTIONS}{/if}
 
   </div> <!-- end box-cart-bottom -->
@@ -558,7 +562,7 @@
 		{/if}
 		{if isset($features) && $features}
 			<!-- Data sheet -->
-			<section class="page-product-box">
+			{* <section class="page-product-box">
 				<h3 class="page-product-heading">{l s='Data sheet'}</h3>
 				<table class="table-data-sheet">
 					{foreach from=$features item=feature}
@@ -570,16 +574,20 @@
 					</tr>
 					{/foreach}
 				</table>
-			</section>
+			</section> *}
 			<!--end Data sheet -->
 		{/if}
 		{if isset($product) && $product->description}
 			<!-- More info -->
-			<div class="">
-				<h2 class="">{l s='More info'}</h2>
+			<div class="col-md-12">
+			<div class="card card-primary">
+				<div class="card-block">
+				<h2 class="mt-4 mb-4">{l s='More info'}</h2>
 				<!-- full description -->
 				<div class="lead">{$product->description}</div>
 			</div>
+		</div>
+	</div>
 			<!--end  More info -->
 		{/if}
 		{if isset($packItems) && $packItems|@count > 0}
