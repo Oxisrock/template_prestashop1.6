@@ -34,48 +34,53 @@
 
 {if !$opc && ((!isset($back) || empty($back)) || (isset($back) && preg_match("/[&?]step=/", $back)))}
 <!-- Steps -->
-<ul class="nav nav-tabs nav-tabs-transparent nav-tabs-full nav-tabs-5" id="order_step">
-	<li class="{if $current_step=='summary'}step_current {elseif $current_step=='login'}step_done_last step_done{else}{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address' || $current_step=='login'}step_done{else}step_todo{/if}{/if} active">
+<div class="card card-primary animated zoomInDown animation-delay-5">
+	<div class="card-block">
+<ul class="nav nav-tabs nav-tabs-transparent indicator-success nav-tabs-full nav-tabs-5" id="order_step">
+	<li role="presentation" class="{if $current_step=='summary'}step_current active {elseif $current_step=='login'}step_done_last step_done{else}{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address' || $current_step=='login'}step_done{else}step_todo{/if}{/if} ">
 		{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address' || $current_step=='login'}
-		<a href="{$link->getPageLink('order', true)}">
-			<em>01.</em> {l s='Summary'}
+		<a class="withoutripple text-center" href="{$link->getPageLink('order', true)}">
+			<em>01.</em><span class="hidden-xs">{l s='Summary'}</span>
 		</a>
 		{else}
-			<span><em>01.</em> {l s='Summary'}</span>
+			<div class="withoutripple text-center"><em>01.</em><span class="hidden-xs"> {l s='Summary'}</span></div>
 		{/if}
 	</li>
-	<li class="{if $current_step=='login'}step_current{elseif $current_step=='address'}step_done step_done_last{else}{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address'}step_done{else}step_todo{/if}{/if} active">
+	<li role="presentation" class="{if $current_step=='login'}step_current active{elseif $current_step=='address'}step_done step_done_last{else}{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address'}step_done{else}step_todo{/if}{/if}">
 		{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address'}
-		<a href="{$link->getPageLink('order', true, NULL, "{$smarty.capture.url_back}&step=1{if $multi_shipping}&multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}">
-			<em>02.</em> {l s='Sign in'}
+		<a class="withoutripple text-center" href="{$link->getPageLink('order', true, NULL, "{$smarty.capture.url_back}&step=1{if $multi_shipping}&multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}">
+			<em>02.</em> <span class="hidden-xs">{l s='Sign in'}</span>
 		</a>
 		{else}
-			<span><em>02.</em> {l s='Sign in'}</span>
+			<div class="withoutripple text-center"><em>02.</em> <span class="hidden-xs">{l s='Sign in'}</span></div>
 		{/if}
 	</li>
-	<li class="{if $current_step=='address'}step_current{elseif $current_step=='shipping'}step_done step_done_last{else}{if $current_step=='payment' || $current_step=='shipping'}step_done{else}step_todo{/if}{/if} active">
+	<li role="presentation" class="{if $current_step=='address'}step_current active hover{elseif $current_step=='shipping'}step_done step_done_last{else}{if $current_step=='payment' || $current_step=='shipping'}step_done{else}step_todo{/if}{/if}">
 		{if $current_step=='payment' || $current_step=='shipping'}
-		<a href="{$link->getPageLink('order', true, NULL, "{$smarty.capture.url_back}&step=1{if $multi_shipping}&multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}">
-			<em>03.</em> {l s='Address'}
+		<a class="withoutripple text-center" href="{$link->getPageLink('order', true, NULL, "{$smarty.capture.url_back}&step=1{if $multi_shipping}&multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}">
+			<em>03.</em> <span class="hidden-xs">{l s='Address'}</span>
 		</a>
 		{else}
-			<span><em>03.</em> {l s='Address'}</span>
+			<div class="withoutripple text-center"><em>03.</em><span class="hidden-xs"> {l s='Address'}</span></div>
 		{/if}
 	</li>
-	<li class="{if $current_step=='shipping'}step_current{else}{if $current_step=='payment'}step_done step_done_last{else}step_todo{/if}{/if} active">
+	<li role="presentation" class="{if $current_step=='shipping'}step_current active{else}{if $current_step=='payment'}step_done step_done_last{else}step_todo{/if}{/if}">
 		{if $current_step=='payment'}
-		<a href="{$link->getPageLink('order', true, NULL, "{$smarty.capture.url_back}&step=2{if $multi_shipping}&multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}">
-			<em>04.</em> {l s='Shipping'}
+		<a class="withoutripple text-center"href="{$link->getPageLink('order', true, NULL, "{$smarty.capture.url_back}&step=2{if $multi_shipping}&multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}">
+			<em>04.</em> <span class="hidden-xs">{l s='Shipping'}</span>
 		</a>
 		{else}
-			<span><em>04.</em> {l s='Shipping'}</span>
+			<div class="withoutripple text-center"><em>04.</em> <span class="hidden-xs">{l s='Shipping'}</span></div>
 		{/if}
 	</li>
-	<li id="step_end" class="{if $current_step=='payment'}step_current{else}step_todo{/if} active">
-		<span><em>05.</em> {l s='Payment'}</span>
+	<li  role="presentation" id="step_end" class=" withoutripple {if $current_step=='payment'}step_current active{else}step_todo{/if} ">
+		<div class="withoutripple text-center"><em>05.</em><span class="hidden-xs"> {l s='Payment'}</span></div>
 	</li>
 </ul>
+	</div>
+</div>
 <!-- /Steps -->
 {/if}
 </div>
+
 </br>

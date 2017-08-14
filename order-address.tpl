@@ -38,6 +38,8 @@
 		<div id="opc_account-overlay" class="opc-overlay" style="display: none;"></div>
 {/if}
 <div class="addresses clearfix">
+	<div class="card card-success animated zoomInDown animation-delay-5">
+		<div class="card-block">
 	<div class="row">
 		<div class="col-xs-12 col-sm-6">
 			<div class="address_delivery select form-group selector1">
@@ -107,6 +109,8 @@
 		</div>
 	{/if}
 </div> <!-- end addresses -->
+</div>
+</div>
 {if !$opc}
 			<p class="cart_navigation clearfix">
 				<input type="hidden" class="hidden" name="step" value="2" />
@@ -115,7 +119,7 @@
 					<i class="zmdi zmdi-chevron-left"></i>
 					{l s='Return'}
 				</a>
-				<button type="submit" name="processAddress" class="btn btn-raised btn-primary">
+				<button type="submit" name="processAddress" class="btn btn-raised btn-primary ">
 					<i class="zmdi zmdi-chevron-right"></i><span>{l s='Proceed to checkout'}<i class="icon-chevron-right right"></i></span>
 				</button>
 			</p>

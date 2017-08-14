@@ -31,6 +31,8 @@
 		{include file="$tpl_dir./order-steps.tpl"}
 		{include file="$tpl_dir./errors.tpl"}
 		<form id="form" action="{$link->getPageLink('order', true, NULL, "{if $multi_shipping}multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}" method="post" name="carrier_area">
+			<div class="card card-primary animated zoomInDown animation-delay-5">
+		    <div class="card-block">
 {else}
 	<div id="carrier_area" class="opc-main-block">
 		<h1 class="page-heading step-num"><span>2</span> {l s='Delivery methods'}</h1>
@@ -359,8 +361,8 @@
                     {$override_tos_display}
                 {else}
                     <div class="box">
-                        <p class="checkbox">
-                            <input type="checkbox" name="cgv" id="cgv" value="1" {if $checkedTOS}checked="checked"{/if} />
+                        <p class="">
+                            <input type="checkbox" name="cgv" id="cgv" value="1" class="checked" />
                             <label for="cgv">{l s='I agree to the terms of service and will adhere to them unconditionally.'}</label>
                             <a href="{$link_conditions|escape:'html':'UTF-8'}" class="iframe" rel="nofollow">{l s='(Read the Terms of Service)'}</a>
                         </p>
@@ -370,6 +372,9 @@
 		</div> <!-- end delivery_options_address -->
 		<div class="" style="background: #000; margin-bottom: 10%;">
 		</div>
+
+	</div>
+</div>
 		{if !$opc}
 				<p class="cart_navigation clearfix">
 					<input type="hidden" name="step" value="3" />

@@ -40,6 +40,8 @@
     </p>
 {else}
     <form action="{$link->getModuleLink('bankwire', 'validation', [], true)|escape:'html':'UTF-8'}" method="post">
+      <div class="card card-primary animated zoomInDown animation-delay-5">
+		    <div class="card-block">
         <div class="box cheque-box">
             <h3 class="page-subheading">
                 {l s='Bank-wire payment' mod='bankwire'}
@@ -81,14 +83,16 @@
                 - {l s='Please confirm your order by clicking "I confirm my order".' mod='bankwire'}
             </p>
         </div><!-- .cheque-box -->
-        <p class="cart_navigation clearfix" id="cart_navigation">
-            <a class="btn btn-raised btn-primary" href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}">
-                <i class="icon-chevron-left"></i>{l s='Other payment methods' mod='bankwire'}
-            </a>
-            <button class="btn btn-raised btn-success" type="submit">
-                <span>{l s='I confirm my order' mod='bankwire'}</span>  <i class="zmdi zmdi-chevron-right"></i>
-            </button>
-        </p>
+      </div>
+    </div>
+    <p class="cart_navigation clearfix" id="cart_navigation">
+        <a class="btn btn-raised btn-primary" href="{$link->getPageLink('order', true, NULL, "step=3")|escape:'html':'UTF-8'}">
+            <i class="icon-chevron-left"></i>{l s='Other payment methods' mod='bankwire'}
+        </a>
+        <button class="btn btn-raised btn-success" type="submit">
+            <span>{l s='I confirm my order' mod='bankwire'}</span>  <i class="zmdi zmdi-chevron-right"></i>
+        </button>
+    </p>
     </form>
 {/if}
 </div>

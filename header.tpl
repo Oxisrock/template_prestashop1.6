@@ -60,9 +60,6 @@
 			 <link rel="stylesheet" href="{$css_dir}plugins.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}preload.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}style.light-blue-300.min.css" type="text/css" media="{$media}" />
-			 <link rel="stylesheet" href="{$css_dir}comparator.css" type="text/css" media="{$media}" />
-			 {*<link rel="stylesheet" href="{$css_dir}contact-form.css" type="text/css" media="{$media}" />
-			 <link rel="stylesheet" href="{$css_dir}order-opc.css" type="text/css" media="{$media}" /> *}
 		{/if}
 		{if isset($js_defer) && !$js_defer && isset($js_files) && isset($js_def)}
 			{$js_def}

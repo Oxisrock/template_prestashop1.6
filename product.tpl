@@ -100,9 +100,9 @@
 					<span id="view_full_size">
 						<img itemprop="image" src="{$img_prod_dir}{$lang_iso}-default-large_default.jpg" id="bigpic" alt="" title="{$product->name|escape:'html':'UTF-8'}" width="{$largeSize.width}" height="{$largeSize.height}"/>
 						{if !$content_only}
-							{* <span class="span_link">
+							<span class="span_link">
 								{l s='View larger'}
-							</span> *}
+							</span>
 						{/if}
 					</span>
 				{/if}
@@ -116,9 +116,9 @@
 				<div id="views_block" class="clearfix {if isset($images) && count($images) < 2}hidden{/if}">
 					{if isset($images) && count($images) > 2}
 						<span class="view_scroll_spacer">
-							<a id="view_scroll_left" class="" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
+							{*<a id="view_scroll_left" class="" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
 								{l s='Previous'}
-							</a>
+							</a>*}
 						</span>
 					{/if}
 					<div id="thumbs_list" class="nav navbar-nav">
@@ -145,9 +145,9 @@
 						</ul>
 			</div> <!-- end thumbs_list -->
 					{if isset($images) && count($images) > 2}
-						<a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
+						{*<a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
 							{l s='Next'}
-						</a>
+						</a>*}
 					{/if}
 				</div> <!-- end views-block -->
 				<!-- end thumbnails -->
@@ -465,9 +465,10 @@
 	  		 </p>
 	  	 </div>
 			<!-- Out of stock hook -->
-			{* <div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
+			<div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
 				{$HOOK_PRODUCT_OOS}
 			</div>
+			{*
 			{if isset($HOOK_EXTRA_RIGHT) && $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
 			{if !$content_only}
 				<!-- usefull links-->

@@ -294,8 +294,6 @@
                         </tbody>
                     {/if}
                 </table>
-              </div>
-            </div>
           </div> <!-- end order-detail-content -->
         {/if}
         {if $opc}
@@ -304,8 +302,11 @@
         <div id="HOOK_PAYMENT">
             {$HOOK_PAYMENT}
         </div>
+      </div>
+    </div>
         {if $opc}
             </div> <!-- end opc_payment_methods-content -->
+
         {/if}
     {else}
         <p class="alert alert-warning">{l s='No payment modules have been installed.'}</p>

@@ -31,7 +31,7 @@
 		<input class="form-control" type="hidden" name="orderway" value="desc" />
 		<label class="col-md-1 text-right hidden-sm"><i class="fa fa-search fa-2x" aria-hidden="true" ></i>&nbsp;</label>
 		<div class="col-md-10">
-		<input class="search_query form-control" type="text" id="search_query_top" name="search_query" placeholder="{l s='Search' mod='blocksearch'}" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" />
+		<input class="search_query form-control" type="text" id="search_query_top id" name="search_query" placeholder="{l s='Search' mod='blocksearch'}" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" />
 		</div>
 	</form>
 		</div>

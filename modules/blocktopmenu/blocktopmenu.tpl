@@ -4,14 +4,14 @@
 		<nav class="navbar navbar-static-top yamm ms-navbar ms-navbar-white">
 					<div class="container container-full">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="index.html">
+							<a class="navbar-brand" href="index.php">
 								<img class="animated fadeInUp animation-delay-6 img-responsive center-block" style="max-width: 200px;" src="{$img_dir}logo2.svg" alt="Logo Color">
 							</a>
 						</div>
 						<div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">
 								<li class="dropdown">
-									<a href="javascript:void(0)" class="dropdown-toggle animated fadeIn animation-delay-4" data-toggle="dropdown" data-hover="dropdown" data-name="home"><i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i>{l s='My store'}<i class="zmdi zmdi-chevron-down"></i>
+									<a href="" class="dropdown-toggle animated fadeIn animation-delay-4" data-toggle="dropdown" data-hover="dropdown" data-name="home"><i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i>{l s='My store'}<i class="zmdi zmdi-chevron-down"></i>
 									</a>
 									<ul class="dropdown-menu">
 										<li>
@@ -30,7 +30,7 @@
 									<a href="index.php?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="javascript:void(0)"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
+									<a href=""><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="index.php?controller=contact"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Support'}</span></a>
@@ -78,7 +78,7 @@
 									</ul>
 								</li>
 								<li>
-									<a href="javascript:void(0)" class="animated fadeIn animation-delay-2" title="Tus Favoritos"><i class="fa fa-heart-o fa-lg color-danger" aria-hidden="true"></i></a>
+									<a href="" class="animated fadeIn animation-delay-2" title="Tus Favoritos"><i class="fa fa-heart-o fa-lg color-danger" aria-hidden="true"></i></a>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
@@ -119,9 +119,9 @@
 							</ul>
 						</div>
 						<!-- navbar-collapse collapse -->
-						<a class="sb-toggle-left btn-navbar-menu visible-xs">
-							<i class="zmdi zmdi-menu"></i>
-						</a>
+						<a href="javascript:void(0)" class="sb-toggle-left btn-navbar-menu visible-xs">
+            <i class="zmdi zmdi-menu"></i>
+          </a>
 					</div>
 					<!-- container -->
 				</nav>
@@ -131,9 +131,9 @@
 			    <div class="ms-slidebar sb-slidebar sb-left sb-momentum-scrolling sb-style-overlay">
 			      <header class="ms-slidebar-header">
 			        <div class="ms-slidebar-login">
-			          <a href="javascript:void(0)" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
+			          <a href="" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
 			            <i class="fa fa-user" aria-hidden="true"></i> {l s='Ingresar'}</a>
-			          <a href="javascript:void(0)" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
+			          <a href="" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
 			            <i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Registrar'}</a>
 			        </div>
 			        <div class="ms-slidebar-title">
@@ -151,15 +151,15 @@
 			            <i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Tienda</a>
 			        </li>
 			        <li>
-			          <a class="link" href="javascript:void(0)">
+			          <a class="link" href="">
 			            <i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> Nosotros</a>
 			        </li>
 			        <li>
-			          <a class="link" href="javascript:void(0)">
+			          <a class="link" href="">
 			            <i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas y Descargas</a>
 			        </li>
 			        <li>
-			          <a class="link" href="javascript:void(0)">
+			          <a class="link" href="">
 			            <i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i> Soporte</a>
 			        </li>
 			      </ul>
@@ -167,17 +167,17 @@
 			        <h4 class="ms-slidebar-block-title">Social Links</h4>
 			        <div class="ms-slidebar-social">
 
-			          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-twitter">
+			          <a href="" class="btn-circle btn-circle-raised btn-twitter">
 			            <i class="zmdi zmdi-twitter"></i>
 			            <div class="ripple-container"></div>
 			          </a>
 
-			          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-youtube">
+			          <a href="" class="btn-circle btn-circle-raised btn-youtube">
 			            <i class="zmdi zmdi-youtube"></i>
 			            <div class="ripple-container"></div>
 			          </a>
 
-			          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-instagram">
+			          <a href="" class="btn-circle btn-circle-raised btn-instagram">
 			            <i class="zmdi zmdi-instagram"></i>
 			            <div class="ripple-container"></div>
 			          </a>
@@ -186,6 +186,5 @@
 			      </div>
 			    </div>
 			    <!-- /. Menu para moviles -->
-	<!--/ Menu -->
 
 {/if}

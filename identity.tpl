@@ -65,8 +65,9 @@
                     {foreach from=$genders key=k item=gender}
                         <div class="radio-inline">
                             <label for="id_gender{$gender->id}" class="top">
+                            {$gender->name}
                             <input type="radio" name="id_gender" id="id_gender{$gender->id}" value="{$gender->id|intval}" {if isset($smarty.post.id_gender) && $smarty.post.id_gender == $gender->id}checked="checked"{/if} />
-                            {$gender->name}</label>
+                          </label>
                         </div>
                     {/foreach}
                 </div>
@@ -153,7 +154,7 @@
                 </div>
                 {if isset($newsletter) && $newsletter}
                 <div class="form-group no-mt">
-                    <div class="checkbox">
+                    <div class="">
                         <label>
                             <input type="checkbox" id="newsletter" name="newsletter" value="1" {if isset($smarty.post.newsletter) && $smarty.post.newsletter == 1} checked="checked"{/if}/>
                             {l s='Sign up for our newsletter!'}
@@ -166,7 +167,7 @@
                 {/if}
                 {if isset($optin) && $optin}
                   <div class="form-group no-mt">
-                    <div class="checkbox">
+                    <div class="">
                         <label for="optin">
                             <input type="checkbox" name="optin" id="optin" value="1" {if isset($smarty.post.optin) && $smarty.post.optin == 1} checked="checked"{/if}/>
                             {l s='Receive special offers from our partners!'}
