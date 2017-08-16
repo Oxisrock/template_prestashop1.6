@@ -3,7 +3,7 @@
 	<div class="medir" style="display: none;"></div>
 	<div id="block_top_menu">
 		<nav class="navbar navbar-static-top yamm ms-navbar ms-navbar-white">
-					<div class="container container-full">
+					<div class="container">
 						<div class="navbar-header">
 							<a class="navbar-brand" href="index.php">
 								<img class="animated fadeInUp animation-delay-6 img-responsive center-block" style="max-width: 200px;" src="{$img_dir}logo2.svg" alt="Logo Color">
@@ -132,7 +132,7 @@
 							</ul>
 						</div>
 						<!-- navbar-collapse collapse -->
-						<a href="javascript:void(0)" onclick="openNav()" class="sb-toggle-left btn-navbar-menu visible-xs">
+						<a href="javascript:void(0)" onclick="openNav()" class="menur sb-toggle-left btn-navbar-menu visible-xs">
             <i class="zmdi zmdi-menu"></i>
           </a>
 					</div>
@@ -142,11 +142,81 @@
 			    MENU PARA MOVILES
 			    ******************************* -->
 					<div id="mySidenav" class="sidenav">
-					  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-					  <a href="#">About</a>
+						<header class="ms-slidebar-header">
+						<div class="ms-slidebar-login text-center">
+          <a href="javascript:void(0)" class="conripple">
+            <i class="fa fa-user" aria-hidden="true"></i> Ingresar</a>
+          <a href="javascript:void(0)" class="conripple">
+            <i class="fa fa-user-plus" aria-hidden="true"></i> Registrar</a>
+						<div class="logo-sidenav">
+						<img class="animated fadeInUp animation-delay-6 img-responsive center-block" src="{$img_dir}bg-slidebar.png" alt="Logo Blanco" width="300px" height="120px">
+					</div>
+						</div>
+						<div class="ms-slidebar-title">
+							<form class="search-form">
+								<form id="searchbox" class="form-group" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}" >
+									<input class="form-control" type="hidden" name="controller" value="search" />
+									<input class="form-control" type="hidden" name="orderby" value="position" />
+									<input class="form-control" type="hidden" name="orderway" value="desc" />
+									<div class="col-md-10 buscador3">
+									<input class="search_query form-control" type="text" id="search_query_top id" name="search_query" placeholder="{l s='Search' mod='blocksearch'}" value="" />
+									<label for="search-box-slidebar" class="col-md-1 hidden-sm">
+              <i class="fa fa-search fa-2x lupa"></i>
+            </label>
+									</div>
+								</form>
+							</form>
+						</div>
+			</header>
+			<div class="ms-slidebar-menu">
+			<ul class="ms-slidebar-menu text-left" id="slidebar-menu" role="tablist" aria-multiselectable="true">
+				<li>
+					<a class="link" href="catalogo.html">
+						<i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Tienda <i class="fa fa-chevron-right fle" aria-hidden="true"></i> </a>
+				</li>
+				<li>
+					<a class="link" href="">
+						<i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> Nosotros <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
+				</li>
+				<li>
+					<a class="link" href="">
+						<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas y Descargas <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
+				</li>
+				<li>
+					<a class="link" href="">
+						<i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i> Soporte <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4 col-xs-6 ms-footer-col">
+		<div class="ms-slidebar-block">
+        <h4 class="ms-slidebar-block-title">Social Links</h4>
+				<div class="ms-footbar-block center-block text-center">
+        <div class="ms-slidebar-social">
+
+          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-twitter">
+            <i class="zmdi zmdi-twitter"></i>
+            <div class="ripple-container"></div>
+          </a>
+
+          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-youtube">
+            <i class="zmdi zmdi-youtube"></i>
+						<div class="ripple-container"></div>
+          </a>
+
+          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-instagram">
+            <i class="zmdi zmdi-instagram"></i>
+						<div class="ripple-container"></div>
+          </a>
+
+        </div>
+      </div>
+		</div>
+	</div>
+					  {* <a href="#">About</a>
 					  <a href="#">Services</a>
 					  <a href="#">Clients</a>
-					  <a href="#">Contact</a>
+					  <a href="#">Contact</a> *}
 					</div>
 	{* <div class="sb-left sb-momentum-scrolling sb-style-overlay">
 		<header class="ms-slidebar-header">

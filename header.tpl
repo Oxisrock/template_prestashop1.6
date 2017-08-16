@@ -118,6 +118,7 @@
 							</div>
 				</header>
 			</div>
+			<div onclick="closeNav()">
 				<div id="columns" class="container container-full">
 					{* {if $page_name !='index' && $page_name !='pagenotfound'}
 						<h1 class="right-line">{include file="$tpl_dir./breadcrumb.tpl"}</h1>
@@ -140,6 +141,8 @@
 						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}"></div>
 						{/if}
 					</div>
+				</div>
+				<div id="main" onclick="closeNav()">
 					<!-- *******************************
       BOTON SUBIR
       ******************************* -->
@@ -150,43 +153,3 @@
       </div>
     </div> *}
     <!-- /.Botón Subir -->
-					<script type="text/javascript">
-      // Modifica el Navbar al hacer scroll //
-      $(document).ready(function(){
-          var altura = $('.medir').offset().top;
-
-        $(window).on('scroll', function(){
-          if ( $(window).scrollTop() > altura ){
-            $('.ver').addClass('nover');
-          } else {
-            $('.ver').removeClass('nover');
-          }
-        });
-      });
-
-      // Modifica el Navbar en tablets //
-      $(document).ready(function(){
-          var altura = $('.medir').offset().top;
-
-        $(window).on('scroll', function(){
-          if ( $(window).scrollTop() > altura ){
-            $('.tablet').addClass('ocultar');
-          } else {
-            $('.tablet').removeClass('ocultar');
-          }
-        });
-      });
-
-      // Muestra el buscador al hacer scroll //
-      $(document).ready(function(){
-          var altura = $('.medir').offset().top;
-
-        $(window).on('scroll', function(){
-          if ( $(window).scrollTop() > altura ){
-            $('.buscar').addClass('mostrar');
-          } else {
-            $('.buscar').removeClass('mostrar');
-          }
-        });
-      });
-    </script>
