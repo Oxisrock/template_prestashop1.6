@@ -139,7 +139,7 @@
               </div>
             </div>
 
-            <div class="col-md-4 col-xs-6 ms-footer-col ms-footer-text-right" style="background-color: #2061A8;">
+            <div class="col-md-4 col-xs-6 ms-footer-col ms-footer-text-right " style="background-color: #2061A8;">
               <div class="ms-footbar-block">
                 <h3 class="ms-footbar-title">{l s='Contact Us'}</h3>
                 <address class="no-mb">

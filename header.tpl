@@ -60,6 +60,11 @@
 			 <link rel="stylesheet" href="{$css_dir}plugins.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}preload.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}style.light-blue-300.min.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}sidenav.css" type="text/css" media="{$media}" />
+
+			 {* <link rel="stylesheet" href="{$css_dir}comparator.css" type="text/css" media="{$media}" /> *}
+			 {*<link rel="stylesheet" href="{$css_dir}contact-form.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}order-opc.css" type="text/css" media="{$media}" /> *}
 		{/if}
 		{if isset($js_defer) && !$js_defer && isset($js_files) && isset($js_def)}
 			{$js_def}
@@ -93,6 +98,7 @@
 					{if $smarty.capture.displayNav}
 						<div class="ms-header ms-header-white" id="gotas">
 							<div class="container container-full">
+								<div class="row">
 									{* Logo*}
 									<div id="header_logo" class="ms-title trans">
 										<a href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}" title="{$shop_name|escape:'html':'UTF-8'}">
@@ -102,6 +108,7 @@
 										</a>
 									</div>
 									<div id="header_menu" class="ms-title">{$smarty.capture.displayNav}</div>
+								</div>
 								</div>
 							</div>
 					{/if}
@@ -120,15 +127,15 @@
 					<div id="slider_row" class="">
 						{capture name='displayTopColumn'}{hook h='displayTopColumn'}{/capture}
 						{if $smarty.capture.displayTopColumn}
-							<div id="top_column" class="ms-carousel carousel slide hidden-xs;">{$smarty.capture.displayTopColumn}</div>
+							<div id="top_column" class="ms-carousel carousel slide hidden-xs">{$smarty.capture.displayTopColumn}</div>
 						{/if}
 					</div>
-						<div class="" style="background: #bedb02;">
+						<div class="" style="background: #bedb02">
 						{if isset($left_column_size) && !empty($left_column_size)}
 						<div id="left_column" class="column col-xs-12 col-sm-{$left_column_size|intval}">{$HOOK_LEFT_COLUMN}</div>
 						{/if}
 						</div>
-					<div class="" style="background: #bedb02;">
+					<div class="" style="background: #bedb02">
 						{if isset($left_column_size) && isset($right_column_size)}{assign var='cols' value=(12 - $left_column_size - $right_column_size)}{else}{assign var='cols' value=12}{/if}
 						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}"></div>
 						{/if}
@@ -136,10 +143,50 @@
 					<!-- *******************************
       BOTON SUBIR
       ******************************* -->
-      	<div class="btn-back-top hidden-xs">
+      {* <div class="btn-back-top hidden-xs">
         <a href="#" data-scroll id="back-top" class="btn-circle btn-circle-primary btn-circle-sm btn-circle-raised ">
           <i class="zmdi zmdi-long-arrow-up"></i>
         </a>
       </div>
-    </div>
+    </div> *}
     <!-- /.Botón Subir -->
+					<script type="text/javascript">
+      // Modifica el Navbar al hacer scroll //
+      $(document).ready(function(){
+          var altura = $('.medir').offset().top;
+
+        $(window).on('scroll', function(){
+          if ( $(window).scrollTop() > altura ){
+            $('.ver').addClass('nover');
+          } else {
+            $('.ver').removeClass('nover');
+          }
+        });
+      });
+
+      // Modifica el Navbar en tablets //
+      $(document).ready(function(){
+          var altura = $('.medir').offset().top;
+
+        $(window).on('scroll', function(){
+          if ( $(window).scrollTop() > altura ){
+            $('.tablet').addClass('ocultar');
+          } else {
+            $('.tablet').removeClass('ocultar');
+          }
+        });
+      });
+
+      // Muestra el buscador al hacer scroll //
+      $(document).ready(function(){
+          var altura = $('.medir').offset().top;
+
+        $(window).on('scroll', function(){
+          if ( $(window).scrollTop() > altura ){
+            $('.buscar').addClass('mostrar');
+          } else {
+            $('.buscar').removeClass('mostrar');
+          }
+        });
+      });
+    </script>

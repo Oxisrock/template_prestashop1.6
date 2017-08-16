@@ -28,10 +28,10 @@
 	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8" title="Ingresar">
 				<i class="zmdi zmdi-account"></i>
 			</a>
-	<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+	<a href="?id_lang=2" class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
 				<img src="{$img_dir}lang_eng.png" />
 			</a>
-	<a class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
+	<a href="?id_lang=1" class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8">
 				<img src="{$img_dir}lang_esp.png" />
 			</a>
 			</div>
@@ -41,7 +41,7 @@
 			{if $language.iso_code == $lang_iso}
 			{/if}
 		{/foreach}
-		<ul id="first-languages" class="languages-block_ul toogle_content"	>
+		<ul id="first-languages" class="languages-block_ul toogle_content" style="display: none;"	>
 			{foreach from=$languages key=k item=language name="languages"}
 				<li {if $language.iso_code == $lang_iso}class="selected"{/if}>
 				{if $language.iso_code != $lang_iso}

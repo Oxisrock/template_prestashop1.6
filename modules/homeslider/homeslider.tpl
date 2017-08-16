@@ -27,7 +27,7 @@
 <!-- Module HomeSlider -->
     {if isset($homeslider_slides)}
     <div id="carousel-example-generic" class="ms-carousel carousel slide hidden-xs" data-ride="carousel" style="margin-top: -55px">
-      <img src="assets/img/home_movil.jpg" class="visible-xs img-responsive" style="margin-top: -55px" alt="...">
+      <img src="{$img_dir}home_movil.jpg" class="visible-xs img-responsive" style="margin-top: -55px" alt="..." >
       <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>

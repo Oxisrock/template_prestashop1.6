@@ -1,5 +1,6 @@
 {if $MENU != ''}
 	<!-- Menu -->
+	<div class="medir" style="display: none;"></div>
 	<div id="block_top_menu">
 		<nav class="navbar navbar-static-top yamm ms-navbar ms-navbar-white">
 					<div class="container container-full">
@@ -35,13 +36,25 @@
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="index.php?controller=contact"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Support'}</span></a>
 								</li>
-								<li class="buscar oculto">
-										<form id="buscador">
-											<label for="search-box-slidebar" class="col-md-1 text-right hidden-sm"><i class="fa fa-search fa-lg color-success"  aria-hidden="true"></i></label>
-											<div class="col-md-10">
-												<input id="search-box-slidebar" type="text" placeholder="Buscar..." name="q" />
-											</div>
-										</form>
+								<li class="buscar oculto animated fadeIn animation-delay-2">
+									{* <form id="searchbox" class="form-group" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}" >
+										<input class="form-control" type="hidden" name="controller" value="search" />
+										<input class="form-control" type="hidden" name="orderby" value="position" />
+										<input class="form-control" type="hidden" name="orderway" value="desc" />
+										<label class="col-md-1 text-right hidden-sm"><i class="fa fa-search fa-2x" aria-hidden="true" ></i>&nbsp;</label>
+										<div class="col-md-10">
+										<input class="search_query form-control" type="text" id="search_query_top " name="search_query" placeholder="{l s='Search' mod='blocksearch'}" value="{$search_query|escape:'htmlall':'UTF-8'|stripslashes}" />
+										</div>
+									</form> *}
+									<form id="buscador" class="form-group" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}">
+										<input class="form-control" type="hidden" name="controller" value="search" />
+										<input class="form-control" type="hidden" name="orderby" value="position" />
+										<input class="form-control" type="hidden" name="orderway" value="desc" />
+									<label for="search-box-slidebar" class="col-md-1 text-right hidden-sm"><i class="fa fa-search fa-lg color-success"  aria-hidden="true"></i></label>
+									<div class="col-md-10">
+										<input id="search-box-slidebar" class="search_query" type="text" name="search_query" placeholder="{l s='Search' mod='blocksearch'}"/>
+									</div>
+								</form>
 								</li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right tablet">
@@ -119,7 +132,7 @@
 							</ul>
 						</div>
 						<!-- navbar-collapse collapse -->
-						<a href="javascript:void(0)" class="sb-toggle-left btn-navbar-menu visible-xs">
+						<a href="javascript:void(0)" onclick="openNav()" class="sb-toggle-left btn-navbar-menu visible-xs">
             <i class="zmdi zmdi-menu"></i>
           </a>
 					</div>
@@ -128,63 +141,79 @@
 				<!-- ******************************
 			    MENU PARA MOVILES
 			    ******************************* -->
-			    <div class="ms-slidebar sb-slidebar sb-left sb-momentum-scrolling sb-style-overlay">
-			      <header class="ms-slidebar-header">
-			        <div class="ms-slidebar-login">
-			          <a href="" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
-			            <i class="fa fa-user" aria-hidden="true"></i> {l s='Ingresar'}</a>
-			          <a href="" class="conripple" data-toggle="modal" data-target="#ms-account-modal">
-			            <i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Registrar'}</a>
-			        </div>
-			        <div class="ms-slidebar-title">
-			          <form class="search-form">
-			            <input id="search-box-slidebar" type="text" class="search-input" placeholder="Buscar..." name="q" />
-			            <label for="search-box-slidebar">
-			              <i class="zmdi zmdi-search"></i>
-			            </label>
-			          </form>
-			        </div>
-			      </header>
-			      <ul class="ms-slidebar-menu" id="slidebar-menu" role="tablist" aria-multiselectable="true">
-			        <li>
-			          <a class="link" href="catalogo.html">
-			            <i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Tienda</a>
-			        </li>
-			        <li>
-			          <a class="link" href="">
-			            <i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> Nosotros</a>
-			        </li>
-			        <li>
-			          <a class="link" href="">
-			            <i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas y Descargas</a>
-			        </li>
-			        <li>
-			          <a class="link" href="">
-			            <i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i> Soporte</a>
-			        </li>
-			      </ul>
-			      <div class="ms-slidebar-social ms-slidebar-block">
-			        <h4 class="ms-slidebar-block-title">Social Links</h4>
-			        <div class="ms-slidebar-social">
+					<div id="mySidenav" class="sidenav">
+					  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					  <a href="#">About</a>
+					  <a href="#">Services</a>
+					  <a href="#">Clients</a>
+					  <a href="#">Contact</a>
+					</div>
+	{* <div class="sb-left sb-momentum-scrolling sb-style-overlay">
+		<header class="ms-slidebar-header">
+			<div class="ms-slidebar-login">
+				<a href="" class="botons-login" data-toggle="modal" data-target="#ms-account-modal">
+					<i class="fa fa-user" aria-hidden="true"></i> {l s='Ingresar'}</a>
+				<a href="" class="botons-login" data-toggle="modal" data-target="#ms-account-modal">
+					<i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Registrar'}</a>
+					<img class="animated fadeInUp animation-delay-6 img-responsive center-block" src="{$img_dir}logob.svg" alt="Logo Blanco">
+			</div>
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-times"></i></a>
+			<div class="ms-slidebar-title">
+				<form class="search-form">
+					<form id="searchbox" class="form-group" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}" >
+						<input class="form-control" type="hidden" name="controller" value="search" />
+						<input class="form-control" type="hidden" name="orderby" value="position" />
+						<input class="form-control" type="hidden" name="orderway" value="desc" />
+						<label class="col-sm-1 text-right hidden-sm"><i class="fa fa-search fa-2x" aria-hidden="true" ></i>&nbsp;</label>
+						<div class="col-md-10">
+						<input class="search_query form-control" type="text" id="search_query_top id" name="search_query" placeholder="{l s='Search' mod='blocksearch'}" value="" />
+						</div>
+					</form>
+				</form>
+			</div>
+		</header>
+		<ul class="ms-slidebar-menu" id="slidebar-menu" role="tablist" aria-multiselectable="true">
+			<li>
+				<a class="link" href="catalogo.html">
+					<i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Tienda</a>
+			</li>
+			<li>
+				<a class="link" href="">
+					<i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> Nosotros</a>
+			</li>
+			<li>
+				<a class="link" href="">
+					<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas y Descargas</a>
+			</li>
+			<li>
+				<a class="link" href="">
+					<i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i> Soporte</a>
+			</li>
+		</ul>
+		<div class="ms-slidebar-social ms-slidebar-block">
+			<h4 class="ms-slidebar-block-title">Social Links</h4>
+			<div class="ms-slidebar-social">
 
-			          <a href="" class="btn-circle btn-circle-raised btn-twitter">
-			            <i class="zmdi zmdi-twitter"></i>
-			            <div class="ripple-container"></div>
-			          </a>
+				<a href="" class="btn-circle btn-circle-raised btn-twitter">
+					<i class="zmdi zmdi-twitter"></i>
+					<div class="ripple-container"></div>
+				</a>
 
-			          <a href="" class="btn-circle btn-circle-raised btn-youtube">
-			            <i class="zmdi zmdi-youtube"></i>
-			            <div class="ripple-container"></div>
-			          </a>
+				<a href="" class="btn-circle btn-circle-raised btn-youtube">
+					<i class="zmdi zmdi-youtube"></i>
+					<div class="ripple-container"></div>
+				</a>
 
-			          <a href="" class="btn-circle btn-circle-raised btn-instagram">
-			            <i class="zmdi zmdi-instagram"></i>
-			            <div class="ripple-container"></div>
-			          </a>
+				<a href="" class="btn-circle btn-circle-raised btn-instagram">
+					<i class="zmdi zmdi-instagram"></i>
+					<div class="ripple-container"></div>
+				</a>
 
-			        </div>
-			      </div>
-			    </div>
+			</div>
+		</div>
+	</div> *}
+
+
 			    <!-- /. Menu para moviles -->
 
 {/if}
