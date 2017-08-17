@@ -22,7 +22,6 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
 {if isset($no_follow) AND $no_follow}
 	{assign var='no_follow_text' value=' rel="nofollow"'}
 {else}
@@ -52,7 +51,8 @@
 		{assign var='requestNb' value=$link->getPaginationLink(false, false, true, false, false, true)}
 	{/if}
 	<!-- Pagination -->
-	<div id="pagination{if isset($paginationId)}_{$paginationId}{/if}" class="pagination clearfix">
+	<div id="pagination{if isset($paginationId)}_{$paginationId}{/if}" class="">
+		<div class="card-block no-pb">
 	    {if $nb_products > $products_per_page && $start!=$stop}
 			<form class="showall" action="{if !is_array($requestNb)}{$requestNb}{else}{$requestNb.requestUrl}{/if}" method="get">
 				<div>
@@ -62,7 +62,7 @@
 					{if isset($tag) AND $tag AND !is_array($tag)}
 						<input type="hidden" name="tag" value="{$tag|escape:'html':'UTF-8'}" />
 					{/if}
-	                <button type="submit" class="btn btn-default button exclusive-medium">
+	                <button type="submit" class="btn btn-raised btn-primary exclusive-medium">
 	                	<span>{l s='Show all'}</span>
 	                </button>
 					{if is_array($requestNb)}
@@ -77,47 +77,48 @@
 			</form>
 		{/if}
 		{if $start!=$stop}
-			<ul class="pagination">
+			<ul class="nav nav-tabs nav-tabs-primary indicator-primary nav-tabs-7 hidden-xs hidden-sm">
 				{if $p != 1}
 					{assign var='p_previous' value=$p-1}
-					<li id="pagination_previous{if isset($paginationId)}_{$paginationId}{/if}" class="pagination_previous">
-						<a{$no_follow_text} href="{$link->goPage($requestPage, $p_previous)}" rel="prev">
+					<li id="pagination_previous{if isset($paginationId)}_{$paginationId}{/if}" class="">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, $p_previous)}" rel="prev" class="conoutripple">
 							<i class="icon-chevron-left"></i> <b>{l s='Previous'}</b>
 						</a>
 					</li>
 				{else}
-					<li id="pagination_previous{if isset($paginationId)}_{$paginationId}{/if}" class="disabled pagination_previous">
+					<li id="pagination_previous{if isset($paginationId)}_{$paginationId}{/if}" class="disabled">
 						<span>
 							<i class="icon-chevron-left"></i> <b>{l s='Previous'}</b>
 						</span>
 					</li>
 				{/if}
+				{*
 				{if $start==3}
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, 1)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, 1)}" class="conoutripple">
 							<span>1</span>
 						</a>
 					</li>
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, 2)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, 2)}" class="conoutripple">
 							<span>2</span>
 						</a>
 					</li>
 				{/if}
 				{if $start==2}
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, 1)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, 1)}" class="conoutripple">
 							<span>1</span>
 						</a>
 					</li>
 				{/if}
 				{if $start>3}
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, 1)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, 1)}" class="conoutripple">
 							<span>1</span>
 						</a>
 					</li>
-					<li class="truncate">
+					<li class="">
 						<span>
 							<span>...</span>
 						</span>
@@ -125,83 +126,86 @@
 				{/if}
 				{section name=pagination start=$start loop=$stop+1 step=1}
 					{if $p == $smarty.section.pagination.index}
-						<li class="active current">
+						<li class="">
 							<span>
 								<span>{$p|escape:'html':'UTF-8'}</span>
 							</span>
 						</li>
 					{else}
 						<li>
-							<a{$no_follow_text} href="{$link->goPage($requestPage, $smarty.section.pagination.index)}">
+							<a{$no_follow_text} href="{$link->goPage($requestPage, $smarty.section.pagination.index)}" class="conoutripple">
 								<span>{$smarty.section.pagination.index|escape:'html':'UTF-8'}</span>
 							</a>
 						</li>
 					{/if}
 				{/section}
 				{if $pages_nb>$stop+2}
-					<li class="truncate">
+					<li class="">
 						<span>
 							<span>...</span>
 						</span>
 					</li>
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb)}" class="conoutripple">
 							<span>{$pages_nb|intval}</span>
 						</a>
 					</li>
 				{/if}
 				{if $pages_nb==$stop+1}
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb)}" class="conoutripple">
 							<span>{$pages_nb|intval}</span>
 						</a>
 					</li>
 				{/if}
 				{if $pages_nb==$stop+2}
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb-1)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb-1)}" class="conoutripple">
 							<span>{$pages_nb-1|intval}</span>
 						</a>
 					</li>
 					<li>
-						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb)}">
+						<a{$no_follow_text} href="{$link->goPage($requestPage, $pages_nb)}" class="conoutripple">
 							<span>{$pages_nb|intval}</span>
 						</a>
 					</li>
-				{/if}
+				{/if} *}
 				{if $pages_nb > 1 AND $p != $pages_nb}
 					{assign var='p_next' value=$p+1}
-					<li id="pagination_next{if isset($paginationId)}_{$paginationId}{/if}" class="pagination_next">
+					<li id="pagination_next{if isset($paginationId)}_{$paginationId}{/if}" class="conoutripple">
 						<a{$no_follow_text} href="{$link->goPage($requestPage, $p_next)}" rel="next">
 							<b>{l s='Next'}</b> <i class="icon-chevron-right"></i>
 						</a>
 					</li>
 				{else}
-					<li id="pagination_next{if isset($paginationId)}_{$paginationId}{/if}" class="disabled pagination_next">
+					<li id="pagination_next{if isset($paginationId)}_{$paginationId}{/if}" class="disabled conoutripple">
 						<span>
 							<b>{l s='Next'}</b> <i class="icon-chevron-right"></i>
 						</span>
 					</li>
 				{/if}
 			</ul>
-		{/if}
+			{/if}
+	</div>
 	</div>
     <div class="product-count">
+			<div class="card-block no-pb">
     	{if ($n*$p) < $nb_products }
-    		{assign var='productShowing' value=$n*$p}
+    		<span class="no-m color-primary">{assign var='productShowing' value=$n*$p}</span>
         {else}
-        	{assign var='productShowing' value=($n*$p-$nb_products-$n*$p)*-1}
+        	<span class="no-m color-primary">{assign var='productShowing' value=($n*$p-$nb_products-$n*$p)*-1}</span>
         {/if}
         {if $p==1}
-        	{assign var='productShowingStart' value=1}
+        	<span class="no-m color-primary">{assign var='productShowingStart' value=1}</span>
         {else}
-        	{assign var='productShowingStart' value=$n*$p-$n+1}
+			<span class="no-m color-primary">{assign var='productShowingStart' value=$n*$p-$n+1}</span>
         {/if}
         {if $nb_products > 1}
-        	{l s='Showing %1$d - %2$d of %3$d items' sprintf=[$productShowingStart, $productShowing, $nb_products]}
+        	<span class="no-m color-primary">{l s='Showing %1$d - %2$d of %3$d items' sprintf=[$productShowingStart, $productShowing, $nb_products]}</span>
 		{else}
-        	{l s='Showing %1$d - %2$d of 1 item' sprintf=[$productShowingStart, $productShowing]}
+        	<span class="no-m color-primary">{l s='Showing %1$d - %2$d of 1 item' sprintf=[$productShowingStart, $productShowing]}</span>
        	{/if}
-    </div>
+			</div>
+		</div>
 	<!-- /Pagination -->
 {/if}

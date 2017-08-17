@@ -39,6 +39,7 @@
 	{/if}
 	<!-- nbr product/page -->
 	{if $nb_products > $nArray[0]}
+	<div class="card-block no-pb">
 		<form action="{if !is_array($requestNb)}{$requestNb|escape:'html':'UTF-8'}{else}{$requestNb.requestUrl|escape:'html':'UTF-8'}{/if}" method="get" class="nbrItemPage">
 			<div class="clearfix selector1">
 				{if isset($search_query) AND $search_query}
@@ -47,9 +48,9 @@
 				{if isset($tag) AND $tag AND !is_array($tag)}
 					<input type="hidden" name="tag" value="{$tag|escape:'html':'UTF-8'}" />
 				{/if}
-				<label for="nb_page_items{if isset($paginationId)}_{$paginationId}{/if}">
+				<h4 for="nb_page_items{if isset($paginationId)}_{$paginationId}{/if}" class="no-m color-primary">
 					{l s='Show'}
-				</label>
+				</h4>
 				{if is_array($requestNb)}
 					{foreach from=$requestNb item=requestValue key=requestKey}
 						{if $requestKey != 'requestUrl'}
@@ -66,9 +67,10 @@
 						{assign var="lastnValue" value=$nValue}
 					{/foreach}
 				</select>
-				<span>{l s='per page'}</span>
+				<span class="no-m color-primary">{l s='per page'}</span>
 			</div>
 		</form>
+	</div>
 	{/if}
 	<!-- /nbr product/page -->
 {/if}

@@ -23,11 +23,11 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 {if isset($orderby) AND isset($orderway)}
-<ul class="display hidden-xs">
-	<li class="display-title">{l s='View:'}</li>
-    <li id="grid"><a rel="nofollow" href="#" title="{l s='Grid'}"><i class="icon-th-large"></i>{l s='Grid'}</a></li>
-    <li id="list"><a rel="nofollow" href="#" title="{l s='List'}"><i class="icon-th-list"></i>{l s='List'}</a></li>
+<ul class="">
+	<li class=""><h4 class="no-m color-primary">{l s='View:'}</h4></li>
+    <li id="grid"><a rel="nofollow" href="#" title="{l s='Grid'}"><i class="icon-th-large"></i>{l s='Grid'}</a> <a id="list" rel="nofollow" href="#" title="{l s='List'}"><i class="icon-th-list"></i>{l s='List'}</a></li>
 </ul>
+
 {* On 1.5 the var request is setted on the front controller. The next lines assure the retrocompatibility with some modules *}
 {if !isset($request)}
 	<!-- Sort products -->
@@ -41,10 +41,11 @@
 		{assign var='request' value=$link->getPaginationLink(false, false, false, true)}
 	{/if}
 {/if}
+<div class="card-block no-pb">
 {if $page_name == 'best-sales' && (!isset($smarty.get.orderby) || empty($smarty.get.orderby))}{$orderby = ''}{$orderbydefault = ''}{/if}
 <form id="productsSortForm{if isset($paginationId)}_{$paginationId}{/if}" action="{$request|escape:'html':'UTF-8'}" class="productsSortForm">
 	<div class="select selector1">
-		<label for="selectProductSort{if isset($paginationId)}_{$paginationId}{/if}">{l s='Sort by'}</label>
+		<h4 class="no-m color-primary" for="selectProductSort{if isset($paginationId)}_{$paginationId}{/if}">{l s='Sort by'}</h4>
 		<select id="selectProductSort{if isset($paginationId)}_{$paginationId}{/if}" class="selectProductSort form-control">
 			<option value="{if $page_name != 'best-sales'}{$orderbydefault|escape:'html':'UTF-8'}:{$orderwaydefault|escape:'html':'UTF-8'}{/if}"{if !in_array($orderby, array('price', 'name', 'quantity', 'reference')) && $orderby eq $orderbydefault} selected="selected"{/if}>--</option>
 			{if !$PS_CATALOG_MODE}
@@ -61,6 +62,8 @@
 		</select>
 	</div>
 </form>
+</div>
+</div>
 <!-- /Sort products -->
 	{if !isset($paginationId) || $paginationId == ''}
 		{addJsDef request=$request}

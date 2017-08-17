@@ -119,6 +119,9 @@
 				</header>
 			</div>
 			<div onclick="closeNav()">
+				{* <a href="catalogo.html" class="ms-conf-btn ms-configurator-btn btn-circle btn-circle-raised btn-circle-success animated rubberBand" title="Catálogo">
+      <i class="fa fa-shopping-basket fa-lg"></i>
+    </a> *}
 				<div id="columns" class="container container-full">
 					{* {if $page_name !='index' && $page_name !='pagenotfound'}
 						<h1 class="right-line">{include file="$tpl_dir./breadcrumb.tpl"}</h1>
@@ -141,8 +144,6 @@
 						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}"></div>
 						{/if}
 					</div>
-				</div>
-				<div id="main" onclick="closeNav()">
 					<!-- *******************************
       BOTON SUBIR
       ******************************* -->

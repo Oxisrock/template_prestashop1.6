@@ -81,7 +81,7 @@
 									{if $is_logged}
 									<li>
 										<a href="index.php?controller=authentication&back=my-account">
-											<i class="fa fa-user" aria-hidden="true"></i>{$cookie->customer_firstname} {$cookie->customer_lastname}</a>
+											<i class="fa fa-user" aria-hidden="true"></i>{l s='My account'} </a>
 									</li>
 									<li>
 										<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}">
@@ -105,7 +105,7 @@
                       <i class="fa fa-download" aria-hidden="true"></i> {l s='Download'}</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">
+                    <a href="http://support.bluehorizon.us/" target="_blank">
                       <i class="fa fa-question-circle" aria-hidden="true"></i> {l s='FAQS'}</a>
                   </li>
                   <li>

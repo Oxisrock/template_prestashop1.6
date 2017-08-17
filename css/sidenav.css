@@ -1,3 +1,6 @@
+.col-md-9 {
+  width: 70%!important;
+}
 /* The side navigation menu */
 .sidenav {
     height: 100vh; /* 100% Full-height */
@@ -13,7 +16,8 @@
     padding-top: 0; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-
+body{overflow-y: hidden;
+	 overflow-x: scroll;}
 /* The navigation menu links */
 .sidenav a {
     padding: 8px 8px 8px 22px;
@@ -24,7 +28,7 @@
     transition: 0.3s*/
 }
 .sidenav .ms-slidebar-login a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 8px;
   text-decoration: none;
   /*font-size: 25px;*/
   color: #fff;

@@ -103,19 +103,35 @@
         {/if}
 		{/if}
 		{if $products}
+		<div class="wrap" style="background-color: #d6f3ff;">
+		        <div class="container">
+		          <div class="row">
+		            <div class="col-md-3">
+		              <div class="card card-primary">
+		                <div class="card-header">
+											<h3 class="card-title">
+                    <i class="zmdi zmdi-filter-list"></i>Seleccionador</h3>
+									</div>
 			<div class="content_sortPagiBar clearfix">
             	<div class="sortPagiBar clearfix">
             		{include file="./product-sort.tpl"}
                 	{include file="./nbr-product-page.tpl"}
+									{include file="$tpl_dir./pagination.tpl"}
 				</div>
                 <div class="top-pagination-content clearfix">
-                	{include file="./product-compare.tpl"}
-					{include file="$tpl_dir./pagination.tpl"}
+                	{* {include file="./product-compare.tpl"} *}
+					{* {include file="$tpl_dir./pagination.tpl"} *}
                 </div>
-			</div>
-			{include file="./product-list.tpl" products=$products}
 		</div>
 	</div>
+	<div class="col-md-9">
+						{include file="./list-product-category.tpl" products=$products}
+					</div>
+</div>
+</div>
+</div>
+</div>
+
 			<div class="content_sortPagiBar">
 				{* <div class="bottom-pagination-content clearfix">
 					{include file="./product-compare.tpl" paginationId='bottom'}

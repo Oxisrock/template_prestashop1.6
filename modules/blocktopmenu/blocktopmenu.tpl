@@ -31,10 +31,10 @@
 									<a href="index.php?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href=""><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
+									<a href="?controller=contact"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?controller=contact"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Support'}</span></a>
+									<a href="http://support.bluehorizon.us/" target="_blank"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Support'}</span></a>
 								</li>
 								<li class="buscar oculto animated fadeIn animation-delay-2">
 									{* <form id="searchbox" class="form-group" method="get" action="{$link->getPageLink('search', null, null, null, false, null, true)|escape:'html':'UTF-8'}" >
@@ -144,10 +144,25 @@
 					<div id="mySidenav" class="sidenav">
 						<header class="ms-slidebar-header">
 						<div class="ms-slidebar-login text-center">
-          <a href="javascript:void(0)" class="conripple">
+							{if !$is_logged}
+							<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow" class="dropdown-toggle animated fadeIn animation-delay-2" ><i class="fa fa-shopping-cart fa-lg color-white" aria-hidden="true"></i><span class="hidden-sm"></span>
+								<i class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</i></i>
+							</a>
+					<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}"  rel="nofollow" title="{l s='Log in to your customer account' mod='blockuserinfo'}" class="conripple">
             <i class="fa fa-user" aria-hidden="true"></i> Ingresar</a>
-          <a href="javascript:void(0)" class="conripple">
+          <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" class="conripple">
             <i class="fa fa-user-plus" aria-hidden="true"></i> Registrar</a>
+						{/if}
+						{if $is_logged}
+						<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow" class="dropdown-toggle animated fadeIn animation-delay-2" ><i class="fa fa-shopping-cart fa-lg color-white" aria-hidden="true"></i><span class="hidden-sm"></span>
+							<i class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</i></i>
+						</a>
+						<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='View my customer account' mod='blockuserinfo'}" class="account" rel="nofollow">
+						<i class="fa fa-user" aria-hidden="true"></i> <span class="">{$cookie->customer_firstname} {$cookie->customer_lastname}</span></a>
+						<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" ><i class="fa fa-user-times" aria-hidden="true"></i>
+							{l s='Sign out' mod='blockuserinfo'}</a>
+					</li>
+						{/if}
 						<div class="logo-sidenav">
 						<img class="animated fadeInUp animation-delay-6 img-responsive center-block" src="{$img_dir}bg-slidebar.png" alt="Logo Blanco" width="300px" height="120px">
 					</div>
@@ -159,7 +174,7 @@
 									<input class="form-control" type="hidden" name="orderby" value="position" />
 									<input class="form-control" type="hidden" name="orderway" value="desc" />
 									<div class="col-md-10 buscador3">
-									<input class="search_query form-control" type="text" id="search_query_top id" name="search_query" placeholder="{l s='Search' mod='blocksearch'}" value="" />
+									<input class="search_query form-control" type="text" id="search_query_top id" name="search_query"/>
 									<label for="search-box-slidebar" class="col-md-1 hidden-sm">
               <i class="fa fa-search fa-2x lupa"></i>
             </label>
@@ -171,19 +186,19 @@
 			<div class="ms-slidebar-menu">
 			<ul class="ms-slidebar-menu text-left" id="slidebar-menu" role="tablist" aria-multiselectable="true">
 				<li>
-					<a class="link" href="catalogo.html">
+					<a class="link" href="index.php">
 						<i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Tienda <i class="fa fa-chevron-right fle" aria-hidden="true"></i> </a>
 				</li>
 				<li>
-					<a class="link" href="">
+					<a class="link" href="?id_cms=4&controller=cms&id_lang=1">
 						<i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> Nosotros <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 				</li>
 				<li>
-					<a class="link" href="">
+					<a class="link" href="index.php?controller=contact">
 						<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas y Descargas <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 				</li>
 				<li>
-					<a class="link" href="">
+					<a class="link" href="http://support.bluehorizon.us/" target="_blank">
 						<i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i> Soporte <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 				</li>
 			</ul>
@@ -194,20 +209,17 @@
 				<div class="ms-footbar-block center-block text-center">
         <div class="ms-slidebar-social">
 
-          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-twitter">
-            <i class="zmdi zmdi-twitter"></i>
-            <div class="ripple-container"></div>
-          </a>
+					<a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-twitter">
+						<i class="zmdi zmdi-twitter fa-lg"></i>
+					</a>
 
-          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-youtube">
-            <i class="zmdi zmdi-youtube"></i>
-						<div class="ripple-container"></div>
-          </a>
+					<a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-youtube">
+						<i class="zmdi zmdi-youtube fa-lg"></i>
+					</a>
 
-          <a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-instagram">
-            <i class="zmdi zmdi-instagram"></i>
-						<div class="ripple-container"></div>
-          </a>
+					<a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-instagram">
+						<i class="zmdi zmdi-instagram fa-lg"></i>
+					</a>
 
         </div>
       </div>
