@@ -47,13 +47,17 @@ class="page-heading {if !isset($instant_search) || (isset($instant_search) && !$
 
 {include file="$tpl_dir./errors.tpl"}
 {if !$nbProducts}
-	<p class="alert alert-warning">
+	<p class="alert alert-primary">
 		{if isset($search_query) && $search_query}
 			{l s='No results were found for your search'}&nbsp;"{if isset($search_query)}{$search_query|escape:'html':'UTF-8'}{/if}"
+      <div class="" style="background: #000; margin-bottom: 22%;">
+      </div>
 		{elseif isset($search_tag) && $search_tag}
 			{l s='No results were found for your search'}&nbsp;"{$search_tag|escape:'html':'UTF-8'}"
+      <div class="" style="background: #000; margin-bottom: 22%;">
 		{else}
 			{l s='Please enter a search keyword'}
+      <div class="" style="background: #000; margin-bottom: 22%;">
 		{/if}
 	</p>
 {else}
@@ -62,28 +66,30 @@ class="page-heading {if !isset($instant_search) || (isset($instant_search) && !$
             {if $nbProducts == 1}{l s='%d result has been found.' sprintf=$nbProducts|intval}{else}{l s='%d results have been found.' sprintf=$nbProducts|intval}{/if}
         </p>
     {/if}
+    <div class="wrap" style="background-color: #d6f3ff;">
+		        <div class="container">
+		          <div class="row">
+		            <div class="col-md-3">
+		              <div class="card card-primary">
+		                <div class="card-header">
+											<h3 class="card-title">
+                    <i class="zmdi zmdi-filter-list"></i>Seleccionador</h3>
+									</div>
     <div class="content_sortPagiBar">
         <div class="sortPagiBar clearfix {if isset($instant_search) && $instant_search} instant_search{/if}">
             {include file="$tpl_dir./product-sort.tpl"}
             {if !isset($instant_search) || (isset($instant_search) && !$instant_search)}
                 {include file="./nbr-product-page.tpl"}
-            {/if}
-        </div>
-    	<div class="top-pagination-content clearfix">
-            {include file="./product-compare.tpl"}
-            {if !isset($instant_search) || (isset($instant_search) && !$instant_search)}
                 {include file="$tpl_dir./pagination.tpl" no_follow=1}
             {/if}
         </div>
 	</div>
-	{include file="$tpl_dir./product-list.tpl" products=$search_products}
-    <div class="content_sortPagiBar">
-    	<div class="bottom-pagination-content clearfix">
-        	{include file="./product-compare.tpl"}
-        	{if !isset($instant_search) || (isset($instant_search) && !$instant_search)}
-                {include file="$tpl_dir./pagination.tpl" paginationId='bottom' no_follow=1}
-            {/if}
-        </div>
-    </div>
-{/if}
 </div>
+<div class="col-md-9">
+          {include file="./list-product-category.tpl" products=$search_products}
+        </div>
+</div>
+</div>
+</div>
+</div>
+{/if}

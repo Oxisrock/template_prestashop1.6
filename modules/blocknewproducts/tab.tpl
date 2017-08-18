@@ -24,10 +24,19 @@
 *}
 <div class="" style="background: #bedb02">
 <div class="container index-1">
+  {if $lang_iso == en}
 <div data-toggle="tab" href="#blocknewproducts" class="text-center mb-4" style="background: #fff; padding: 5px; border-radius: 4px; margin-top: 12px;">
             <h2 class="color-info-light superh1">{l s='Discover our News Products'}</h2>
             <p class="lead"><b>{l s= 'Welcome'}</b>... {l s='Discover the latest products at incredible prices.'}
             <br>{l s='Do not forget to check our daily offers.'}</p>
 </div>
+{/if}
+{if $lang_iso == es}
+<div data-toggle="tab" href="#blocknewproducts" class="text-center mb-4" style="background: #fff; padding: 5px; border-radius: 4px; margin-top: 12px;">
+            <h2 class="color-info-light superh1">{l s='Descubre nuestros nuevos productos'}</h2>
+            <p class="lead"><b>{l s= 'Bienvenido'}</b>... {l s='Descubre los últimos productos a precios increíbles.'}
+            <br>{l s='No olvide consultar nuestras ofertas diarias.'}</p>
+</div>
+{/if}
 </div>
 </div>

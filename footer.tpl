@@ -59,7 +59,7 @@
 						<aside class="ms-footbar" style="background-color: #2061A8;">
         <div class="container">
           <div class="row">
-
+						{if $lang_iso == en}
             <div class="col-md-4 col-sm-12 ms-footer-col" style="background-color: #2061A8;">
               <div class="ms-footbar-block">
                 <h3 class="ms-footbar-title">Sitemap</h3>
@@ -159,6 +159,107 @@
               </div>
 
             </div>
+						{/if}
+						{if $lang_iso == es}
+						<div class="col-md-4 col-sm-12 ms-footer-col" style="background-color: #2061A8;">
+							<div class="ms-footbar-block">
+								<h3 class="ms-footbar-title">Sitemap</h3>
+								<ul class="list-unstyled ms-icon-list three_cols">
+									<li>
+										<a href="index.php">
+											<i class="fa fa-home" aria-hidden="true"></i> {l s='Home'}</a>
+									</li>
+									{if !$is_logged}
+									<li>
+										<a href="index.php?controller=authentication&back=my-account">
+											<i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Registrar'}</a>
+									</li>
+									<li>
+										<a href="index.php?controller=authentication&back=my-account">
+											<i class="fa fa-user" aria-hidden="true"></i> {l s='Iniciar sesion'}</a>
+									</li>
+									{/if}
+									{if $is_logged}
+									<li>
+										<a href="index.php?controller=authentication&back=my-account">
+											<i class="fa fa-user" aria-hidden="true"></i>{l s='Mi Cuenta'} </a>
+									</li>
+									<li>
+										<a href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}">
+											<i class="fa fa-user-times" aria-hidden="true"></i> {l s='Deslogear'}</a>
+									</li>
+									{/if}
+									<li>
+										<a href="">
+											<i class="fa fa-tint" aria-hidden="true"></i> {l s='Mi tienda'}</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">
+											<i class="zmdi zmdi-favorite-outline"></i> {l s='Favoritos'}</a>
+									</li>
+									<li>
+										<a href="index.php?id_cms=4&controller=cms&id_lang=1">
+											<i class="fa fa-users" aria-hidden="true"></i> {l s='Nosotros'}</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">
+											<i class="fa fa-download" aria-hidden="true"></i> {l s='Descargas'}</a>
+									</li>
+									<li>
+										<a href="http://support.bluehorizon.us/" target="_blank">
+											<i class="fa fa-question-circle" aria-hidden="true"></i> {l s='FAQS'}</a>
+									</li>
+									<li>
+										<a href="index.php?controller=contact">
+											<i class="fa fa-envelope" aria-hidden="true"></i> {l s='Contáctos'}</a>
+									</li>
+									<!-- <li>
+										<a href="javascript:void(0)">
+											<i class="fa fa-file-text-o" aria-hidden="true"></i> Condiciones</a>
+									</li> -->
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-4 col-xs-6 ms-footer-col" style="background-color: #538e1c;">
+							<div class="ms-footbar-block center-block text-center">
+								<img class="animated fadeInUp animation-delay-6 img-responsive center-block" src="{$img_dir}logob.svg" alt="Logo Blanco">
+								<br>
+								<h3 class="ms-footbar-title">{l s='Manténte en contacto'}</h3>
+								<div class="ms-footbar-social">
+									<a href="javascript:void(0)" class="btn-circle btn-twitter">
+										<i class="zmdi zmdi-twitter"></i>
+									</a>
+									<a href="javascript:void(0)" class="btn-circle btn-youtube">
+										<i class="zmdi zmdi-youtube"></i>
+									</a>
+									<a href="javascript:void(0)" class="btn-circle btn-instagram">
+										<i class="zmdi zmdi-instagram"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 col-xs-6 ms-footer-col ms-footer-text-right " style="background-color: #2061A8;">
+							<div class="ms-footbar-block">
+								<h3 class="ms-footbar-title">{l s='Contáctanos'}</h3>
+								<address class="no-mb">
+									<p>
+										<i class="color-danger-light zmdi zmdi-pin mr-1"></i>3874 SW 30th Avenue</p>
+									<p>
+										<i class="color-warning-light zmdi zmdi-map mr-1"></i>Fort Lauderdale, FL</p>
+									<p>
+										<i class="color-info-light zmdi zmdi-email mr-1"></i>
+										<a href="mailto:info@conectala.com">admin@bluehorizon.us</a>
+									</p>
+									<p>
+										<i class="color-royal-light zmdi zmdi-phone mr-1"></i>+34 123 456 7890 </p>
+									<p>
+										<i class="color-success-light fa fa-fax mr-1"></i>+34 123 456 7890 </p>
+								</address>
+							</div>
+							{/if}
+						</div>
           </div>
         </div>
       </aside>

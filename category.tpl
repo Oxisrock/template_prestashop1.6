@@ -118,10 +118,6 @@
                 	{include file="./nbr-product-page.tpl"}
 									{include file="$tpl_dir./pagination.tpl"}
 				</div>
-                <div class="top-pagination-content clearfix">
-                	{* {include file="./product-compare.tpl"} *}
-					{* {include file="$tpl_dir./pagination.tpl"} *}
-                </div>
 		</div>
 	</div>
 	<div class="col-md-9">

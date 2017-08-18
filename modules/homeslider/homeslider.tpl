@@ -37,9 +37,16 @@
         <div class="item active">
               <img src="{$img_dir}carusel01.jpg" alt="...">
               <div class="banner_der color-white">
+                {if $lang_iso == en}
                 <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">{l s= 'Discover our'}<br>
                 <span class="color-warning-light">{l s= 'News'}</span> {l s= 'Products'}</h1>
                 <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
+                {/if}
+                {if $lang_iso == es}
+                <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">{l s= 'Descubre nuestros'}<br>
+                <span class="color-warning-light">{l s= 'Nuevos'}</span> {l s= 'Productos'}</h1>
+                <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
+                {/if}
               </div>
               <div class="carousel-caption">
                   <h3 class="color-warning-light">Lorem ipsum dolor</h3>
@@ -49,9 +56,16 @@
           <div class="item">
               <img src="{$img_dir}carusel02.jpg" alt="...">
               <div class="banner_izq color-white">
+                {if $lang_iso == en}
                 <h1 class="animated fadeInRight animation-delay-15 font-smoothing superh1">{l s= 'Great Filters'}<br>
                 <span class="color-danger-light">{l s= 'Purifiers'}</span> {l s= 'of water'}</h1>
                 <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
+                {/if}
+                {if $lang_iso == es}
+                <h1 class="animated fadeInRight animation-delay-15 font-smoothing superh1">{l s= 'Magníficos filtros'}<br>
+                <span class="color-danger-light">{l s= 'Purificadores'}</span> {l s= 'de agua'}</h1>
+                <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
+                {/if}
               </div>
               <div class="carousel-caption">
                   <h3 class="color-warning-light">Lorem ipsum dolor</h3>
@@ -61,9 +75,16 @@
           <div class="item">
               <img src="{$img_dir}carusel03.jpg" alt="...">
               <div class="banner_der color-white">
+                {if $lang_iso == en}
                 <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">{l s= 'All you'} <span class="color-warning-light">{l s= 'Need'}</span><br>
                 {l s= 'For your Home'}</h1>
                 <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
+                {/if}
+                {if $lang_iso == es}
+                <h1 class="animated fadeInLeft animation-delay-15 font-smoothing superh1">{l s= 'Todo lo que'} <span class="color-warning-light">{l s= 'Necesitas'}</span><br>
+                {l s= 'Para tu hogar'}</h1>
+                <p class="lead animated zoomInUp animation-delay-10 hidden-xs hidden-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus rem vel, atque incidunt. Voluptate repellendus iste illo tempora, alias accusamus odit qui quibusdam ratione impedit esse repellat reprehenderit molestias!</p>
+                {/if}
               </div>
               <div class="carousel-caption">
                   <h3 class="color-warning-light">Lorem ipsum dolor</h3>
