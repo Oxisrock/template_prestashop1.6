@@ -2,12 +2,16 @@
 function openNav() {
     document.getElementById("mySidenav").style.marginLeft = "0px";
 }
-
+function openMsg() {
+    document.getElementById("mensage").style.display = "block";
+}
+function closeMsg() {
+    document.getElementById("mensage").style.display = "none";
+}
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
     document.getElementById("mySidenav").style.marginLeft = "-300px";
 }
-
 // Modifica el Navbar al hacer scroll //
     $(document).ready(function(){
         var altura = $('.medir').offset().top;

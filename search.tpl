@@ -73,7 +73,8 @@ class="page-heading {if !isset($instant_search) || (isset($instant_search) && !$
 		              <div class="card card-primary">
 		                <div class="card-header">
 											<h3 class="card-title">
-                    <i class="zmdi zmdi-filter-list"></i>Seleccionador</h3>
+                    {if $lang_iso == en}<i class="zmdi zmdi-filter-list"></i>Selector</h3>{/if}
+                    {if $lang_iso == es}<i class="zmdi zmdi-filter-list"></i>Seleccionador</h3>{/if}
 									</div>
     <div class="content_sortPagiBar">
         <div class="sortPagiBar clearfix {if isset($instant_search) && $instant_search} instant_search{/if}">

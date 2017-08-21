@@ -71,7 +71,7 @@
 									{if !$is_logged}
                   <li>
                     <a href="index.php?controller=authentication&back=my-account">
-                      <i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Register'}</a>
+                      <i class="fa fa-user-plus" aria-hidden="true"></i> {l s='Sign up'}</a>
                   </li>
                   <li>
                     <a href="index.php?controller=authentication&back=my-account">

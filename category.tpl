@@ -46,7 +46,7 @@
                     </div>
 				{else}
                     <!-- Category image -->
-                    <div class="content_scene_cat_bg"{if $category->id_image} style="background:url({$link->getCatImageLink($category->link_rewrite, $category->id_image, 'category_default')|escape:'html':'UTF-8'})center ; background-size:cover; min-height:439px;"{/if}>
+                    <div class="content_scene_cat_bg"{if $category->id_image} style="background:url({$link->getCatImageLink($category->link_rewrite, $category->id_image, 'category_default')|escape:'html':'UTF-8'})center ; background-size:cover; min-height:14em;"{/if}>
                         {if $category->description}
                             <div class="cat_desc">
                             <span class="category-name">
@@ -110,7 +110,8 @@
 		              <div class="card card-primary">
 		                <div class="card-header">
 											<h3 class="card-title">
-                    <i class="zmdi zmdi-filter-list"></i>Seleccionador</h3>
+												{if $lang_iso == en}<i class="zmdi zmdi-filter-list"></i>Selector</h3>{/if}
+		                    {if $lang_iso == es}<i class="zmdi zmdi-filter-list"></i>Seleccionador</h3>{/if}
 									</div>
 			<div class="content_sortPagiBar clearfix">
             	<div class="sortPagiBar clearfix">

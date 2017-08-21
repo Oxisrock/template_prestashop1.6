@@ -45,8 +45,9 @@
 {if $cart_qties > 0 }
 <p class="alert alert-success">{l s='Some products are in the shopping carts.'}</p>
 {else}
-<p class="alert alert-warning">{l s='Your shopping cart is empty.'}</p>
-
+<p class="alert alert-primary">{l s='Your shopping cart is empty.'}</p>
+<div class="" style="margin-bottom: 20%;">
+</div>
 <ul class="footer_links clearfix">
 	<li>
 		<a class="btn-circle btn-circle-raised btn-circle-primary" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Back to your account'}">
@@ -61,8 +62,6 @@
 		</a>
 	</li>
 </ul>
-<div class="" style="background: #000; margin-bottom: 20%;">
-</div>
 {/if}
 {if isset($empty)}
 	{* <p class="alert alert-warning">{l s='Your shopping cart is empty.'}</p> *}

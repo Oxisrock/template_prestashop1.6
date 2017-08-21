@@ -418,7 +418,7 @@
 																<option value="{$id_attribute|intval}"{if (isset($smarty.get.$groupName) && $smarty.get.$groupName|intval == $id_attribute) || $group.default == $id_attribute} selected="selected"{/if} title="{$group_attribute|escape:'html':'UTF-8'}">{$group_attribute|escape:'html':'UTF-8'}</option>
 															{/foreach}
 														</select>
-													{elseif ($group.group_type == 'color')}
+													{* {elseif ($group.group_type == 'color')}
 														<ul id="color_to_pick_list" class="clearfix">
 															{assign var="default_colorpicker" value=""}
 															{foreach from=$group.attributes key=id_attribute item=group_attribute}
@@ -435,7 +435,7 @@
 																{/if}
 															{/foreach}
 														</ul>
-														<input type="hidden" class="color_pick_hidden" name="{$groupName|escape:'html':'UTF-8'}" value="{$default_colorpicker|intval}" />
+														<input type="hidden" class="color_pick_hidden" name="{$groupName|escape:'html':'UTF-8'}" value="{$default_colorpicker|intval}" /> *}
 													{elseif ($group.group_type == 'radio')}
 														<ul>
 															{foreach from=$group.attributes key=id_attribute item=group_attribute}
@@ -459,10 +459,24 @@
 			</div>
 			<div {if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || (isset($restricted_country_mode) && $restricted_country_mode) || $PS_CATALOG_MODE} class="unvisible"{/if}>
 	  		 <p id="add_to_cart" class="buttons_bottom_block no-print">
-	  			 <button type="submit" name="Submit" class="btn btn-success btn-block btn-raised mt-2 no-mb">
-	  				 <i class="zmdi zmdi-shopping-cart-plus"></i><span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
-	  			 </button>
-	  		 </p>
+					 {if $product->quantity <= 0}
+					 <p id="add_to_cart" class="buttons_bottom_block no-print">
+		  			 <button type="submit" name="Submit" class="btn btn-danger btn-block btn-raised mt-2 no-mb" >
+		  				 <i class="zmdi zmdi-shopping-cart-plus"></i><span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
+		  			 </button>
+		  		 </p>
+
+					 {/if}
+					 {if $product->quantity > 0}
+					 <p id="add_to_cart" class="buttons_bottom_block no-print">
+		  			 <button href="#modal1" type="submit" name="Submit" class="btn btn-success btn-block btn-raised mt-2 no-mb" data-toggle="modal">
+		  				 <i class="zmdi zmdi-shopping-cart-plus"></i><span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
+		  			 </button>
+		  		 </p>
+
+<!-- Modal -->
+
+					 {/if}
 	  	 </div>
 			<!-- Out of stock hook -->
 			<div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
