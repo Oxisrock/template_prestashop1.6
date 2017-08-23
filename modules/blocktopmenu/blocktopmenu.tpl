@@ -226,36 +226,34 @@
 										<span class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</span><i class="zmdi zmdi-chevron-down"></i>
 									</a>
 									<ul class="dropdown-menu">
-										<li>
 											<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
-												{if $cart_qties != 0 }
-												<span class="ajax_cart_quantity{if $cart_qties == 0} unvisible{/if}">{$cart_qties}</span>
-												<span class="ajax_cart_product_txt{if $cart_qties != 1} unvisible{/if}">{l s='Producto' mod='blockcart'}</span>
-												<span class="ajax_cart_product_txt_s{if $cart_qties < 2} unvisible{/if}">{l s='Productos' mod='blockcart'}</span>
-												<span class="ajax_cart_total{if $cart_qties == 0} unvisible{/if}">
-													{if $cart_qties > 0}
-														{if $priceDisplay == 1}
-															{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-															{convertPrice price=$cart->getOrderTotal(false, $blockcart_cart_flag)}
-														{else}
-															{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-															{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
-														{/if}
-													{/if}
-												</span>
-												{/if}
-												{if $cart_qties > 0 }
-												<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">{l s='(carrito tiene :)' mod='blockcart'} {$cart_qties}</span>
-												{else}
-												<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">{l s='(Carrito Vacio)' mod='blockcart'}</span>
-												{/if}
+
+												<div class="" tabindex="-1" style="background-color:rgba(255, 255, 255, 0.9);">
+														<div class="modal-body">
+															<h4 class="" style="color:#000;">Quantity of products : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
+															<h4 class="" style="text-align:right; color:#000;">Total price:
+															{if $cart_qties != 0 }
+															<span class="ajax_cart_total text-success">
+																{if $cart_qties > 0}
+																	{if $priceDisplay == 1}
+																		{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
+																		{convertPrice price=$cart->getOrderTotal(false, $blockcart_cart_flag)}
+																	{else}
+																		{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
+																		{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
+																	{/if}
+																{/if}
+															</span>
+															{/if}
+														</h4>
+													</div>t
+												</div>
 												{* {include file="$modules_dir./blockcart.tpl"} *}
 												{* {if $ajax_allowed && isset($blockcart_top) && !$blockcart_top}
 													<span class="block_cart_expand{if !isset($colapseExpandStatus) || (isset($colapseExpandStatus) && $colapseExpandStatus eq 'expanded')} unvisible{/if}">&nbsp;</span>
 													<span class="block_cart_collapse{if isset($colapseExpandStatus) && $colapseExpandStatus eq 'collapsed'} unvisible{/if}">&nbsp;</span>
 												{/if} *}
 											</a>
-										</li>
 									</ul>
 								</li>
 								<!-- <li class="btn-navbar-menu"><a href="javascript:void(0)" class="sb-toggle-left"><i class="zmdi zmdi-menu"></i></a></li> -->
@@ -388,7 +386,7 @@
         <div class="ms-slidebar-social">
 
 					<a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-twitter">
-						<i class="zmdi zmdi-twitter fa-lg"></i>
+						<i class="fa fa-twitter fa-lg"></i>
 					</a>
 
 					<a href="javascript:void(0)" class="btn-circle btn-circle-raised btn-youtube">

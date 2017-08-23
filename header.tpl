@@ -60,7 +60,7 @@
 			 <link rel="stylesheet" href="{$css_dir}plugins.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}preload.min.css" type="text/css" media="{$media}" />
 			 <link rel="stylesheet" href="{$css_dir}style.light-blue-300.min.css" type="text/css" media="{$media}" />
-			 <link rel="stylesheet" href="{$css_dir}sidenav.css" type="text/css" media="{$media}" />
+			 <link rel="stylesheet" href="{$css_dir}sidenav2.css" type="text/css" media="{$media}" />
 
 			 {* <link rel="stylesheet" href="{$css_dir}comparator.css" type="text/css" media="{$media}" /> *}
 			 {*<link rel="stylesheet" href="{$css_dir}contact-form.css" type="text/css" media="{$media}" />
@@ -113,7 +113,7 @@
 							</div>
 					{/if}
 					{*----Menu de Navegacion----*}
-							<div class="row">
+							<div class="row" id="menu1">
 								{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
 							</div>
 				</header>
@@ -132,7 +132,7 @@
 						<h4 class="">Cantidad de productos : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
 						<h4 class="" style="text-align:right;">Precio total:
 						{if $cart_qties != 0 }
-						<span class="ajax_cart_total{if $cart_qties == 0} unvisible{/if} text-success">
+						<span class="ajax_cart_total text-success">
 							{if $cart_qties > 0}
 								{if $priceDisplay == 1}
 									{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
@@ -156,14 +156,14 @@
 		{if $lang_iso == en}
 		<div class="modal fade" id="modal1" style="">
 			<div class="modal-dialog animated zoomInDown animation-delay-5" tabindex="-1" style="background-color:rgba(255, 255, 255, 0.9);">
-					<div class="modal-header">Added product (s) to your cart
-						<span class="fa fa-ok"></span><h2 class="text-primary text-center">Added <span class="ajax_cart_quantity"></span>product(s)to your cart</h2>
+					<div class="modal-header">
+						<span class="fa fa-ok"></span><h2 class="text-primary text-center">Added product(s)to your cart</h2>
 					</div>
 					<div class="modal-body">
 						<h4 class="">Quantity of products : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
 						<h4 class="" style="text-align:right;">Total price:
 						{if $cart_qties != 0 }
-						<span class="ajax_cart_total{if $cart_qties == 0} unvisible{/if} text-success">
+						<span class="ajax_cart_total text-success">
 							{if $cart_qties > 0}
 								{if $priceDisplay == 1}
 									{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
@@ -178,8 +178,8 @@
 					</h4>
 							</div>
 				<div class="modal-footer">
-					<a class="btn btn-raised btn-primary" data-dismiss="modal">Continue shopping</a>
-					<a href="index.php?controller=order" class="btn btn-raised btn-success">Check out</a>
+					<a class="btn btn-raised btn-primary" data-dismiss="modal" style="">Continue shopping</a>
+					<a href="index.php?controller=order" class="btn btn-raised btn-success" style="">Check out</a>
 				</div>
 			</div>
 		</div>
@@ -191,6 +191,9 @@
 				</div>
 					{* Slider Home  *}
 					<div id="slider_row" class="">
+						{if $page_name == 'index'}
+							<img src="{$img_dir}home_movil.jpg" class="visible-xs img-responsive" style="margin-top: -55px" alt="..." >
+						{/if}
 						{capture name='displayTopColumn'}{hook h='displayTopColumn'}{/capture}
 						{if $smarty.capture.displayTopColumn}
 							<div id="top_column" class="ms-carousel carousel slide hidden-xs">{$smarty.capture.displayTopColumn}</div>
@@ -206,13 +209,5 @@
 						<div id="center_column" class="center_column col-xs-12 col-sm-{$cols|intval}"></div>
 						{/if}
 					</div>
-					<!-- *******************************
-      BOTON SUBIR
-      ******************************* -->
-      {* <div class="btn-back-top hidden-xs">
-        <a href="#" data-scroll id="back-top" class="btn-circle btn-circle-primary btn-circle-sm btn-circle-raised ">
-          <i class="zmdi zmdi-long-arrow-up"></i>
-        </a>
-      </div>
-    </div> *}
+    </div>
     <!-- /.Botón Subir -->

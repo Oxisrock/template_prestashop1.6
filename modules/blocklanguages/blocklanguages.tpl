@@ -29,10 +29,10 @@
 				<i class="zmdi zmdi-account"></i>
 			</a>
 	<a href="?id_lang=2" class="btn-circle btn-circle-primary animated zoomInDown animation-delay-8">
-				<img src="{$img_dir}lang_eng.png" />
+				<img src="{$img_dir}lang_eng.png" style="margin-bottom: 1em;"/>
 			</a>
 	<a href="?id_lang=1" class="btn-circle btn-circle-primary animated zoomInDown animation-delay-8">
-				<img src="{$img_dir}lang_esp.png" style=""/>
+				<img src="{$img_dir}lang_esp.png" style="margin-bottom: 1em;"/>
 			</a>
 			</div>
 <div class="header-right ">

@@ -48,6 +48,8 @@
 </form>
 {/if}
 </div>
+<div class="" style="background: #000; margin-bottom: 20%;">
+</div>
 <ul class="clearfix footer_links">
 		<li><a class="btn btn-raised btn-success" href="{$link->getPageLink('authentication')|escape:'html':'UTF-8'}" title="{l s='Back to Login'}" rel="nofollow"><span><i class="icon-chevron-left"></i>{l s='Back to Login'}</span></a></li>
 </ul>

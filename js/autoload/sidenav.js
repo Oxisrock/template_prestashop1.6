@@ -19,6 +19,7 @@ function closeNav() {
       $(window).on('scroll', function(){
         if ( $(window).scrollTop() > altura ){
           $('.ver').addClass('nover');
+          $('#menu1').css('margin-top',altura + 'px');
         } else {
           $('.ver').removeClass('nover');
         }

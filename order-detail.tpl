@@ -83,10 +83,13 @@
 <p class="bold">{l s='Click the following link to track the delivery of your order'}</p>
 <a href="{$followup|escape:'html':'UTF-8'}">{$followup|escape:'html':'UTF-8'}</a>
 {/if}
-
+</div>
+</div>
 <div class="adresses_bloc">
 	<div class="row">
 		<div class="col-xs-12 col-sm-6"{if $order->isVirtual()} style="display:none;"{/if}>
+			<div class="card card-primary animated zoomInDown animation-delay-5">
+				<div class="card-block">
 			<ul class="address alternate_item box">
 				<li><h3 class="page-subheading">{l s='Delivery address'} ({$address_delivery->alias})</h3></li>
 				{foreach from=$dlv_adr_fields name=dlv_loop item=field_item}
@@ -100,7 +103,11 @@
 				{/foreach}
 			</ul>
 		</div>
+	</div>
+	</div>
 		<div class="col-xs-12 col-sm-6">
+			<div class="card card-primary animated zoomInDown animation-delay-5">
+				<div class="card-block">
 			<ul class="address item {if $order->isVirtual()}full_width{/if} box">
 				<li><h3 class="page-subheading">{l s='Invoice address'} ({$address_invoice->alias})</h3></li>
 				{foreach from=$inv_adr_fields name=inv_loop item=field_item}
@@ -116,8 +123,10 @@
 		</div>
 	</div>
 </div>
-<div class="card card-primary animated zoomInDown animation-delay-5">
-	<div class="card-block">
+	</div>
+</div>
+{* <div class="card card-primary animated zoomInDown animation-delay-5"> *}
+	{* <div class="card-block"> *}
 {$HOOK_ORDERDETAILDISPLAYED}
 {if !$is_guest}<form action="{$link->getPageLink('order-follow', true)|escape:'html':'UTF-8'}" method="post">{/if}
 <div id="order-detail-content" class="table_block table-responsive">
@@ -375,8 +384,6 @@
 	</div>
 {/if}
 {if !$is_guest}</form>{/if}
-</div>
-</div>
 {assign var='carriers' value=$order->getShipping()}
 {if $carriers|count > 0 && isset($carriers.0.carrier_name) && $carriers.0.carrier_name}
 <div class="card card-primary animated zoomInDown animation-delay-5">
@@ -441,8 +448,7 @@
 			</tbody>
 		</table>
 	</div>
-</div>
-</div>
+
 	{/if}
 	{if isset($errors) && $errors}
 		<div class="alert alert-danger">

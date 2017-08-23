@@ -468,7 +468,7 @@
 
 					 {/if}
 					 {if $product->quantity > 0}
-					 <p id="add_to_cart" class="buttons_bottom_block no-print">
+					 <p id="add_to_cart" class="buttons_bottom_block no-print imgtres">
 		  			 <button href="#modal1" type="submit" name="Submit" class="btn btn-success btn-block btn-raised mt-2 no-mb" data-toggle="modal">
 		  				 <i class="zmdi zmdi-shopping-cart-plus"></i><span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
 		  			 </button>
