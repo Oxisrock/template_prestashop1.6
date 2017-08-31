@@ -36,7 +36,7 @@
 <!-- Steps -->
 <div class="card card-primary animated zoomInDown animation-delay-5">
 	<div class="card-block">
-<ul class="nav nav-tabs nav-tabs-transparent indicator-success nav-tabs-full nav-tabs-5" id="order_step">
+<ul class="nav nav-tabs nav-tabs-transparent indicator-primary nav-tabs-full nav-tabs-5" id="order_step">
 	<li role="presentation" class="{if $current_step=='summary'}step_current active {elseif $current_step=='login'}step_done_last step_done{else}{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address' || $current_step=='login'}step_done{else}step_todo{/if}{/if} ">
 		{if $current_step=='payment' || $current_step=='shipping' || $current_step=='address' || $current_step=='login'}
 		<a class="withoutripple text-center" href="{$link->getPageLink('order', true)}">

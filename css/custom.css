@@ -1,4 +1,9 @@
 /* Carousel*/
+sup {
+	top: 0.5em!important;
+	font-size: 3em!important;
+	color: red!important;
+}
 .banner_der {
 	position: absolute;
 	top: 20%;

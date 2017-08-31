@@ -25,6 +25,7 @@
 *}
 
 <!-- MODULE Block best sellers -->
+
 <div id="best-sellers_block_right" class="block products_block">
 	<h4 class="title_block">
     	<a href="{$link->getPageLink('best-sales')|escape:'html'}" title="{l s='View a top sellers products' mod='blockbestsellers'}">{l s='Top sellers' mod='blockbestsellers'}</a>
@@ -32,6 +33,7 @@
 	<div class="block_content">
 	{if $best_sellers && $best_sellers|@count > 0}
 		<ul class="block_content products-block">
+
 			{foreach from=$best_sellers item=product name=myLoop}
 			<li class="clearfix">
 				<a href="{$product.link|escape:'html'}" title="{$product.legend|escape:'html':'UTF-8'}" class="products-block-image content_img clearfix">

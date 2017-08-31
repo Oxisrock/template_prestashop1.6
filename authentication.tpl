@@ -356,7 +356,7 @@
 						</div>
 						{elseif $field_name eq "state" || $field_name eq 'State:name'}
 						{$stateExist = true}
-						<div class="required id_state_invoice form-group" style="display:none;">
+						<div class="required id_state_invoice form-group" style="">
 							<label for="id_state_invoice">{l s='State'} <sup>*</sup></label>
 							<select name="id_state_invoice" id="id_state_invoice" class="form-control">
 								<option value="">-</option>
@@ -416,6 +416,8 @@
 					</span>
 				</button>
 			</p>
+		</div>
+	</div>
 		</form>
 	{/if}
 {else}
@@ -434,41 +436,43 @@
 	</div>
 	{/if}-->
 	<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="account-creation_form" class="std box">
+		<div class="card card-success animated zoomInDown animation-delay-5">
+			<div class="card-block">
 		{$HOOK_CREATE_ACCOUNT_TOP}
-		<div class="account_creation">
+		<div class="account_creation" style="color: #000;">
 			<h3 class="page-subheading">{l s='Your personal information'}</h3>
 			<p class="required"><sup>*</sup>{l s='Required field'}</p>
 			<div class="clearfix">
-				<label>{l s='Title'}</label>
+				<label style="color: #000;">{l s='Title'}</label>
 				<br />
 				{foreach from=$genders key=k item=gender}
 					<div class="radio-inline">
-						<label for="id_gender{$gender->id}" class="top">
-							<input type="radio" name="id_gender" id="id_gender{$gender->id}" value="{$gender->id}" {if isset($smarty.post.id_gender) && $smarty.post.id_gender == $gender->id}checked="checked"{/if} />
-						{$gender->name}
+						<label for="id_gender{$gender->id}" class="left">
+						<span style="color: #000;">{$gender->name}</span>
+						<input type="radio" name="id_gender" id="id_gender{$gender->id}" value="{$gender->id}" {if isset($smarty.post.id_gender) && $smarty.post.id_gender == $gender->id}checked="checked"{/if} />
 						</label>
 					</div>
 				{/foreach}
 			</div>
 			<div class="required form-group">
-				<label for="customer_firstname">{l s='First name'} <sup>*</sup></label>
+				<label for="customer_firstname" style="color: #000!important;">{l s='First name'} <sup>*</sup></label>
 				<input onkeyup="$('#firstname').val(this.value);" type="text" class="is_required validate form-control" data-validate="isName" id="customer_firstname" name="customer_firstname" value="{if isset($smarty.post.customer_firstname)}{$smarty.post.customer_firstname}{/if}" />
 			</div>
 			<div class="required form-group">
-				<label for="customer_lastname">{l s='Last name'} <sup>*</sup></label>
+				<label for="customer_lastname" style="color: #000!important;">{l s='Last name'} <sup>*</sup></label>
 				<input onkeyup="$('#lastname').val(this.value);" type="text" class="is_required validate form-control" data-validate="isName" id="customer_lastname" name="customer_lastname" value="{if isset($smarty.post.customer_lastname)}{$smarty.post.customer_lastname}{/if}" />
 			</div>
 			<div class="required form-group">
-				<label for="email">{l s='Email'} <sup>*</sup></label>
+				<label for="email" style="color: #000!important;">{l s='Email'} <sup>*</sup></label>
 				<input type="email" class="is_required validate form-control" data-validate="isEmail" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email}{/if}" />
 			</div>
 			<div class="required password form-group">
-				<label for="passwd">{l s='Password'} <sup>*</sup></label>
+				<label for="passwd" style="color: #000!important;">{l s='Password'} <sup>*</sup></label>
 				<input type="password" class="is_required validate form-control" data-validate="isPasswd" name="passwd" id="passwd" />
 				<span class="form_info">{l s='(Five characters minimum)'}</span>
 			</div>
 			<div class="form-group">
-				<label>{l s='Date of Birth'}</label>
+				<label style="color: #000!important;">{l s='Date of Birth'}</label>
 				<div class="row">
 					<div class="col-xs-4">
 						<select id="days" name="days" class="form-control">
@@ -511,18 +515,18 @@
 				</div>
 			</div>
 			{if isset($newsletter) && $newsletter}
-				<div class="checkbox">
-					<input type="checkbox" name="newsletter" id="newsletter" value="1" {if isset($smarty.post.newsletter) AND $smarty.post.newsletter == 1} checked="checked"{/if} />
-					<label for="newsletter">{l s='Sign up for our newsletter!'}</label>
+				<div class="">
+					<input type="checkbox" name="newsletter" id="newsletter" value="1" checked="checked" {if isset($smarty.post.newsletter) AND $smarty.post.newsletter == 1} checked="checked"{/if} />
+					<label for="newsletter" style="color: #000!important;">{l s='Sign up for our newsletter!'}</label>
 					{if array_key_exists('newsletter', $field_required)}
 						<sup> *</sup>
 					{/if}
 				</div>
 			{/if}
 			{if isset($optin) && $optin}
-				<div class="checkbox">
-					<input type="checkbox" name="optin" id="optin" value="1" {if isset($smarty.post.optin) AND $smarty.post.optin == 1} checked="checked"{/if} />
-					<label for="optin">{l s='Receive special offers from our partners!'}</label>
+				<div class="">
+					<input type="checkbox" name="optin" id="optin" value="1" checked="checked" {if isset($smarty.post.optin) AND $smarty.post.optin == 1} checked="checked"{/if} />
+					<label for="optin" style="color: #000!important;">{l s='Receive special offers from our partners!'}</label>
 					{if array_key_exists('optin', $field_required)}
 						<sup> *</sup>
 					{/if}
@@ -671,10 +675,10 @@
 			<input type="hidden" name="email_create" value="1" />
 			<input type="hidden" name="is_new_customer" value="1" />
 			{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'html':'UTF-8'}" />{/if}
-			<button type="submit" name="submitAccount" id="submitAccount" class="btn btn-default button button-medium">
+			<button type="submit" name="submitAccount" id="submitAccount" class="btn btn-raised btn-success pull-right">
 				<span>{l s='Register'}<i class="icon-chevron-right right"></i></span>
 			</button>
-			<p class="pull-right required"><span><sup>*</sup>{l s='Required field'}</span></p>
+			{* <p class="pull-right required"><span><sup>*</sup>{l s='Required field'}</span></p> *}
 		</div>
 	</form>
 {/if}

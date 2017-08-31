@@ -67,8 +67,13 @@
 				<div id="vat_area">
 					<div id="vat_number">
 						<div class="form-group">
+							<div class="input-group">
+							<span class="input-group-addon">
+							<i class="fa fa-id-card"></i>
+            	</span>
 							<label for="vat-number">{l s='VAT number'}{if isset($required_fields) && in_array($field_name, $required_fields)} <sup>*</sup>{/if}</label>
 							<input type="text" class="form-control validate" data-validate="{$address_validation.$field_name.validate}" id="vat-number" name="vat_number" value="{if isset($smarty.post.vat_number)}{$smarty.post.vat_number}{else}{if isset($address->vat_number)}{$address->vat_number|escape:'html':'UTF-8'}{/if}{/if}" />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -78,7 +83,7 @@
 			<div class="required form-group dni">
 				<label for="dni">{l s='Identification number'} <sup>*</sup></label>
 				<input class="form-control" data-validate="{$address_validation.$field_name.validate}" type="text" name="dni" id="dni" value="{if isset($smarty.post.dni)}{$smarty.post.dni}{else}{if isset($address->dni)}{$address->dni|escape:'html':'UTF-8'}{/if}{/if}" />
-				<span class="form_info">{l s='DNI / NIF / NIE'}</span>
+				<span class="form_info"><i class="fa fa-id-card"></i>{l s='DNI / NIF / NIE'}</span>
 			</div>
 			{/if}
 			{if $field_name eq 'firstname'}
@@ -127,7 +132,7 @@
 			{/if}
 			{if $field_name eq 'postcode'}
 				{assign var="postCodeExist" value=true}
-				<div class="required postcode form-group unvisible">
+				<div class="required form-group">
 					<div class="input-group">
 					<span class="input-group-addon">
 						<i class="zmdi zmdi-pin" aria-hidden="true"></i>
@@ -163,11 +168,16 @@
 			{if $field_name eq 'State:name'}
 				{assign var="stateExist" value=true}
 				<div class="required id_state form-group">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-globe" aria-hidden="true"></i>
+						</span>
 					<label for="id_state">{l s='State'} <sup>*</sup></label>
 					<select name="id_state" id="id_state" class="form-control">
 						<option value="">-</option>
 					</select>
 				</div>
+			</div>
 			{/if}
 			{if $field_name eq 'phone'}
 				{assign var="homePhoneExist" value=true}
@@ -200,24 +210,29 @@
 			{/if}
 		{/foreach}
 		{if !$postCodeExist}
-			<div class="required postcode form-group unvisible">
+			<div class="">
 				<label for="postcode">{l s='Zip/Postal Code'} <sup>*</sup></label>
 				<input class="is_required validate form-control" data-validate="{$address_validation.postcode.validate}" type="text" id="postcode" name="postcode" value="{if isset($smarty.post.postcode)}{$smarty.post.postcode}{else}{if isset($address->postcode)}{$address->postcode|escape:'html':'UTF-8'}{/if}{/if}" />
 			</div>
 		{/if}
 		{if !$stateExist}
 			<div class="required id_state form-group unvisible">
+				<div class="input-group">
+					<span class="input-group-addon">
+						<i class="fa fa-globe" aria-hidden="true"></i>
+					</span>
 				<label for="id_state">{l s='State'} <sup>*</sup></label>
 				<select name="id_state" id="id_state" class="form-control">
 					<option value="">-</option>
 				</select>
+				</div>
 			</div>
 		{/if}
 		{if !$dniExist}
 			<div class="required dni form-group unvisible">
 				<label for="dni">{l s='Identification number'} <sup>*</sup></label>
 				<input class="is_required form-control" data-validate="{$address_validation.dni.validate}" type="text" name="dni" id="dni" value="{if isset($smarty.post.dni)}{$smarty.post.dni}{else}{if isset($address->dni)}{$address->dni|escape:'html':'UTF-8'}{/if}{/if}" />
-				<span class="form_info">{l s='DNI / NIF / NIE'}</span>
+				<span class="form_info"><i class="fa fa-id-card"></i>{l s='DNI / NIF / NIE'}</span>
 			</div>
 		{/if}
 		<div class="form-group">

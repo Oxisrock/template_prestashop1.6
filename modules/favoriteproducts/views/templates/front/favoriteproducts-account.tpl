@@ -37,11 +37,11 @@
 			{foreach from=$favoriteProducts item=favoriteProduct}
 			<li class="col-xs-12">
             	<div class="favoriteproduct clearfix inner-content">
-                    <a 
+                    <a
                     class="product_img_link"
                     href="{$link->getProductLink($favoriteProduct.id_product, null, null, null, null, $favoriteProduct.id_shop)|escape:'html':'UTF-8'}">
-                        <img 
-                        src="{$link->getImageLink($favoriteProduct.link_rewrite, $favoriteProduct.image, 'medium_default')|escape:'html':'UTF-8'}" 
+                        <img
+                        src="{$link->getImageLink($favoriteProduct.link_rewrite, $favoriteProduct.image, 'medium_default')|escape:'html':'UTF-8'}"
                         alt=""/>
                     </a>
                     <p class="s_title_block">
@@ -65,8 +65,8 @@
 
 	<ul class="footer_links clearfix">
 		<li>
-			<a 
-			class="btn btn-default button button-small" 
+			<a
+			class="btn btn-default button button-small"
 			href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 				<span>
 					<i class="icon-chevron-left"></i>{l s='Back to your account' mod='favoriteproducts'}
