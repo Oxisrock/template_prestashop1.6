@@ -131,19 +131,15 @@
 					<div class="modal-body">
 						<h4 class="">Cantidad de productos : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
 						<h4 class="" style="text-align:right;">Precio total:
-						{if $cart_qties != 0 }
-						<span class="ajax_cart_total text-success">
-							{if $cart_qties > 0}
-								{if $priceDisplay == 1}
-									{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-									{convertPrice price=$cart->getOrderTotal(false, $blockcart_cart_flag)}
-								{else}
-									{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-									{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
-								{/if}
+							{if $cart_qties >= 0 }
+							<span class="ajax_cart_total text-success ">
+
+
+										{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
+										{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
+
+							</span>
 							{/if}
-						</span>
-						{/if}
 					</h4>
 							</div>
 				<div class="modal-footer">
@@ -162,19 +158,15 @@
 					<div class="modal-body">
 						<h4 class="">Quantity of products : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
 						<h4 class="" style="text-align:right;">Total price:
-						{if $cart_qties != 0 }
-						<span class="ajax_cart_total text-success">
-							{if $cart_qties > 0}
-								{if $priceDisplay == 1}
-									{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-									{convertPrice price=$cart->getOrderTotal(false, $blockcart_cart_flag)}
-								{else}
-									{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-									{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
-								{/if}
+							{if $cart_qties >= 0 }
+							<span class="ajax_cart_total text-success ">
+
+
+										{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
+										{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
+
+							</span>
 							{/if}
-						</span>
-						{/if}
 					</h4>
 							</div>
 				<div class="modal-footer">

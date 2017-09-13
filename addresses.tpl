@@ -37,7 +37,7 @@
 		<div class="bloc_adresses row">
 	{foreach from=$multipleAddresses item=address name=myLoop}
     	<div class="col-xs-12 col-sm-4 address">
-				<div class="card card-success animated zoomInDown animation-delay-5">
+				<div class="card card-danger animated zoomInDown animation-delay-5">
 					<div class="card-block text-center">
 			<ul class="{if $smarty.foreach.myLoop.last}last_item{elseif $smarty.foreach.myLoop.first}first_item{/if}{if $smarty.foreach.myLoop.index % 2} alternate_item{else} item{/if} box">
                 <li><h3 class="page-subheading">{$address.object.alias}</h3></li>

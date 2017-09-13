@@ -29,10 +29,13 @@
 									</ul>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
+									<a href="index.php?id_cms=4&controller=cms&id_lang=2"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="?controller=contact"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
+									<a href="#"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
+								</li>
+								<li class="ver animated fadeIn animation-delay-2">
+									<a href="?controller=contact"><i class="fa fa-envelope fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contact us'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="http://support.bluehorizon.us/" target="_blank"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Support'}</span></a>
@@ -96,39 +99,28 @@
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
-										<span class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</span><i class="zmdi zmdi-chevron-down"></i>
+										<span class="ajax_cart_quantity{if $cart_qties >= 0} {/if} badge">{$cart_qties}</span><i class="zmdi zmdi-chevron-down"></i>
 									</a>
 									<ul class="dropdown-menu">
 										<li>
-											{if $cart_qties != 0 }<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">{/if}
-												{if $cart_qties == 0 }<a href="javascript:void(0)" title="{l s='you shopping cart is empty' mod='blockcart'}" rel="nofollow">{/if}
-												{if $cart_qties != 0 }
-												{* <span class="ajax_cart_quantity{if $cart_qties == 0} unvisible{/if}">{$cart_qties}</span>
-												<span class="ajax_cart_product_txt{if $cart_qties != 1} unvisible{/if}">{l s='Product' mod='blockcart'}</span>
-												<span class="ajax_cart_product_txt_s{if $cart_qties < 2} unvisible{/if}">{l s='Products' mod='blockcart'}</span> *}
-												{/if}
-												{if $cart_qties > 0 }
-												<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">{l s='Cart has products :' mod='blockcart'}</span>
-												{else}
-												<span class="ajax_cart_no_product{if $cart_qties > 0} unvisible{/if}">{l s='Cart is empty' mod='blockcart'}</span>
-												{/if}
-												<span class="ajax_cart_total{if $cart_qties == 0} unvisible{/if}">
-													{if $cart_qties > 0}
-														{if $priceDisplay == 1}
-															{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-															{convertPrice price=$cart->getOrderTotal(false, $blockcart_cart_flag)}
-														{else}
-															{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-															{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
+											<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
+											<div class="" tabindex="-1" style="background-color:#fff;">
+													<div class="modal-body">
+														<h4 class="" style="color:#000;">Quantity of products : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
+														<h4 class="" style="text-align:right; color:#000;">Total price:
+														{if $cart_qties >= 0 }
+														<span class="ajax_cart_total text-success ">
+
+
+																	{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
+																	{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
+
+														</span>
 														{/if}
-													{/if}
-												</span>
-												{* {include file="$modules_dir./blockcart.tpl"} *}
-												{* {if $ajax_allowed && isset($blockcart_top) && !$blockcart_top}
-													<span class="block_cart_expand{if !isset($colapseExpandStatus) || (isset($colapseExpandStatus) && $colapseExpandStatus eq 'expanded')} unvisible{/if}">&nbsp;</span>
-													<span class="block_cart_collapse{if isset($colapseExpandStatus) && $colapseExpandStatus eq 'collapsed'} unvisible{/if}">&nbsp;</span>
-												{/if} *}
-											</a>
+													</h4>
+												</div>
+											</div>
+										</a>
 										</li>
 									</ul>
 								</li>
@@ -159,7 +151,10 @@
 									<a href="index.php?id_cms=4&controller=cms&id_lang=1" title="Nosotros"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Nosotros'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="?controller=contact" title="Nosotros"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Preguntas y Descargas'}</span></a>
+									<a href="#" title="Preguntas y Descargas"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Preguntas y Descargas'}</span></a>
+								</li>
+								<li class="ver animated fadeIn animation-delay-2">
+									<a href="?controller=contact" title="Contactanos"><i class="fa fa-envelope fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contactanos'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="http://support.bluehorizon.us/" title="Soporte" target="_blank"><i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i><span class="hidden-sm">{l s='Soporte'}</span></a>
@@ -185,7 +180,7 @@
 								</form>
 								</li>
 							</ul>
-							<ul class="nav navbar-nav navbar-right tablet">
+							<ul class="nav navbar-nav navbar-right tablet" style="margin-right: -2em!important;">
 								<li class="dropdown">
 								{if !$is_logged}
 									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-user-circle-o color-royal-light" style="color:#154C9B;" aria-hidden="true"></i><span class="hidden-sm"> {l s='Tu cuenta'}</span>
@@ -223,37 +218,29 @@
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" title="Tu carrito" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
-										<span class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</span><i class="zmdi zmdi-chevron-down"></i>
+										<span class="ajax_cart_quantity{if $cart_qties >= 0}{/if} badge">{$cart_qties}</span><i class="zmdi zmdi-chevron-down"></i>
 									</a>
 									<ul class="dropdown-menu">
+										<li>
 											<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
+											<div class="" tabindex="-1" style="background-color:#fff;">
+													<div class="modal-body">
+														<h4 class="" style="color:#000;">Cantidad de productos : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
+														<h4 class="" style="text-align:right; color:#000;">Precio total:
+															{if $cart_qties >= 0 }
+															<span class="ajax_cart_total text-success ">
 
-												<div class="" tabindex="-1" style="background-color:rgba(255, 255, 255, 0.9);">
-														<div class="modal-body">
-															<h4 class="" style="color:#000;">Quantity of products : <span class="ajax_cart_quantity">{$cart_qties}</span> </h4>
-															<h4 class="" style="text-align:right; color:#000;">Total price:
-															{if $cart_qties != 0 }
-															<span class="ajax_cart_total text-success">
-																{if $cart_qties > 0}
-																	{if $priceDisplay == 1}
-																		{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
-																		{convertPrice price=$cart->getOrderTotal(false, $blockcart_cart_flag)}
-																	{else}
+
 																		{assign var='blockcart_cart_flag' value='Cart::BOTH_WITHOUT_SHIPPING'|constant}
 																		{convertPrice price=$cart->getOrderTotal(true, $blockcart_cart_flag)}
-																	{/if}
-																{/if}
+
 															</span>
 															{/if}
-														</h4>
-													</div>t
+													</h4>
 												</div>
-												{* {include file="$modules_dir./blockcart.tpl"} *}
-												{* {if $ajax_allowed && isset($blockcart_top) && !$blockcart_top}
-													<span class="block_cart_expand{if !isset($colapseExpandStatus) || (isset($colapseExpandStatus) && $colapseExpandStatus eq 'expanded')} unvisible{/if}">&nbsp;</span>
-													<span class="block_cart_collapse{if isset($colapseExpandStatus) && $colapseExpandStatus eq 'collapsed'} unvisible{/if}">&nbsp;</span>
-												{/if} *}
-											</a>
+											</div>
+										</a>
+										</li>
 									</ul>
 								</li>
 								<!-- <li class="btn-navbar-menu"><a href="javascript:void(0)" class="sb-toggle-left"><i class="zmdi zmdi-menu"></i></a></li> -->
@@ -276,7 +263,7 @@
 							{if $lang_iso == es}
 							{if !$is_logged}
 							<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow" class="dropdown-toggle animated fadeIn animation-delay-2" ><i class="fa fa-shopping-cart fa-lg color-white" aria-hidden="true"></i><span class="hidden-sm"></span>
-								<i class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</i></i>
+								<i class="ajax_cart_quantity{if $cart_qties >= 0} {/if} badge">{$cart_qties}</i></i>
 							</a>
 					<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}"  rel="nofollow" title="{l s='Log in to your customer account' mod='blockuserinfo'}" class="conripple">
             <i class="fa fa-user" aria-hidden="true"></i> Ingresar</a>
@@ -285,7 +272,7 @@
 						{/if}
 						{if $is_logged}
 						<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow" class="dropdown-toggle animated fadeIn animation-delay-2" ><i class="fa fa-shopping-cart fa-lg color-white" aria-hidden="true"></i><span class="hidden-sm"></span>
-							<i class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</i></i>
+							<i class="ajax_cart_quantity{if $cart_qties >= 0} {/if} badge">{$cart_qties}</i></i>
 						</a>
 						<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='View my customer account' mod='blockuserinfo'}" class="account" rel="nofollow">
 						<i class="fa fa-user" aria-hidden="true"></i> <span class="">{$cookie->customer_firstname} {$cookie->customer_lastname}</span></a>
@@ -296,7 +283,7 @@
 						{if $lang_iso == en}
 						{if !$is_logged}
 						<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow" class="dropdown-toggle animated fadeIn animation-delay-2" ><i class="fa fa-shopping-cart fa-lg color-white" aria-hidden="true"></i><span class="hidden-sm"></span>
-							<i class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</i></i>
+							<i class="ajax_cart_quantity{if $cart_qties >= 0} {/if} badge">{$cart_qties}</i></i>
 						</a>
 				<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}"  rel="nofollow" title="{l s='Log in to your customer account' mod='blockuserinfo'}" class="conripple">
 					<i class="fa fa-user" aria-hidden="true"></i> Sign in</a>
@@ -305,7 +292,7 @@
 					{/if}
 					{if $is_logged}
 					<a href="index.php?controller=order" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow" class="dropdown-toggle animated fadeIn animation-delay-2" ><i class="fa fa-shopping-cart fa-lg color-white" aria-hidden="true"></i><span class="hidden-sm"></span>
-						<i class="ajax_cart_quantity{if $cart_qties >= 0} unvisible{/if} badge">{$cart_qties}</i></i>
+						<i class="ajax_cart_quantity{if $cart_qties >= 0} {/if} badge">{$cart_qties}</i></i>
 					</a>
 					<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='View my customer account' mod='blockuserinfo'}" class="account" rel="nofollow">
 					<i class="fa fa-user" aria-hidden="true"></i> <span class="">{$cookie->customer_firstname} {$cookie->customer_lastname}</span></a>
@@ -350,6 +337,9 @@
 					<a class="link" href="index.php?controller=contact">
 						<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas y Descargas <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 				</li>
+				<li class="ver animated fadeIn animation-delay-2">
+					<a href="?controller=contact"><i class="fa fa-download fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contactanos'}</span></a>
+				</li>
 				<li>
 					<a class="link" href="http://support.bluehorizon.us/" target="_blank">
 						<i class="fa fa-superpowers fa-lg color-warning-light" aria-hidden="true"></i> Soporte <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
@@ -365,12 +355,15 @@
 					<i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Store <i class="fa fa-chevron-right fle" aria-hidden="true"></i> </a>
 			</li>
 			<li>
-				<a class="link" href="?id_cms=4&controller=cms&id_lang=1">
+				<a class="link" href="index.php?id_cms=4&controller=cms&id_lang=2">
 					<i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> About us <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 			</li>
 			<li>
-				<a class="link" href="index.php?controller=contact">
+				<a class="link" href="#">
 					<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> FAQS <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
+			</li>
+			<li class="ver animated fadeIn animation-delay-2">
+				<a href="?controller=contact"><i class="fa fa-envelope fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contact us'}</span></a>
 			</li>
 			<li>
 				<a class="link" href="http://support.bluehorizon.us/" target="_blank">

@@ -29,7 +29,7 @@
     	{if $scenes || $category->description || $category->id_image}
 			<div class="content_scene_cat">
             	 {if $scenes}
-                 	<div class="content_scene">
+                 	<div class="content_scene" style="width: 870px;">
                         <!-- Scenes -->
                         {include file="$tpl_dir./scenes.tpl" scenes=$scenes}
                         {if $category->description}
@@ -49,7 +49,7 @@
                     <div class="content_scene_cat_bg"{if $category->id_image} style="background:url({$link->getCatImageLink($category->link_rewrite, $category->id_image, 'category_default')|escape:'html':'UTF-8'})center ; background-size:cover; min-height:14em;"{/if}>
                         {if $category->description}
                             <div class="cat_desc">
-                            <span class="category-name">
+                            <span class="category-name" style="">
                                 {strip}
                                     {$category->name|escape:'html':'UTF-8'}
                                     {if isset($categoryNameComplement)}

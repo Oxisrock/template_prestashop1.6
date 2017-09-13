@@ -299,10 +299,10 @@
         {if $opc}
             <div id="opc_payment_methods-content">
         {/if}
-        <div id="HOOK_PAYMENT">
-            {$HOOK_PAYMENT}
-        </div>
       </div>
+    </div>
+    <div id="HOOK_PAYMENT">
+        {$HOOK_PAYMENT}
     </div>
         {if $opc}
             </div> <!-- end opc_payment_methods-content -->
