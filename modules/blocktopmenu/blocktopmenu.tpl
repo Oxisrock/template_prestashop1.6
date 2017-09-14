@@ -29,10 +29,10 @@
 									</ul>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?id_cms=4&controller=cms&id_lang=2"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
+									<a href="?id_cms=4&controller=cms&id_lang=2"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="#"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
+									<a href="?controller=faqs"><i class="fa fa-question-circle-o fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="?controller=contact"><i class="fa fa-envelope fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contact us'}</span></a>
@@ -148,10 +148,10 @@
 									</ul>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="index.php?id_cms=4&controller=cms&id_lang=1" title="Nosotros"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Nosotros'}</span></a>
+									<a href="?id_cms=4&controller=cms&id_lang=1" title="Nosotros"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Nosotros'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="#" title="Preguntas y Descargas"><i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Preguntas y Descargas'}</span></a>
+									<a href="?controller=faqs" title="Preguntas Frecuentes"><i class="fa fa-question-circle-o fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Preguntas Frecuentes'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="?controller=contact" title="Contactanos"><i class="fa fa-envelope fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contactanos'}</span></a>
@@ -360,7 +360,7 @@
 			</li>
 			<li>
 				<a class="link" href="#">
-					<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> FAQS <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
+					<i class="fa fa-question fa-lg color-success-light" aria-hidden="true"></i> FAQS <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 			</li>
 			<li class="ver animated fadeIn animation-delay-2">
 				<a href="?controller=contact"><i class="fa fa-envelope fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contact us'}</span></a>

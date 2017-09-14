@@ -595,7 +595,7 @@
 		{if isset($product) && $product->description}
 			<!-- More info -->
 			<div class="col-md-12">
-			<div class="card card-primary">
+			<div class="card card-primary animated fadeInUp animation-delay-10">
 				<div class="card-block">
 				<h2 class="mt-4 mb-4">{l s='More info'}</h2>
 				<!-- full description -->
@@ -681,22 +681,37 @@
 		{if (isset($product) && $product->description) || (isset($features) && $features) || (isset($accessories) && $accessories) || (isset($HOOK_PRODUCT_TAB) && $HOOK_PRODUCT_TAB) || (isset($attachments) && $attachments) || isset($product) && $product->customizable}
 			{if isset($attachments) && $attachments}
 			<!--Download -->
+			<div class="col-md-12">
+			<div class="card card-success animated zoomInDown animation-delay-5">
+				<div class="card-block">
 			<section class="page-product-box">
-				<h3 class="page-product-heading">{l s='Download'}</h3>
+				{if $lang_iso == en}
+					<h3 class="page-product-heading">{l s='Manuals'}</h3>
+				{/if}
+				{if $lang_iso == es}
+					<h3 class="page-product-heading">{l s='Manuales'}</h3>
+				{/if}
+
 				{foreach from=$attachments item=attachment name=attachements}
 					{if $smarty.foreach.attachements.iteration %3 == 1}<div class="row">{/if}
 						<div class="col-lg-4">
+							<div class="card card-primary animated zoomInDown animation-delay-5">
+								<div class="card-block text-center">
 							<h4><a href="{$link->getPageLink('attachment', true, NULL, "id_attachment={$attachment.id_attachment}")|escape:'html':'UTF-8'}">{$attachment.name|escape:'html':'UTF-8'}</a></h4>
 							<p class="text-muted">{$attachment.description|escape:'html':'UTF-8'}</p>
-							<a class="btn btn-default btn-block" href="{$link->getPageLink('attachment', true, NULL, "id_attachment={$attachment.id_attachment}")|escape:'html':'UTF-8'}">
-								<i class="icon-download"></i>
+							<a class="btn btn-raised btn-success" href="{$link->getPageLink('attachment', true, NULL, "id_attachment={$attachment.id_attachment}")|escape:'html':'UTF-8'}">
+								<i class="fa fa-download" aria-hidden="true"></i>
 								{l s="Download"} ({Tools::formatBytes($attachment.file_size, 2)})
 							</a>
-							<hr />
+						</div>
+					</div>
 						</div>
 					{if $smarty.foreach.attachements.iteration %3 == 0 || $smarty.foreach.attachements.last}</div>{/if}
 				{/foreach}
 			</section>
+		</div>
+	</div>
+</div>
 			<!--end Download -->
 			{/if}
 			{if isset($product) && $product->customizable}

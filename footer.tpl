@@ -97,7 +97,7 @@
                       <i class="zmdi zmdi-favorite-outline"></i> {l s='Favorits'}</a>
                   </li>
                   <li>
-                    <a href="index.php?id_cms=4&controller=cms&id_lang=1">
+                    <a href="?id_cms=4&controller=cms&id_lang=1">
                       <i class="fa fa-users" aria-hidden="true"></i> {l s='About us'}</a>
                   </li>
                   <li>
@@ -105,7 +105,7 @@
                       <i class="fa fa-download" aria-hidden="true"></i> {l s='Download'}</a>
                   </li>
                   <li>
-                    <a href="http://support.bluehorizon.us/" target="_blank">
+                    <a href="index.php?controller=faqs">
                       <i class="fa fa-question-circle" aria-hidden="true"></i> {l s='FAQS'}</a>
                   </li>
                   <li>
@@ -132,7 +132,7 @@
                   <a href="javascript:void(0)" class="btn-circle btn-youtube">
                     <i class="zmdi zmdi-youtube"></i>
                   </a>
-                  <a href="javascript:void(0)" class="btn-circle btn-instagram">
+                  <a href="https://www.instagram.com/bluehorizonus/" target="_blank" class="btn-circle btn-instagram">
                     <i class="zmdi zmdi-instagram"></i>
                   </a>
                 </div>
@@ -206,7 +206,7 @@
 											<i class="fa fa-download" aria-hidden="true"></i> {l s='Descargas'}</a>
 									</li>
 									<li>
-										<a href="http://support.bluehorizon.us/" target="_blank">
+										<a href="index.php?controller=faqs">
 											<i class="fa fa-question-circle" aria-hidden="true"></i> {l s='FAQS'}</a>
 									</li>
 									<li>
@@ -233,7 +233,7 @@
 									<a href="javascript:void(0)" class="btn-circle btn-youtube">
 										<i class="zmdi zmdi-youtube"></i>
 									</a>
-									<a href="javascript:void(0)" class="btn-circle btn-instagram">
+									<a href="https://www.instagram.com/bluehorizonus/" target="_blank" class="btn-circle btn-instagram">
 										<i class="zmdi zmdi-instagram"></i>
 									</a>
 								</div>
