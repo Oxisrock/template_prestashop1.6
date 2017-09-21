@@ -1,8 +1,8 @@
 /*********************************************************************
 					Maintenance Page Styles
 **********************************************************************/
-#body {
-  background-color: #F7F7F7; }
+body {
+  background-color: #000; }
 
 #maintenance {
   margin: 50px 0 0 0;
@@ -27,7 +27,6 @@
     padding: 0 0 0 18px;
     color: #555454;
     text-align: center; }
-
 .container {
   padding-right: 15px;
   padding-left: 15px;
