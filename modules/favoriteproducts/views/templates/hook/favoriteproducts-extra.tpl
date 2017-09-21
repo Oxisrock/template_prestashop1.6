@@ -25,18 +25,18 @@
 
 {if !$isCustomerFavoriteProduct AND $is_logged}
 <li id="favoriteproducts_block_extra_add" class="add">
-	{l s='Add this product to my list of favorites.' mod='favoriteproducts'}
+	<span class="fa fa-heart-o color-danger pull-right fa-2x" aria-hidden="true" title="{l s='Add this product to my list of favorites.' mod='favoriteproducts'}"></span>
 </li>
 {/if}
 {if $isCustomerFavoriteProduct AND $is_logged}
 <li id="favoriteproducts_block_extra_remove">
-	{l s='Remove this product from my favorite\'s list. ' mod='favoriteproducts'}
+	<span class="fa fa-heart color-danger pull-right fa-2x" aria-hidden="true" title="{l s='Remove this product from my favorite\'s list. ' mod='favoriteproducts'}"></span>
 </li>
 {/if}
 
 <li id="favoriteproducts_block_extra_added">
-	{l s='Remove this product from my favorite\'s list. ' mod='favoriteproducts'}
+	<span class="fa fa-heart color-danger pull-right fa-2x" aria-hidden="true" title="{l s='Remove this product from my favorite\'s list. ' mod='favoriteproducts'}"></span>
 </li>
 <li id="favoriteproducts_block_extra_removed">
-	{l s='Add this product to my list of favorites.' mod='favoriteproducts'}
+	<span class="fa fa-heart-o color-danger pull-right fa-2x" aria-hidden="true" title="{l s='Add this product to my list of favorites.' mod='favoriteproducts'}"></span>
 </li>

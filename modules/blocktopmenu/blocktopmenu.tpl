@@ -29,7 +29,7 @@
 									</ul>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="?id_cms=4&controller=cms&id_lang=2"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
+									<a href="?id_cms=4&controller=cms&id_lang=1"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='About us'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="?controller=faqs"><i class="fa fa-question-circle-o fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='FAQS'}</span></a>
@@ -95,7 +95,7 @@
 									</ul>
 								</li>
 								<li>
-									<a href="" class="animated fadeIn animation-delay-2" title="Tus Favoritos"><i class="fa fa-heart-o fa-lg color-danger" aria-hidden="true"></i></a>
+									<a href="{$link->getModuleLink('favoriteproducts', 'account', [], true)|escape:'html':'UTF-8'}" title="{l s='My favorite products.' mod='favoriteproducts'}" class="animated fadeIn animation-delay-2"><i class="fa fa-heart-o fa-lg color-danger" aria-hidden="true"></i></a>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
@@ -148,7 +148,7 @@
 									</ul>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
-									<a href="?id_cms=4&controller=cms&id_lang=1" title="Nosotros"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Nosotros'}</span></a>
+									<a href="?id_cms=4&controller=cms&id_lang=3" title="Nosotros"><i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Nosotros'}</span></a>
 								</li>
 								<li class="ver animated fadeIn animation-delay-2">
 									<a href="?controller=faqs" title="Preguntas Frecuentes"><i class="fa fa-question-circle-o fa-lg color-success-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Preguntas Frecuentes'}</span></a>
@@ -214,7 +214,7 @@
 									</ul>
 								</li>
 								<li>
-									<a href="" class="animated fadeIn animation-delay-2" title="Tus Favoritos"><i class="fa fa-heart-o fa-lg color-danger" aria-hidden="true"></i></a>
+									<a href="{$link->getModuleLink('favoriteproducts', 'account', [], true)|escape:'html':'UTF-8'}" title="Mis productos favoritos" class="animated fadeIn animation-delay-2"><i class="fa fa-heart-o fa-lg color-danger" aria-hidden="true"></i></a>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle animated fadeIn animation-delay-2" title="Tu carrito" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"><i class="fa fa-shopping-cart fa-lg color-success" aria-hidden="true"></i><span class="hidden-sm"></span>
@@ -330,12 +330,12 @@
 						<i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Tienda <i class="fa fa-chevron-right fle" aria-hidden="true"></i> </a>
 				</li>
 				<li>
-					<a class="link" href="?id_cms=4&controller=cms&id_lang=1">
+					<a class="link" href="?id_cms=4&controller=cms&id_lang=3">
 						<i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> Nosotros <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 				</li>
 				<li>
 					<a class="link" href="index.php?controller=contact">
-						<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas y Descargas <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
+						<i class="fa fa-download fa-lg color-success-light" aria-hidden="true"></i> Preguntas Frecuentes <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 				</li>
 				<li class="ver animated fadeIn animation-delay-2">
 					<a href="?controller=contact"><i class="fa fa-download fa-lg color-primary-light" aria-hidden="true"></i> <span class="hidden-sm">{l s='Contactanos'}</span></a>
@@ -355,7 +355,7 @@
 					<i class="fa fa-tint fa-lg color-info-light" aria-hidden="true"></i> Store <i class="fa fa-chevron-right fle" aria-hidden="true"></i> </a>
 			</li>
 			<li>
-				<a class="link" href="index.php?id_cms=4&controller=cms&id_lang=2">
+				<a class="link" href="index.php?id_cms=4&controller=cms&id_lang=1">
 					<i class="fa fa-users fa-lg color-danger-light" aria-hidden="true"></i> About us <i class="fa fa-chevron-right fle" aria-hidden="true"></i></a>
 			</li>
 			<li>

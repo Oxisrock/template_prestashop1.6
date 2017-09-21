@@ -22,6 +22,7 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+<div class="container container-full">
 {capture name=path}
 	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 		{l s='My account' mod='favoriteproducts'}
@@ -33,7 +34,7 @@
 <div id="favoriteproducts_block_account">
 	<h1 class="page-heading">{l s='My favorite products' mod='favoriteproducts'}</h1>
 	{if $favoriteProducts}
-    	<ul class="row">
+    	<ul class="row card card-success animated fadeInUp animation-delay-10">
 			{foreach from=$favoriteProducts item=favoriteProduct}
 			<li class="col-xs-12">
             	<div class="favoriteproduct clearfix inner-content">
@@ -50,9 +51,10 @@
                     	</a>
                     </p>
                     <div class="product_desc">{$favoriteProduct.description_short|strip_tags|escape:'html':'UTF-8'}</div>
-                    <div class="remove">
-                    	<a href="#" rel="ajax_id_favoriteproduct_{$favoriteProduct.id_product}">
-                    		<i class="icon-remove"></i>
+										<div class=""></div>
+										<div class="remove">
+                    	<a href="#" rel="ajax_id_favoriteproduct_{$favoriteProduct.id_product}" {if $lang_iso == es}title="{l s='Eliminar de mi lista de favoritos. ' mod='favoriteproducts'}"{/if} {if $lang_iso == en}title="{l s='Remove this product from my favorite\'s list. ' mod='favoriteproducts'}"{/if}>
+                    		<i class="fa fa-remove"></i>
                     	</a>
                     </div>
                 </div>
@@ -60,18 +62,21 @@
 			{/foreach}
         </ul>
 	{else}
-		<p class="alert alert-warning">{l s='No favorite products have been determined just yet. ' mod='favoriteproducts'}</p>
+		<p class="alert alert-primary">{l s='No favorite products have been determined just yet. ' mod='favoriteproducts'}</p>
+		<div class="" style="background: #000; margin-bottom: 20%;">
+		</div>
 	{/if}
 
 	<ul class="footer_links clearfix">
 		<li>
 			<a
-			class="btn btn-default button button-small"
+			class="btn btn-raised btn-primary"
 			href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
-				<span>
-					<i class="icon-chevron-left"></i>{l s='Back to your account' mod='favoriteproducts'}
+				<span class="">
+					<i class="fa fa-chevron-left"></i> {l s='Back to your account' mod='favoriteproducts'}
 				</span>
 			</a>
 		</li>
 	</ul>
+</div>
 </div>

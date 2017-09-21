@@ -114,7 +114,7 @@
 					{/if}
 					<th class="cart_unit item text-right">{l s='Unit price'}</th>
 					<th class="cart_quantity item text-center">{l s='Qty'}</th>
-					<th class="cart_delete last_item"><i class="fa fa-trash-o" /></th>
+					<th class="cart_delete last_item"><i class="fa fa-trah-o" /></th>
 					<th class="cart_total item text-right">{l s='Total'}</th>
 				</tr>
 			</thead>

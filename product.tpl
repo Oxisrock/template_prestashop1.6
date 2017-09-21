@@ -168,6 +168,17 @@
 		<div class="col-md-6">
       <div class="card card-primary animated zoomInDown animation-delay-5">
         <div class="card-block">
+					{if !$content_only}
+						<!-- usefull links-->
+						<ul id="usefull_link_block" class="clearfix no-print">
+							{if $HOOK_EXTRA_LEFT}{$HOOK_EXTRA_LEFT}{/if}
+							{* <li class="print">
+								<a href="javascript:print();">
+									{l s='Print'}
+								</a>
+							</li> *}
+						</ul>
+					{/if}
 			{if $product->online_only}
 				<p class="online_only">{l s='Online only'}</p>
 			{/if}
@@ -385,7 +396,9 @@
 						</div> <!-- end content_prices -->
 						<div class="product_attributes clearfix">
 							<!-- quantity wanted -->
+							<span>{if $product->reference == '123'}{/if}</span>
 							{if !$PS_CATALOG_MODE}
+							<div {if !$product->reference} style="display: none;"{/if}>
 							<p id="quantity_wanted_p"{if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none;"{/if}>
 								<label for="quantity_wanted">{l s='Quantity'}</label>
 								<input type="number" min="1" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}{if $product->minimal_quantity > 1}{$product->minimal_quantity}{else}1{/if}{/if}" />
@@ -397,6 +410,7 @@
 								</a>
 								<span class="clearfix"></span>
 							</p>
+						</div>
 							{/if}
 							<!-- minimal quantity wanted -->
 							<p id="minimal_quantity_wanted_p"{if $product->minimal_quantity <= 1 || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none;"{/if}>
@@ -418,7 +432,7 @@
 																<option value="{$id_attribute|intval}"{if (isset($smarty.get.$groupName) && $smarty.get.$groupName|intval == $id_attribute) || $group.default == $id_attribute} selected="selected"{/if} title="{$group_attribute|escape:'html':'UTF-8'}">{$group_attribute|escape:'html':'UTF-8'}</option>
 															{/foreach}
 														</select>
-													{* {elseif ($group.group_type == 'color')}
+													{elseif ($group.group_type == 'color')}
 														<ul id="color_to_pick_list" class="clearfix">
 															{assign var="default_colorpicker" value=""}
 															{foreach from=$group.attributes key=id_attribute item=group_attribute}
@@ -482,19 +496,6 @@
 			<div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
 				{$HOOK_PRODUCT_OOS}
 			</div>
-			{*
-			{if isset($HOOK_EXTRA_RIGHT) && $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
-			{if !$content_only}
-				<!-- usefull links-->
-				<ul id="usefull_link_block" class="clearfix no-print">
-					{if $HOOK_EXTRA_LEFT}{$HOOK_EXTRA_LEFT}{/if}
-					<li class="print">
-						<a href="javascript:print();">
-							{l s='Print'}
-						</a>
-					</li>
-				</ul>
-			{/if} *}
 		</div>
 	</div>
 </div>
@@ -577,7 +578,7 @@
 		{/if}
 		{if isset($features) && $features}
 			<!-- Data sheet -->
-			{* <section class="page-product-box">
+			<section class="page-product-box">
 				<h3 class="page-product-heading">{l s='Data sheet'}</h3>
 				<table class="table-data-sheet">
 					{foreach from=$features item=feature}
@@ -589,7 +590,7 @@
 					</tr>
 					{/foreach}
 				</table>
-			</section> *}
+			</section>
 			<!--end Data sheet -->
 		{/if}
 		{if isset($product) && $product->description}

@@ -33,7 +33,7 @@
 <p class="info-account">{l s='Welcome to your account. Here you can manage all of your personal information and orders.'}</p>
 <div class="row addresses-lists">
 	<div class="card card-primary">
-		<ul class="nav nav-tabs nav-tabs-transparent indicator-danger nav-tabs-full nav-tabs-5" role="tablist">
+		<ul class="nav nav-tabs nav-tabs-transparent indicator-danger nav-tabs-full nav-tabs-6" role="tablist">
             {if $has_customer_an_address}
             <li><a href="{$link->getPageLink('address', true)|escape:'html':'UTF-8'}" title="{l s='Add my first address'}"><i class="fa fa-map-maker"></i><span class="hidden-xs">{l s='Add my first address'}</span></a></li>
             {/if}
